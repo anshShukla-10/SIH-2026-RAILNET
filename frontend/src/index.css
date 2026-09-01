@@ -1,0 +1,184 @@
+@import "tailwindcss";
+
+@theme {
+  --color-railnet-navy: #050b1a;
+  --color-railnet-deep: #081428;
+  --color-railnet-panel: #0d1c36;
+  --color-railnet-panel2: #112347;
+  --color-railnet-graphite: #1a2438;
+  --color-railnet-steel: #2a3650;
+  --color-railnet-line: #1e2a44;
+  --color-railnet-text: #c7d3e6;
+  --color-railnet-muted: #6b7a98;
+  --color-railnet-amber: #f5a623;
+  --color-railnet-red: #e53935;
+  --color-railnet-green: #2ecc71;
+  --color-railnet-blue: #2196f3;
+  --color-railnet-cyan: #00bcd4;
+  --font-mono: "JetBrains Mono", "Menlo", "Consolas", monospace;
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  background: #050b1a;
+  color: #c7d3e6;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  font-feature-settings: "tnum", "ss01";
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Subtle scanline grid for command centre feel */
+.bg-grid {
+  background-image:
+    linear-gradient(rgba(33, 150, 243, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(33, 150, 243, 0.04) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.bg-dot {
+  background-image: radial-gradient(rgba(120, 160, 220, 0.08) 1px, transparent 1px);
+  background-size: 18px 18px;
+}
+
+.panel {
+  background: linear-gradient(180deg, #0d1c36 0%, #081428 100%);
+  border: 1px solid #1e2a44;
+  box-shadow: inset 0 1px 0 rgba(120, 160, 220, 0.04);
+}
+
+.panel-soft {
+  background: rgba(13, 28, 54, 0.7);
+  border: 1px solid #1e2a44;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 8px;
+  border-radius: 2px;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  border: 1px solid transparent;
+}
+
+.chip-green {
+  background: rgba(46, 204, 113, 0.1);
+  color: #5fe09a;
+  border-color: rgba(46, 204, 113, 0.3);
+}
+
+.chip-amber {
+  background: rgba(245, 166, 35, 0.1);
+  color: #f5a623;
+  border-color: rgba(245, 166, 35, 0.3);
+}
+
+.chip-red {
+  background: rgba(229, 57, 53, 0.1);
+  color: #ff6b66;
+  border-color: rgba(229, 57, 53, 0.4);
+}
+
+.chip-blue {
+  background: rgba(33, 150, 243, 0.1);
+  color: #5fb1ff;
+  border-color: rgba(33, 150, 243, 0.3);
+}
+
+.chip-grey {
+  background: rgba(107, 122, 152, 0.12);
+  color: #a3b0cc;
+  border-color: rgba(107, 122, 152, 0.3);
+}
+
+.kbd {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  padding: 1px 6px;
+  border-radius: 2px;
+  background: #112347;
+  border: 1px solid #1e2a44;
+  color: #c7d3e6;
+}
+
+.scroll-thin::-webkit-scrollbar { width: 6px; height: 6px; }
+.scroll-thin::-webkit-scrollbar-track { background: #081428; }
+.scroll-thin::-webkit-scrollbar-thumb { background: #1e2a44; border-radius: 3px; }
+.scroll-thin::-webkit-scrollbar-thumb:hover { background: #2a3650; }
+
+/* MapLibre overrides */
+.maplibregl-popup-content {
+  background: #081428 !important;
+  color: #c7d3e6 !important;
+  border: 1px solid #2a3650 !important;
+  border-radius: 0 !important;
+  font-family: var(--font-mono) !important;
+  padding: 10px 12px !important;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.6) !important;
+}
+.maplibregl-popup-tip {
+  border-top-color: #2a3650 !important;
+  border-bottom-color: #2a3650 !important;
+}
+.maplibregl-popup-close-button {
+  color: #6b7a98 !important;
+  font-size: 18px !important;
+  padding: 2px 6px !important;
+}
+.maplibregl-ctrl-group {
+  background: #081428 !important;
+  border: 1px solid #1e2a44 !important;
+  border-radius: 0 !important;
+}
+.maplibregl-ctrl-group button {
+  background: transparent !important;
+}
+.maplibregl-ctrl-group button:hover {
+  background: #112347 !important;
+}
+.maplibregl-ctrl button .maplibregl-ctrl-icon {
+  filter: invert(0.85) hue-rotate(180deg) !important;
+}
+.maplibregl-ctrl-attrib {
+  background: rgba(8, 20, 40, 0.85) !important;
+  color: #6b7a98 !important;
+}
+.maplibregl-ctrl-attrib a {
+  color: #5fb1ff !important;
+}
+.maplibregl-canvas { outline: none; }
+
+/* Pulse for critical markers */
+@keyframes pulse-ring {
+  0% { transform: scale(0.8); opacity: 0.8; }
+  100% { transform: scale(2.4); opacity: 0; }
+}
+.pulse-ring {
+  animation: pulse-ring 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0.25; }
+}
+.blink { animation: blink 1.2s steps(2, end) infinite; }
+
+@keyframes bar-scan {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+.bar-scan::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(90deg, transparent 0%, rgba(33,150,243,0.25) 50%, transparent 100%);
+  animation: bar-scan 3s linear infinite;
+}
+
+.text-shadow-sm { text-shadow: 0 1px 2px rgba(0,0,0,0.6); }
