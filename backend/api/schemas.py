@@ -68,6 +68,23 @@ class MaintenanceJobOut(BaseModel):
     model_config = ConfigDict(from_attributes=True)
 
 
+class MaintenanceJobCreateIn(BaseModel):
+    """Payload for creating a manual maintenance job."""
+
+    department: str
+    asset_id: str
+    section_id: str
+    defect_desc: str
+    criticality: float
+    urgency: float
+    asset_risk: float
+    overdue_factor: float
+    failure_history: float
+    due_date: date
+    duration_min: int
+    day_night_pref: str = "ANY"
+
+
 class BlockOut(BaseModel):
     """Pydantic model for Block."""
 
@@ -78,8 +95,32 @@ class BlockOut(BaseModel):
     end: datetime
     status: str
     has_hard_conflict: bool = False
+    is_locked: bool = False
 
     model_config = ConfigDict(from_attributes=True)
+
+
+class BlockPinIn(BaseModel):
+    """Payload for manually pinning a maintenance job to a block window."""
+
+    start: datetime
+    end: datetime
+
+
+class BlockPinOut(BlockOut):
+    """Response returned after manually pinning a block."""
+
+    conflict_count: int
+    reason: str
+
+
+class BlockUnpinOut(BaseModel):
+    """Response returned after unpinning a block."""
+
+    job_id: str
+    status: str
+    is_locked: bool
+    message: str
 
 
 class OptimizationResultOut(BaseModel):

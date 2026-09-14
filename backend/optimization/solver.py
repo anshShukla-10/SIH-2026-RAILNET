@@ -14,7 +14,7 @@ Constraints:
 import asyncio
 import sys
 from collections import defaultdict
-from datetime import date, datetime
+from datetime import date, datetime, timezone
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
@@ -58,6 +58,7 @@ class OptimizerRunSummary(BaseModel):
     relaxed_but_clean_jobs: int
     hard_conflict_jobs: int
     total_conflicts: int
+    locked_skipped_jobs: int = 0
     assignments: List[Assignment]
 
 
@@ -72,12 +73,24 @@ def _get_val(obj: Any, key: str, default: Any = None) -> Any:
     return val
 
 
-def solve_schedule(jobs_with_candidates: List[Dict[str, Any]]) -> List[Assignment]:
+def _ensure_utc(dt: datetime) -> datetime:
+    """Ensure datetime is timezone-aware in UTC."""
+    if dt.tzinfo is None:
+        return dt.replace(tzinfo=timezone.utc)
+    return dt.astimezone(timezone.utc)
+
+
+def solve_schedule(
+    jobs_with_candidates: List[Dict[str, Any]],
+    locked_intervals: Optional[List[Dict[str, Any]]] = None,
+) -> List[Assignment]:
     """Pure function: builds and solves the CP-SAT model given in-memory candidate windows.
 
     Enforces zero-conflict as a HARD constraint whenever a job has at least one clean window.
     Only genuine hard cases (zero clean windows available anywhere) may take a conflicted window,
     flagged as hard_conflict=True.
+
+    Locked intervals are treated as fixed, non-movable intervals under section NoOverlap.
     """
     if not jobs_with_candidates:
         return []
@@ -90,7 +103,13 @@ def solve_schedule(jobs_with_candidates: List[Dict[str, Any]]) -> List[Assignmen
         for win in job.get("candidate_windows", []):
             start = _get_val(win, "start")
             if start:
-                all_starts.append(start)
+                all_starts.append(_ensure_utc(start))
+
+    if locked_intervals:
+        for lock in locked_intervals:
+            l_start = _get_val(lock, "start")
+            if l_start:
+                all_starts.append(_ensure_utc(l_start))
 
     if not all_starts:
         return []
@@ -99,10 +118,41 @@ def solve_schedule(jobs_with_candidates: List[Dict[str, Any]]) -> List[Assignmen
 
     # presence_vars[job_idx] -> dict mapping eligible window index to BoolVar
     presence_vars: List[Dict[int, cp_model.IntVar]] = []
-    eligible_windows_per_job: List[List[Any]] = []
-    is_hard_case_per_job: List[bool] = []
     section_intervals: Dict[str, List[cp_model.IntervalVar]] = defaultdict(list)
     objective_terms: List[Any] = []
+
+    # 1. Enforce fixed non-movable intervals for locked blocks under section NoOverlap (FR5.2)
+    if locked_intervals:
+        locked_by_sec = defaultdict(list)
+        for lock in locked_intervals:
+            sec_id = str(_get_val(lock, "section_id"))
+            l_start = _ensure_utc(_get_val(lock, "start"))
+            l_end = _ensure_utc(_get_val(lock, "end"))
+            locked_by_sec[sec_id].append((l_start, l_end))
+
+        for sec_id, raw_spans in locked_by_sec.items():
+            sorted_spans = sorted(raw_spans, key=lambda x: x[0])
+            merged_spans = [sorted_spans[0]]
+            for cur in sorted_spans[1:]:
+                prev_s, prev_e = merged_spans[-1]
+                cur_s, cur_e = cur
+                if cur_s < prev_e:
+                    merged_spans[-1] = (prev_s, max(prev_e, cur_e))
+                else:
+                    merged_spans.append(cur)
+
+            for l_idx, (m_start, m_end) in enumerate(merged_spans):
+                start_min = int((m_start - min_dt).total_seconds() // 60)
+                end_min = int((m_end - min_dt).total_seconds() // 60)
+                duration_min = max(1, end_min - start_min)
+
+                fixed_interval = model.NewIntervalVar(
+                    start_min,
+                    duration_min,
+                    end_min,
+                    f"fixed_locked_{sec_id}_{l_idx}",
+                )
+                section_intervals[sec_id].append(fixed_interval)
 
     for j_idx, job in enumerate(jobs_with_candidates):
         section_id = str(job["section_id"])
@@ -116,8 +166,8 @@ def solve_schedule(jobs_with_candidates: List[Dict[str, Any]]) -> List[Assignmen
         job_var_map: Dict[int, cp_model.IntVar] = {}
 
         for w_idx, win in enumerate(windows):
-            w_start = _get_val(win, "start")
-            w_end = _get_val(win, "end")
+            w_start = _ensure_utc(_get_val(win, "start"))
+            w_end = _ensure_utc(_get_val(win, "end"))
             conflicts = int(_get_val(win, "conflict_count", 0))
 
             start_min = int((w_start - min_dt).total_seconds() // 60)
@@ -221,6 +271,22 @@ async def run_optimizer_and_persist(
         from services.clock import get_base_date
         ref_date = base_date or get_base_date()
 
+        # 0. Fetch all locked blocks to exclude from re-assignment and feed into section NoOverlap constraint
+        locked_blocks = await db.block.find_many(
+            where={"is_locked": True},
+        )
+        locked_job_ids = {b.job_id for b in locked_blocks}
+        locked_intervals = [
+            {
+                "job_id": b.job_id,
+                "section_id": b.section_id,
+                "start": b.start,
+                "end": b.end,
+            }
+            for b in locked_blocks
+        ]
+        locked_skipped_jobs = len(locked_job_ids)
+
         # 1. Fetch pending maintenance jobs (if none pending, fallback to all scheduled/pending for re-runs)
         jobs = await db.maintenancejob.find_many(
             where={"status": "PENDING"},
@@ -231,27 +297,35 @@ async def run_optimizer_and_persist(
                 order={"priority_score": "desc"},
             )
 
-        if not jobs:
+        # Exclude locked jobs entirely from candidate window generation and re-assignment
+        eligible_jobs = [j for j in jobs if j.job_id not in locked_job_ids]
+
+        if not eligible_jobs:
             return OptimizerRunSummary(
                 jobs_scheduled=0,
                 zero_conflict_jobs=0,
                 relaxed_but_clean_jobs=0,
                 hard_conflict_jobs=0,
                 total_conflicts=0,
+                locked_skipped_jobs=locked_skipped_jobs,
                 assignments=[],
             )
 
         total_jobs = len(jobs)
         priority_rank_map = {j.job_id: idx + 1 for idx, j in enumerate(jobs)}
+        total_jobs = len(eligible_jobs)
+        priority_rank_map = {j.job_id: idx + 1 for idx, j in enumerate(eligible_jobs)}
 
         # 2. Generate candidate windows with conflict counts for each job
         # 2. Pre-fetch all train stops once for instant in-memory conflict detection (critical for cloud DB latency)
         all_train_stops = await db.trainstop.find_many(include={"train": True})
 
         # Generate candidate windows with conflict counts for each job
+        # Generate candidate windows with conflict counts for each eligible job
         jobs_with_candidates = []
         for j in jobs:
             windows = await generate_candidate_windows(j, ref_date, db=db)
+        for j in eligible_jobs:
             windows = await generate_candidate_windows(j, ref_date, db=db, cached_stops=all_train_stops)
             jobs_with_candidates.append(
                 {
@@ -265,12 +339,17 @@ async def run_optimizer_and_persist(
 
         # 3. Run pure CP-SAT optimizer with hard zero-conflict constraint
         assignments = solve_schedule(jobs_with_candidates)
+        # 3. Run pure CP-SAT optimizer with hard zero-conflict constraint + fixed locked intervals
+        assignments = solve_schedule(jobs_with_candidates, locked_intervals=locked_intervals)
 
         # 4. Persist Block and OptimizationResult records concurrently
         jobs_by_id = {j.job_id: j for j in jobs}
+        # 4. Persist Block and OptimizationResult records concurrently for assigned eligible jobs
+        jobs_by_id = {j.job_id: j for j in eligible_jobs}
         assigned_job_ids = [a.job_id for a in assignments]
 
         # Clean existing optimization results in a single batch query
+        # Clean existing optimization results in a single batch query for assigned jobs
         await db.optimizationresult.delete_many(where={"job_id": {"in": assigned_job_ids}})
 
         # Persist Block, OptimizationResult, and Job updates concurrently
@@ -314,6 +393,7 @@ async def run_optimizer_and_persist(
                             "end": assignment.end,
                             "status": "SCHEDULED",
                             "has_hard_conflict": assignment.hard_conflict,
+                            "is_locked": False,
                         },
                         "update": {
                             "section_id": assignment.section_id,
@@ -321,6 +401,7 @@ async def run_optimizer_and_persist(
                             "end": assignment.end,
                             "status": "SCHEDULED",
                             "has_hard_conflict": assignment.hard_conflict,
+                            "is_locked": False,
                         },
                     },
                 )
@@ -363,6 +444,7 @@ async def run_optimizer_and_persist(
             relaxed_but_clean_jobs=relaxed_but_clean_jobs,
             hard_conflict_jobs=hard_conflict_jobs,
             total_conflicts=total_conflicts,
+            locked_skipped_jobs=locked_skipped_jobs,
             assignments=assignments,
         )
         return summary

@@ -97,6 +97,7 @@ model Block {
   end               DateTime
   status            JobStatus @default(PENDING)
   has_hard_conflict Boolean   @default(false)
+  is_locked         Boolean   @default(false)
 
   job     MaintenanceJob @relation(fields: [job_id], references: [job_id])
   section Section        @relation(fields: [section_id], references: [section_id])
