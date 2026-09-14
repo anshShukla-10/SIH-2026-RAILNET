@@ -32,7 +32,7 @@ app = FastAPI(
         "AI-Powered Automatic Block Planning System for Indian Railways.\n"
         "Smart India Hackathon 2026 (SIH26027) · Ministry of Railways."
     ),
-    version="1.0.0",
+    version="1.0.1",
     docs_url="/docs",
     redoc_url="/redoc",
     lifespan=lifespan,
