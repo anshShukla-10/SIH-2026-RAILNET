@@ -11,6 +11,7 @@ Constraints:
    receiving their earliest / most-preferred candidate windows.
 """
 
+import asyncio
 import sys
 from collections import defaultdict
 from datetime import date, datetime
@@ -244,9 +245,14 @@ async def run_optimizer_and_persist(
         priority_rank_map = {j.job_id: idx + 1 for idx, j in enumerate(jobs)}
 
         # 2. Generate candidate windows with conflict counts for each job
+        # 2. Pre-fetch all train stops once for instant in-memory conflict detection (critical for cloud DB latency)
+        all_train_stops = await db.trainstop.find_many(include={"train": True})
+
+        # Generate candidate windows with conflict counts for each job
         jobs_with_candidates = []
         for j in jobs:
             windows = await generate_candidate_windows(j, ref_date, db=db)
+            windows = await generate_candidate_windows(j, ref_date, db=db, cached_stops=all_train_stops)
             jobs_with_candidates.append(
                 {
                     "job_id": j.job_id,
@@ -260,10 +266,17 @@ async def run_optimizer_and_persist(
         # 3. Run pure CP-SAT optimizer with hard zero-conflict constraint
         assignments = solve_schedule(jobs_with_candidates)
 
-        # 4. Persist Block and OptimizationResult records
+        # 4. Persist Block and OptimizationResult records concurrently
         jobs_by_id = {j.job_id: j for j in jobs}
+        assigned_job_ids = [a.job_id for a in assignments]
 
-        for assignment in assignments:
+        # Clean existing optimization results in a single batch query
+        await db.optimizationresult.delete_many(where={"job_id": {"in": assigned_job_ids}})
+
+        # Persist Block, OptimizationResult, and Job updates concurrently
+        sem = asyncio.Semaphore(15)
+
+        async def persist_assignment(assignment: Assignment):
             job_obj = jobs_by_id[assignment.job_id]
             rank = priority_rank_map.get(assignment.job_id, 1)
             pref_str = _get_val(job_obj, "day_night_pref", "ANY")
@@ -287,51 +300,53 @@ async def run_optimizer_and_persist(
                     f"on {assignment.section_id}."
                 )
 
-            # Upsert Block
             block_id = f"BLK-{assignment.job_id}"
-            await db.block.upsert(
-                where={"block_id": block_id},
-                data={
-                    "create": {
-                        "block_id": block_id,
+            async with sem:
+                # Upsert Block
+                await db.block.upsert(
+                    where={"block_id": block_id},
+                    data={
+                        "create": {
+                            "block_id": block_id,
+                            "job_id": assignment.job_id,
+                            "section_id": assignment.section_id,
+                            "start": assignment.start,
+                            "end": assignment.end,
+                            "status": "SCHEDULED",
+                            "has_hard_conflict": assignment.hard_conflict,
+                        },
+                        "update": {
+                            "section_id": assignment.section_id,
+                            "start": assignment.start,
+                            "end": assignment.end,
+                            "status": "SCHEDULED",
+                            "has_hard_conflict": assignment.hard_conflict,
+                        },
+                    },
+                )
+
+                # Recreate OptimizationResult
+                await db.optimizationresult.create(
+                    data={
                         "job_id": assignment.job_id,
-                        "section_id": assignment.section_id,
-                        "start": assignment.start,
-                        "end": assignment.end,
+                        "recommended_start": assignment.start,
+                        "recommended_end": assignment.end,
+                        "conflict_count": assignment.conflict_count,
+                        "priority_score": assignment.priority_score,
+                        "reason": reason,
+                    }
+                )
+
+                # Update job status to SCHEDULED and set has_hard_conflict flag
+                await db.maintenancejob.update(
+                    where={"job_id": assignment.job_id},
+                    data={
                         "status": "SCHEDULED",
                         "has_hard_conflict": assignment.hard_conflict,
                     },
-                    "update": {
-                        "section_id": assignment.section_id,
-                        "start": assignment.start,
-                        "end": assignment.end,
-                        "status": "SCHEDULED",
-                        "has_hard_conflict": assignment.hard_conflict,
-                    },
-                },
-            )
+                )
 
-            # Clean and recreate OptimizationResult for idempotency
-            await db.optimizationresult.delete_many(where={"job_id": assignment.job_id})
-            await db.optimizationresult.create(
-                data={
-                    "job_id": assignment.job_id,
-                    "recommended_start": assignment.start,
-                    "recommended_end": assignment.end,
-                    "conflict_count": assignment.conflict_count,
-                    "priority_score": assignment.priority_score,
-                    "reason": reason,
-                }
-            )
-
-            # Update job status to SCHEDULED and set has_hard_conflict flag
-            await db.maintenancejob.update(
-                where={"job_id": assignment.job_id},
-                data={
-                    "status": "SCHEDULED",
-                    "has_hard_conflict": assignment.hard_conflict,
-                },
-            )
+        await asyncio.gather(*(persist_assignment(a) for a in assignments))
 
         zero_conflict_jobs = sum(
             1 for a in assignments if a.conflict_count == 0 and not a.relaxed

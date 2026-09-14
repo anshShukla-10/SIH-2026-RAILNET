@@ -136,6 +136,7 @@ async def generate_candidate_windows(
     job: Any,
     base_date: Optional[date] = None,
     db: Optional[Prisma] = None,
+    cached_stops: Optional[List[Any]] = None,
 ) -> List[CandidateWindow]:
     """DB-orchestrator: builds slots, queries conflicts on section, and sorts zero-conflict first.
 
@@ -149,6 +150,7 @@ async def generate_candidate_windows(
     initial_candidates: List[CandidateWindow] = []
     for start, end in slots:
         conflict_res = await find_conflicts(section_id, start, end, db=db)
+        conflict_res = await find_conflicts(section_id, start, end, db=db, cached_stops=cached_stops)
         initial_candidates.append(
             CandidateWindow(
                 start=start,
@@ -174,6 +176,7 @@ async def generate_candidate_windows(
             continue
 
         conflict_res = await find_conflicts(section_id, start, end, db=db)
+        conflict_res = await find_conflicts(section_id, start, end, db=db, cached_stops=cached_stops)
         cand = CandidateWindow(
             start=start,
             end=end,
