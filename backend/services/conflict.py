@@ -1,7 +1,7 @@
-"""Conflict detection service between candidate maintenance blocks and train schedules (FR3)."""
+from __future__ import annotations
 
 from datetime import datetime, timezone
-from typing import List, Optional
+from typing import Any, List, Optional
 from pydantic import BaseModel
 from prisma import Prisma
 
