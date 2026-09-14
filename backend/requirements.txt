@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+pydantic
+ortools
+pandas
+pytest
+requests
+httpx
+python-dotenv
+prisma

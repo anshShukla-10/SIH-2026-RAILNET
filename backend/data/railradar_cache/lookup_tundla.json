@@ -1,0 +1,81 @@
+{
+  "success": true,
+  "data": [
+    {
+      "code": "TDL",
+      "name": "Tundla Jn",
+      "city": "Tundla",
+      "popularity": 0,
+      "isActive": true
+    },
+    {
+      "code": "TDLN",
+      "name": "New Tundla Jn",
+      "city": null,
+      "popularity": 0,
+      "isActive": false
+    },
+    {
+      "code": "WSC",
+      "name": "West Side Cabin Tundla",
+      "city": null,
+      "popularity": 0,
+      "isActive": false
+    },
+    {
+      "code": "GDPL",
+      "name": "Gundla Pochampalli",
+      "city": "Hyderabad",
+      "popularity": 0,
+      "isActive": true
+    },
+    {
+      "code": "KDI",
+      "name": "Kundli",
+      "city": "Kundli",
+      "popularity": 0,
+      "isActive": true
+    },
+    {
+      "code": "TNL",
+      "name": "Tangla",
+      "city": "Tangla",
+      "popularity": 0,
+      "isActive": true
+    },
+    {
+      "code": "MFR",
+      "name": "Mandla Fort",
+      "city": "Mandla Fort",
+      "popularity": 0,
+      "isActive": true
+    },
+    {
+      "code": "MQC",
+      "name": "Mundka Halt",
+      "city": "Mundka",
+      "popularity": 0,
+      "isActive": true
+    },
+    {
+      "code": "MPH",
+      "name": "Mundha Pandey",
+      "city": "Mundha Pande",
+      "popularity": 0,
+      "isActive": true
+    },
+    {
+      "code": "KWC",
+      "name": "Kundwa Chainpur",
+      "city": "Kundwa Chainpur",
+      "popularity": 0,
+      "isActive": true
+    }
+  ],
+  "meta": {
+    "timestamp": "2026-09-03T12:52:15+05:30",
+    "traceId": "535c3721-a25c-43fe-8d0e-85a5c28a6743",
+    "source": "database",
+    "executionTime": 33
+  }
+}

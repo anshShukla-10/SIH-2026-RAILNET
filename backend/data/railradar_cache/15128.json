@@ -1,0 +1,671 @@
+{
+  "success": true,
+  "data": {
+    "train": {
+      "number": "15128",
+      "name": "Kashi Vishwanath Express",
+      "type": "MAIL EXPRESS",
+      "category": "Express",
+      "source": {
+        "code": "NDLS",
+        "name": "New Delhi",
+        "lat": 28.6419258,
+        "lng": 77.2217499
+      },
+      "destination": {
+        "code": "BNRS",
+        "name": "Banaras",
+        "lat": 25.29926,
+        "lng": 82.97177
+      },
+      "runDays": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ],
+      "distance": 768.4,
+      "duration": 1025,
+      "avgSpeed": 45,
+      "maxSpeed": 83.5,
+      "totalHalts": 37,
+      "returnTrain": "15127",
+      "coachPosition": "ENG-SLRD-GEN-GEN-S5-S4-S3-S2-S1-M2-M1-B6-B5-B4-B3-B2-B1-H1-A2-A1-GEN-GEN-LPR"
+    },
+    "route": [
+      {
+        "sequence": 1,
+        "station": {
+          "code": "NDLS",
+          "name": "New Delhi",
+          "lat": 28.6419258,
+          "lng": 77.2217499
+        },
+        "isHalt": true,
+        "platform": "PF 8",
+        "speedToNextStationKmph": 36.9,
+        "departure": "11:35",
+        "departureDay": 1,
+        "distance": 0
+      },
+      {
+        "sequence": 9,
+        "station": {
+          "code": "GZB",
+          "name": "Ghaziabad Jn",
+          "lat": 28.6528563,
+          "lng": 77.4282442
+        },
+        "isHalt": true,
+        "platform": "PF 2",
+        "speedToNextStationKmph": 56.9,
+        "arrival": "12:15",
+        "arrivalDay": 1,
+        "departure": "12:17",
+        "departureDay": 1,
+        "distance": 24.6
+      },
+      {
+        "sequence": 14,
+        "station": {
+          "code": "PKW",
+          "name": "Pilkhua",
+          "lat": 28.7125191,
+          "lng": 77.6684448
+        },
+        "isHalt": true,
+        "platform": "PF 2",
+        "speedToNextStationKmph": 56,
+        "arrival": "12:44",
+        "arrivalDay": 1,
+        "departure": "12:46",
+        "departureDay": 1,
+        "distance": 50.2
+      },
+      {
+        "sequence": 16,
+        "station": {
+          "code": "HPU",
+          "name": "Hapur Jn",
+          "lat": 28.7395389,
+          "lng": 77.7789714
+        },
+        "isHalt": true,
+        "platform": "PF 2",
+        "speedToNextStationKmph": 78.3,
+        "arrival": "12:58",
+        "arrivalDay": 1,
+        "departure": "13:00",
+        "departureDay": 1,
+        "distance": 61.4
+      },
+      {
+        "sequence": 21,
+        "station": {
+          "code": "GMS",
+          "name": "Garhmuktesar",
+          "lat": 28.7803,
+          "lng": 78.07747
+        },
+        "isHalt": true,
+        "platform": "PF 3",
+        "speedToNextStationKmph": 56.2,
+        "arrival": "13:23",
+        "arrivalDay": 1,
+        "departure": "13:25",
+        "departureDay": 1,
+        "distance": 91.4
+      },
+      {
+        "sequence": 24,
+        "station": {
+          "code": "GJL",
+          "name": "Gajraula Jn",
+          "lat": 28.8348503,
+          "lng": 78.250401
+        },
+        "isHalt": true,
+        "platform": "PF 1",
+        "speedToNextStationKmph": 72,
+        "arrival": "13:47",
+        "arrivalDay": 1,
+        "departure": "13:49",
+        "departureDay": 1,
+        "distance": 112
+      },
+      {
+        "sequence": 27,
+        "station": {
+          "code": "AMRO",
+          "name": "Amroha",
+          "lat": 28.8922129,
+          "lng": 78.4744272
+        },
+        "isHalt": true,
+        "platform": "PF 1",
+        "speedToNextStationKmph": 33.4,
+        "arrival": "14:08",
+        "arrivalDay": 1,
+        "departure": "14:10",
+        "departureDay": 1,
+        "distance": 134.8
+      },
+      {
+        "sequence": 32,
+        "station": {
+          "code": "MB",
+          "name": "Moradabad Jn",
+          "lat": 28.8313915,
+          "lng": 78.7654415
+        },
+        "isHalt": true,
+        "platform": "PF 1",
+        "speedToNextStationKmph": 58.3,
+        "arrival": "15:05",
+        "arrivalDay": 1,
+        "departure": "15:15",
+        "departureDay": 1,
+        "distance": 165.4
+      },
+      {
+        "sequence": 37,
+        "station": {
+          "code": "RMU",
+          "name": "Rampur",
+          "lat": 28.7785349,
+          "lng": 79.0232295
+        },
+        "isHalt": true,
+        "platform": "PF 1",
+        "speedToNextStationKmph": 80.4,
+        "arrival": "15:43",
+        "arrivalDay": 1,
+        "departure": "15:45",
+        "departureDay": 1,
+        "distance": 192.6
+      },
+      {
+        "sequence": 47,
+        "station": {
+          "code": "BE",
+          "name": "Bareilly Jn",
+          "lat": 28.3381037,
+          "lng": 79.4102663
+        },
+        "isHalt": true,
+        "platform": "PF 1",
+        "speedToNextStationKmph": 59.4,
+        "arrival": "16:32",
+        "arrivalDay": 1,
+        "departure": "16:34",
+        "departureDay": 1,
+        "distance": 255.6
+      },
+      {
+        "sequence": 50,
+        "station": {
+          "code": "PMR",
+          "name": "Pitambarpur",
+          "lat": 28.2000044,
+          "lng": 79.5381483
+        },
+        "isHalt": true,
+        "platform": "PF 1",
+        "speedToNextStationKmph": 76.2,
+        "arrival": "16:54",
+        "arrivalDay": 1,
+        "departure": "16:56",
+        "departureDay": 1,
+        "distance": 275.4
+      },
+      {
+        "sequence": 56,
+        "station": {
+          "code": "TLH",
+          "name": "Tilhar",
+          "lat": 27.9728281,
+          "lng": 79.7420096
+        },
+        "isHalt": true,
+        "platform": "PF 1",
+        "speedToNextStationKmph": 53.6,
+        "arrival": "17:22",
+        "arrivalDay": 1,
+        "departure": "17:24",
+        "departureDay": 1,
+        "distance": 308.4
+      },
+      {
+        "sequence": 60,
+        "station": {
+          "code": "SPN",
+          "name": "Shahjahanpur Jn",
+          "lat": 27.8934038,
+          "lng": 79.9048982
+        },
+        "isHalt": true,
+        "platform": "PF 1",
+        "speedToNextStationKmph": 83.5,
+        "arrival": "17:53",
+        "arrivalDay": 1,
+        "departure": "17:58",
+        "departureDay": 1,
+        "distance": 334.3
+      },
+      {
+        "sequence": 66,
+        "station": {
+          "code": "AJI",
+          "name": "Anji Shahabad",
+          "lat": 27.6443023,
+          "lng": 79.974234
+        },
+        "isHalt": true,
+        "platform": "PF 1",
+        "speedToNextStationKmph": 74.1,
+        "arrival": "18:20",
+        "arrivalDay": 1,
+        "departure": "18:22",
+        "departureDay": 1,
+        "distance": 364.9
+      },
+      {
+        "sequence": 71,
+        "station": {
+          "code": "HRI",
+          "name": "Hardoi",
+          "lat": 27.4000849,
+          "lng": 80.1475002
+        },
+        "isHalt": true,
+        "platform": "PF 3",
+        "speedToNextStationKmph": 70.9,
+        "arrival": "18:48",
+        "arrivalDay": 1,
+        "departure": "18:50",
+        "departureDay": 1,
+        "distance": 397
+      },
+      {
+        "sequence": 75,
+        "station": {
+          "code": "BLM",
+          "name": "Balamau Jn",
+          "lat": 27.1680626,
+          "lng": 80.3518903
+        },
+        "isHalt": true,
+        "platform": "PF 5",
+        "speedToNextStationKmph": 72,
+        "arrival": "19:18",
+        "arrivalDay": 1,
+        "departure": "19:20",
+        "departureDay": 1,
+        "distance": 430.1
+      },
+      {
+        "sequence": 78,
+        "station": {
+          "code": "SAN",
+          "name": "Sandila",
+          "lat": 27.0600761,
+          "lng": 80.516318
+        },
+        "isHalt": true,
+        "platform": "PF 1",
+        "speedToNextStationKmph": 39.3,
+        "arrival": "19:37",
+        "arrivalDay": 1,
+        "departure": "19:39",
+        "departureDay": 1,
+        "distance": 450.5
+      },
+      {
+        "sequence": 83,
+        "station": {
+          "code": "AMG",
+          "name": "Alam Nagar",
+          "lat": 26.8415195,
+          "lng": 80.8682662
+        },
+        "isHalt": true,
+        "platform": "PF 2",
+        "speedToNextStationKmph": 32.2,
+        "arrival": "20:44",
+        "arrivalDay": 1,
+        "departure": "20:54",
+        "departureDay": 1,
+        "distance": 493.1
+      },
+      {
+        "sequence": 85,
+        "station": {
+          "code": "LKO",
+          "name": "Lucknow Jn",
+          "lat": 26.8311583,
+          "lng": 80.9243609
+        },
+        "isHalt": true,
+        "platform": "PF 6",
+        "speedToNextStationKmph": 40.3,
+        "arrival": "21:05",
+        "arrivalDay": 1,
+        "departure": "21:15",
+        "departureDay": 1,
+        "distance": 499
+      },
+      {
+        "sequence": 88,
+        "station": {
+          "code": "UTR",
+          "name": "Utraitia Jn",
+          "lat": 26.7633752,
+          "lng": 80.9742674
+        },
+        "isHalt": true,
+        "platform": "PF 1",
+        "speedToNextStationKmph": 78,
+        "arrival": "21:33",
+        "arrivalDay": 1,
+        "departure": "21:38",
+        "departureDay": 1,
+        "distance": 511.1
+      },
+      {
+        "sequence": 93,
+        "station": {
+          "code": "BCN",
+          "name": "Bachhrawn",
+          "lat": 26.4766008,
+          "lng": 81.1049522
+        },
+        "isHalt": true,
+        "platform": "PF 1",
+        "speedToNextStationKmph": 56,
+        "arrival": "22:05",
+        "arrivalDay": 1,
+        "departure": "22:07",
+        "departureDay": 1,
+        "distance": 546.2
+      },
+      {
+        "sequence": 97,
+        "station": {
+          "code": "RBL",
+          "name": "Rae Bareli Jn",
+          "lat": 26.2313438,
+          "lng": 81.2403133
+        },
+        "isHalt": true,
+        "platform": "PF 2",
+        "speedToNextStationKmph": 0.3,
+        "arrival": "22:40",
+        "arrivalDay": 1,
+        "departure": "22:45",
+        "departureDay": 1,
+        "distance": 577
+      },
+      {
+        "sequence": 98,
+        "station": {
+          "code": "JAIS",
+          "name": "Jais",
+          "lat": 26.2619806,
+          "lng": 81.5195917
+        },
+        "isHalt": true,
+        "platform": "PF 1",
+        "speedToNextStationKmph": 0.4,
+        "arrival": "23:08",
+        "arrivalDay": 1,
+        "departure": "23:10",
+        "departureDay": 1,
+        "distance": 577.1
+      },
+      {
+        "sequence": 99,
+        "station": {
+          "code": "GNG",
+          "name": "Gauriganj",
+          "lat": 26.2040212,
+          "lng": 81.6856692
+        },
+        "isHalt": true,
+        "platform": "PF 1",
+        "speedToNextStationKmph": 61.8,
+        "arrival": "23:26",
+        "arrivalDay": 1,
+        "departure": "23:28",
+        "departureDay": 1,
+        "distance": 577.2
+      },
+      {
+        "sequence": 101,
+        "station": {
+          "code": "AME",
+          "name": "Amethi",
+          "lat": 26.1528737,
+          "lng": 81.8061035
+        },
+        "isHalt": true,
+        "platform": "PF 1",
+        "speedToNextStationKmph": 47.7,
+        "arrival": "23:41",
+        "arrivalDay": 1,
+        "departure": "23:43",
+        "departureDay": 1,
+        "distance": 590.6
+      },
+      {
+        "sequence": 104,
+        "station": {
+          "code": "MCDA",
+          "name": "Maa Chandika Devi Dham Antu",
+          "lat": 26.0551621,
+          "lng": 81.897788
+        },
+        "isHalt": true,
+        "platform": "PF 1",
+        "speedToNextStationKmph": 54.8,
+        "arrival": "00:01",
+        "arrivalDay": 2,
+        "departure": "00:02",
+        "departureDay": 2,
+        "distance": 604.9
+      },
+      {
+        "sequence": 107,
+        "station": {
+          "code": "MBDP",
+          "name": "Maa Belha Devi Dham Pratapgarh Jn",
+          "lat": 25.9115884,
+          "lng": 82.0007886
+        },
+        "isHalt": true,
+        "platform": "PF 2",
+        "speedToNextStationKmph": 52.1,
+        "arrival": "00:25",
+        "arrivalDay": 2,
+        "departure": "00:30",
+        "departureDay": 2,
+        "distance": 625.9
+      },
+      {
+        "sequence": 109,
+        "station": {
+          "code": "MBDD",
+          "name": "Maa Barahi Devi Dham",
+          "lat": 25.8026285,
+          "lng": 82.0410236
+        },
+        "isHalt": true,
+        "platform": "PF 1",
+        "speedToNextStationKmph": 64.3,
+        "arrival": "00:46",
+        "arrivalDay": 2,
+        "departure": "00:47",
+        "departureDay": 2,
+        "distance": 639.8
+      },
+      {
+        "sequence": 112,
+        "station": {
+          "code": "BSE",
+          "name": "Badshahpur",
+          "lat": 25.6529101,
+          "lng": 82.1908879
+        },
+        "isHalt": true,
+        "platform": "PF 1",
+        "speedToNextStationKmph": 27.7,
+        "arrival": "01:08",
+        "arrivalDay": 2,
+        "departure": "01:10",
+        "departureDay": 2,
+        "distance": 662.3
+      },
+      {
+        "sequence": 114,
+        "station": {
+          "code": "JNH",
+          "name": "Janghai Jn",
+          "lat": 25.5500475,
+          "lng": 82.3100813
+        },
+        "isHalt": true,
+        "platform": "PF 2",
+        "speedToNextStationKmph": 53.6,
+        "arrival": "01:46",
+        "arrivalDay": 2,
+        "departure": "01:48",
+        "departureDay": 2,
+        "distance": 678.9
+      },
+      {
+        "sequence": 116,
+        "station": {
+          "code": "SAW",
+          "name": "Suriawan",
+          "lat": 25.4609491,
+          "lng": 82.4247922
+        },
+        "isHalt": true,
+        "platform": "PF 1",
+        "speedToNextStationKmph": 57.7,
+        "arrival": "02:05",
+        "arrivalDay": 2,
+        "departure": "02:07",
+        "departureDay": 2,
+        "distance": 694.1
+      },
+      {
+        "sequence": 118,
+        "station": {
+          "code": "BOY",
+          "name": "Bhadohi",
+          "lat": 25.3949665,
+          "lng": 82.5587121
+        },
+        "isHalt": true,
+        "platform": "PF 1",
+        "speedToNextStationKmph": 18.7,
+        "arrival": "02:23",
+        "arrivalDay": 2,
+        "departure": "02:25",
+        "departureDay": 2,
+        "distance": 709.5
+      },
+      {
+        "sequence": 119,
+        "station": {
+          "code": "PRF",
+          "name": "Parsipur",
+          "lat": 25.370603,
+          "lng": 82.6374188
+        },
+        "isHalt": true,
+        "platform": "PF 2",
+        "speedToNextStationKmph": 32.2,
+        "arrival": "02:52",
+        "arrivalDay": 2,
+        "departure": "02:53",
+        "departureDay": 2,
+        "distance": 717.9
+      },
+      {
+        "sequence": 121,
+        "station": {
+          "code": "SWPR",
+          "name": "Sewapuri",
+          "lat": 25.3508182,
+          "lng": 82.7692534
+        },
+        "isHalt": true,
+        "platform": "PF 1",
+        "speedToNextStationKmph": 44.7,
+        "arrival": "03:18",
+        "arrivalDay": 2,
+        "departure": "03:20",
+        "departureDay": 2,
+        "distance": 731.3
+      },
+      {
+        "sequence": 122,
+        "station": {
+          "code": "CHH",
+          "name": "Chaukhandi",
+          "lat": 25.3396504,
+          "lng": 82.8351252
+        },
+        "isHalt": true,
+        "platform": "PF 3",
+        "speedToNextStationKmph": 52,
+        "arrival": "03:29",
+        "arrivalDay": 2,
+        "departure": "03:30",
+        "departureDay": 2,
+        "distance": 738
+      },
+      {
+        "sequence": 124,
+        "station": {
+          "code": "LOT",
+          "name": "Lohta",
+          "lat": 25.3152018,
+          "lng": 82.9305862
+        },
+        "isHalt": true,
+        "platform": "PF 2",
+        "speedToNextStationKmph": 10,
+        "arrival": "03:57",
+        "arrivalDay": 2,
+        "departure": "03:58",
+        "departureDay": 2,
+        "distance": 761.4
+      },
+      {
+        "sequence": 125,
+        "station": {
+          "code": "BNRS",
+          "name": "Banaras",
+          "lat": 25.29926,
+          "lng": 82.97177
+        },
+        "isHalt": true,
+        "platform": "PF 7",
+        "arrival": "04:40",
+        "arrivalDay": 2,
+        "distance": 768.4
+      }
+    ]
+  },
+  "meta": {
+    "timestamp": "2026-09-03T12:55:03+05:30",
+    "traceId": "94694530-0900-4b27-a457-65a6af41547d",
+    "source": "database",
+    "executionTime": 5
+  }
+}

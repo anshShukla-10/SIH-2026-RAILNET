@@ -1,0 +1,477 @@
+{
+  "success": true,
+  "data": {
+    "train": {
+      "number": "64472",
+      "name": "Panipat - Ghaziabad MEMU",
+      "type": "MEMU",
+      "category": "Local",
+      "source": {
+        "code": "PNP",
+        "name": "Panipat Jn",
+        "lat": 29.3903294,
+        "lng": 76.964085
+      },
+      "destination": {
+        "code": "GZB",
+        "name": "Ghaziabad Jn",
+        "lat": 28.6528563,
+        "lng": 77.4282442
+      },
+      "runDays": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ],
+      "distance": 114.4,
+      "duration": 190,
+      "avgSpeed": 36.1,
+      "maxSpeed": 72,
+      "totalHalts": 26,
+      "returnTrain": "64471",
+      "coachPosition": "GEN-GEN-GEN-GEN-GEN-GEN-GEN-GEN-GEN-GEN"
+    },
+    "route": [
+      {
+        "sequence": 1,
+        "station": {
+          "code": "PNP",
+          "name": "Panipat Jn",
+          "lat": 29.3903294,
+          "lng": 76.964085
+        },
+        "isHalt": true,
+        "platform": "PF 1",
+        "speedToNextStationKmph": 71.1,
+        "departure": "06:00",
+        "departureDay": 1,
+        "distance": 0
+      },
+      {
+        "sequence": 2,
+        "station": {
+          "code": "DWNA",
+          "name": "Diwana",
+          "lat": 29.3180709,
+          "lng": 76.9801567
+        },
+        "isHalt": true,
+        "platform": "PF 1",
+        "speedToNextStationKmph": 66,
+        "arrival": "06:07",
+        "arrivalDay": 1,
+        "departure": "06:08",
+        "departureDay": 1,
+        "distance": 8.3
+      },
+      {
+        "sequence": 3,
+        "station": {
+          "code": "SMK",
+          "name": "Samalkha",
+          "lat": 29.2415096,
+          "lng": 77.0032892
+        },
+        "isHalt": true,
+        "platform": "PF 1",
+        "speedToNextStationKmph": 54,
+        "arrival": "06:16",
+        "arrivalDay": 1,
+        "departure": "06:17",
+        "departureDay": 1,
+        "distance": 17.1
+      },
+      {
+        "sequence": 4,
+        "station": {
+          "code": "BDMJ",
+          "name": "Bhodwal Majri",
+          "lat": 29.1852264,
+          "lng": 77.0084189
+        },
+        "isHalt": true,
+        "platform": "PF 1",
+        "speedToNextStationKmph": 60,
+        "arrival": "06:24",
+        "arrivalDay": 1,
+        "departure": "06:25",
+        "departureDay": 1,
+        "distance": 23.4
+      },
+      {
+        "sequence": 5,
+        "station": {
+          "code": "GNU",
+          "name": "Ganaur",
+          "lat": 29.1315256,
+          "lng": 77.0110886
+        },
+        "isHalt": true,
+        "platform": "PF 1",
+        "speedToNextStationKmph": 54,
+        "arrival": "06:31",
+        "arrivalDay": 1,
+        "departure": "06:32",
+        "departureDay": 1,
+        "distance": 29.4
+      },
+      {
+        "sequence": 6,
+        "station": {
+          "code": "RUG",
+          "name": "Rajlu Garhi Halt",
+          "lat": 29.0907857,
+          "lng": 77.0121466
+        },
+        "isHalt": true,
+        "platform": "PF 1",
+        "speedToNextStationKmph": 46.5,
+        "arrival": "06:37",
+        "arrivalDay": 1,
+        "departure": "06:38",
+        "departureDay": 1,
+        "distance": 33.9
+      },
+      {
+        "sequence": 7,
+        "station": {
+          "code": "SLKN",
+          "name": "Sandal Kalan",
+          "lat": 29.0634081,
+          "lng": 77.0128043
+        },
+        "isHalt": true,
+        "platform": "PF 1",
+        "speedToNextStationKmph": 72,
+        "arrival": "06:42",
+        "arrivalDay": 1,
+        "departure": "06:43",
+        "departureDay": 1,
+        "distance": 37
+      },
+      {
+        "sequence": 8,
+        "station": {
+          "code": "SNP",
+          "name": "Sonipat",
+          "lat": 28.9898429,
+          "lng": 77.0171182
+        },
+        "isHalt": true,
+        "platform": "PF 1",
+        "speedToNextStationKmph": 46.3,
+        "arrival": "06:50",
+        "arrivalDay": 1,
+        "departure": "06:52",
+        "departureDay": 1,
+        "distance": 45.4
+      },
+      {
+        "sequence": 9,
+        "station": {
+          "code": "HNN",
+          "name": "Harsana Kalan",
+          "lat": 28.9450327,
+          "lng": 77.0389386
+        },
+        "isHalt": true,
+        "platform": "PF 1",
+        "speedToNextStationKmph": 49,
+        "arrival": "06:59",
+        "arrivalDay": 1,
+        "departure": "07:00",
+        "departureDay": 1,
+        "distance": 50.8
+      },
+      {
+        "sequence": 10,
+        "station": {
+          "code": "RDDE",
+          "name": "Rathdhana",
+          "lat": 28.9040911,
+          "lng": 77.0590439
+        },
+        "isHalt": true,
+        "platform": "PF 1",
+        "speedToNextStationKmph": 60,
+        "arrival": "07:06",
+        "arrivalDay": 1,
+        "departure": "07:07",
+        "departureDay": 1,
+        "distance": 55.7
+      },
+      {
+        "sequence": 11,
+        "station": {
+          "code": "NUR",
+          "name": "Narela",
+          "lat": 28.8464766,
+          "lng": 77.0856631
+        },
+        "isHalt": true,
+        "platform": "PF 1",
+        "speedToNextStationKmph": 52,
+        "arrival": "07:14",
+        "arrivalDay": 1,
+        "departure": "07:15",
+        "departureDay": 1,
+        "distance": 62.7
+      },
+      {
+        "sequence": 12,
+        "station": {
+          "code": "HUK",
+          "name": "Holambi Kalan",
+          "lat": 28.8015786,
+          "lng": 77.1024832
+        },
+        "isHalt": true,
+        "platform": "PF 1",
+        "speedToNextStationKmph": 45.6,
+        "arrival": "07:21",
+        "arrivalDay": 1,
+        "departure": "07:22",
+        "departureDay": 1,
+        "distance": 67.9
+      },
+      {
+        "sequence": 13,
+        "station": {
+          "code": "KHKN",
+          "name": "Khera Kalan",
+          "lat": 28.7696903,
+          "lng": 77.1158609
+        },
+        "isHalt": true,
+        "speedToNextStationKmph": 39.6,
+        "arrival": "07:27",
+        "arrivalDay": 1,
+        "departure": "07:28",
+        "departureDay": 1,
+        "distance": 71.7
+      },
+      {
+        "sequence": 14,
+        "station": {
+          "code": "BHD",
+          "name": "Badli",
+          "lat": 28.7465404,
+          "lng": 77.1374615
+        },
+        "isHalt": true,
+        "platform": "PF 1",
+        "speedToNextStationKmph": 55.2,
+        "arrival": "07:33",
+        "arrivalDay": 1,
+        "departure": "07:34",
+        "departureDay": 1,
+        "distance": 75
+      },
+      {
+        "sequence": 15,
+        "station": {
+          "code": "ANDI",
+          "name": "Adarsh Nagar Delhi",
+          "lat": 28.7144008,
+          "lng": 77.1672884
+        },
+        "isHalt": true,
+        "platform": "PF 1",
+        "speedToNextStationKmph": 24,
+        "arrival": "07:39",
+        "arrivalDay": 1,
+        "departure": "07:40",
+        "departureDay": 1,
+        "distance": 79.6
+      },
+      {
+        "sequence": 16,
+        "station": {
+          "code": "DAZ",
+          "name": "Delhi-Azadpur",
+          "lat": 28.7035041,
+          "lng": 77.1770629
+        },
+        "isHalt": true,
+        "speedToNextStationKmph": 25.1,
+        "arrival": "07:44",
+        "arrivalDay": 1,
+        "departure": "07:45",
+        "departureDay": 1,
+        "distance": 81.2
+      },
+      {
+        "sequence": 17,
+        "station": {
+          "code": "SZM",
+          "name": "Subzi Mandi",
+          "lat": 28.6685068,
+          "lng": 77.2004935
+        },
+        "isHalt": true,
+        "platform": "PF 2",
+        "speedToNextStationKmph": 12,
+        "arrival": "07:56",
+        "arrivalDay": 1,
+        "departure": "07:57",
+        "departureDay": 1,
+        "distance": 85.8
+      },
+      {
+        "sequence": 18,
+        "station": {
+          "code": "DSB",
+          "name": "Sadar Bazar",
+          "lat": 28.658087,
+          "lng": 77.2170087
+        },
+        "isHalt": true,
+        "speedToNextStationKmph": 15.4,
+        "arrival": "08:08",
+        "arrivalDay": 1,
+        "departure": "08:09",
+        "departureDay": 1,
+        "distance": 88
+      },
+      {
+        "sequence": 19,
+        "station": {
+          "code": "NDLS",
+          "name": "New Delhi",
+          "lat": 28.6419258,
+          "lng": 77.2217499
+        },
+        "isHalt": true,
+        "platform": "PF 9",
+        "speedToNextStationKmph": 14.4,
+        "arrival": "08:16",
+        "arrivalDay": 1,
+        "departure": "08:18",
+        "departureDay": 1,
+        "distance": 89.8
+      },
+      {
+        "sequence": 20,
+        "station": {
+          "code": "CSB",
+          "name": "Shivaji Bridge",
+          "lat": 28.6334521,
+          "lng": 77.2266682
+        },
+        "isHalt": true,
+        "speedToNextStationKmph": 24,
+        "arrival": "08:23",
+        "arrivalDay": 1,
+        "departure": "08:24",
+        "departureDay": 1,
+        "distance": 91
+      },
+      {
+        "sequence": 21,
+        "station": {
+          "code": "TKJ",
+          "name": "Tilak Bridge",
+          "lat": 28.6281166,
+          "lng": 77.2374037
+        },
+        "isHalt": true,
+        "platform": "PF 5",
+        "speedToNextStationKmph": 38.4,
+        "arrival": "08:27",
+        "arrivalDay": 1,
+        "departure": "08:28",
+        "departureDay": 1,
+        "distance": 92.2
+      },
+      {
+        "sequence": 22,
+        "station": {
+          "code": "MWC",
+          "name": "Mandawali Chander Vihar Halt",
+          "lat": 28.6294332,
+          "lng": 77.2884872
+        },
+        "isHalt": true,
+        "speedToNextStationKmph": 68,
+        "arrival": "08:38",
+        "arrivalDay": 1,
+        "departure": "08:39",
+        "departureDay": 1,
+        "distance": 98.6
+      },
+      {
+        "sequence": 23,
+        "station": {
+          "code": "ANVR",
+          "name": "Anand Vihar Halt",
+          "lat": 28.6498106,
+          "lng": 77.3144992
+        },
+        "isHalt": true,
+        "speedToNextStationKmph": 66,
+        "arrival": "08:42",
+        "arrivalDay": 1,
+        "departure": "08:43",
+        "departureDay": 1,
+        "distance": 102
+      },
+      {
+        "sequence": 24,
+        "station": {
+          "code": "CNJ",
+          "name": "Chander Nagar Halt",
+          "lat": 28.6631056,
+          "lng": 77.331206
+        },
+        "isHalt": true,
+        "speedToNextStationKmph": 30,
+        "arrival": "08:45",
+        "arrivalDay": 1,
+        "departure": "08:46",
+        "departureDay": 1,
+        "distance": 104.2
+      },
+      {
+        "sequence": 26,
+        "station": {
+          "code": "SBB",
+          "name": "Sahibabad",
+          "lat": 28.6742784,
+          "lng": 77.3644349
+        },
+        "isHalt": true,
+        "platform": "PF 2",
+        "speedToNextStationKmph": 25.1,
+        "arrival": "08:53",
+        "arrivalDay": 1,
+        "departure": "08:54",
+        "departureDay": 1,
+        "distance": 107.7
+      },
+      {
+        "sequence": 27,
+        "station": {
+          "code": "GZB",
+          "name": "Ghaziabad Jn",
+          "lat": 28.6528563,
+          "lng": 77.4282442
+        },
+        "isHalt": true,
+        "platform": "PF 2",
+        "arrival": "09:10",
+        "arrivalDay": 1,
+        "distance": 114.4
+      }
+    ]
+  },
+  "meta": {
+    "timestamp": "2026-09-03T12:54:05+05:30",
+    "traceId": "fb930dcc-5999-4329-a04f-d66b327b74bb",
+    "source": "database",
+    "executionTime": 4
+  }
+}

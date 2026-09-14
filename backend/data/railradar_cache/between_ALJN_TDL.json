@@ -1,0 +1,1344 @@
+{
+  "success": true,
+  "data": {
+    "from": {
+      "code": "ALJN",
+      "name": "Aligarh Jn"
+    },
+    "to": {
+      "code": "TDL",
+      "name": "Tundla Jn"
+    },
+    "trains": [
+      {
+        "train": {
+          "number": "15744",
+          "name": "Farakka Express",
+          "type": "MAIL EXPRESS",
+          "runDays": [
+            "tue",
+            "thu",
+            "fri",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "ALJN",
+          "name": "Aligarh Jn",
+          "city": "Aligarh",
+          "departure": "00:20",
+          "day": 2,
+          "sequence": 73
+        },
+        "to": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "arrival": "01:30",
+          "day": 2,
+          "sequence": 83
+        },
+        "distance": 78,
+        "duration": 70,
+        "totalHaltsBetween": 1
+      },
+      {
+        "train": {
+          "number": "15734",
+          "name": "Farakka Express",
+          "type": "MAIL EXPRESS",
+          "runDays": [
+            "mon",
+            "wed",
+            "sat"
+          ]
+        },
+        "from": {
+          "code": "ALJN",
+          "name": "Aligarh Jn",
+          "city": "Aligarh",
+          "departure": "00:20",
+          "day": 2,
+          "sequence": 71
+        },
+        "to": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "arrival": "01:30",
+          "day": 2,
+          "sequence": 81
+        },
+        "distance": 78.1,
+        "duration": 70,
+        "totalHaltsBetween": 1
+      },
+      {
+        "train": {
+          "number": "14118",
+          "name": "Kalindi Express",
+          "type": "MAIL EXPRESS",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "ALJN",
+          "name": "Aligarh Jn",
+          "city": "Aligarh",
+          "departure": "00:48",
+          "day": 2,
+          "sequence": 46
+        },
+        "to": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "arrival": "01:55",
+          "day": 2,
+          "sequence": 56
+        },
+        "distance": 78.1,
+        "duration": 67,
+        "totalHaltsBetween": 0
+      },
+      {
+        "train": {
+          "number": "19603",
+          "name": "Godda Weekly Express",
+          "type": "MAIL EXPRESS",
+          "runDays": [
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "ALJN",
+          "name": "Aligarh Jn",
+          "city": "Aligarh",
+          "departure": "01:02",
+          "day": 2,
+          "sequence": 86
+        },
+        "to": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "arrival": "02:03",
+          "day": 2,
+          "sequence": 96
+        },
+        "distance": 78,
+        "duration": 61,
+        "totalHaltsBetween": 0
+      },
+      {
+        "train": {
+          "number": "04072",
+          "name": "Supaul Special Fare Special",
+          "type": "TRAIN ON DEMAND",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "ALJN",
+          "name": "Aligarh Jn",
+          "city": "Aligarh",
+          "departure": "01:20",
+          "day": 2,
+          "sequence": 26
+        },
+        "to": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "arrival": "03:20",
+          "day": 2,
+          "sequence": 36
+        },
+        "distance": 78.1,
+        "duration": 120,
+        "totalHaltsBetween": 0
+      },
+      {
+        "train": {
+          "number": "15657",
+          "name": "Brahmaputra Mail",
+          "type": "MAIL EXPRESS",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "ALJN",
+          "name": "Aligarh Jn",
+          "city": "Aligarh",
+          "departure": "01:27",
+          "day": 2,
+          "sequence": 23
+        },
+        "to": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "arrival": "02:30",
+          "day": 2,
+          "sequence": 33
+        },
+        "distance": 78.1,
+        "duration": 63,
+        "totalHaltsBetween": 0
+      },
+      {
+        "train": {
+          "number": "20434",
+          "name": "Jammu Mail",
+          "type": "SUPERFAST",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "ALJN",
+          "name": "Aligarh Jn",
+          "city": "Aligarh",
+          "departure": "06:05",
+          "day": 2,
+          "sequence": 127
+        },
+        "to": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "arrival": "07:03",
+          "day": 2,
+          "sequence": 137
+        },
+        "distance": 78,
+        "duration": 58,
+        "totalHaltsBetween": 0
+      },
+      {
+        "train": {
+          "number": "22432",
+          "name": "Subedarganj SF Express",
+          "type": "SUPERFAST",
+          "runDays": [
+            "wed",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "ALJN",
+          "name": "Aligarh Jn",
+          "city": "Aligarh",
+          "departure": "06:25",
+          "day": 2,
+          "sequence": 119
+        },
+        "to": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "arrival": "07:20",
+          "day": 2,
+          "sequence": 129
+        },
+        "distance": 78,
+        "duration": 55,
+        "totalHaltsBetween": 0
+      },
+      {
+        "train": {
+          "number": "12004",
+          "name": "New Delhi - Lucknow Swarn Shatabdi Express",
+          "type": "Shatabdi Express",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "ALJN",
+          "name": "Aligarh Jn",
+          "city": "Aligarh",
+          "departure": "07:49",
+          "day": 1,
+          "sequence": 26
+        },
+        "to": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "arrival": "08:45",
+          "day": 1,
+          "sequence": 36
+        },
+        "distance": 78.1,
+        "duration": 56,
+        "totalHaltsBetween": 0
+      },
+      {
+        "train": {
+          "number": "64167",
+          "name": "Agra City GZB-AGA EMU",
+          "type": "EMU",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "ALJN",
+          "name": "Aligarh Jn",
+          "city": "Aligarh",
+          "departure": "08:30",
+          "day": 1,
+          "sequence": 18
+        },
+        "to": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "arrival": "11:10",
+          "day": 1,
+          "sequence": 28
+        },
+        "distance": 78.1,
+        "duration": 160,
+        "totalHaltsBetween": 4
+      },
+      {
+        "train": {
+          "number": "13052",
+          "name": "Netaji Express",
+          "type": "MAIL EXPRESS",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "ALJN",
+          "name": "Aligarh Jn",
+          "city": "Aligarh",
+          "departure": "08:35",
+          "day": 2,
+          "sequence": 65
+        },
+        "to": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "arrival": "09:45",
+          "day": 2,
+          "sequence": 75
+        },
+        "distance": 78.1,
+        "duration": 70,
+        "totalHaltsBetween": 1
+      },
+      {
+        "train": {
+          "number": "18102",
+          "name": "Tatanagar Express",
+          "type": "MAIL EXPRESS",
+          "runDays": [
+            "mon",
+            "wed",
+            "sat"
+          ]
+        },
+        "from": {
+          "code": "ALJN",
+          "name": "Aligarh Jn",
+          "city": "Aligarh",
+          "departure": "08:50",
+          "day": 2,
+          "sequence": 125
+        },
+        "to": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "arrival": "10:05",
+          "day": 2,
+          "sequence": 135
+        },
+        "distance": 78,
+        "duration": 75,
+        "totalHaltsBetween": 1
+      },
+      {
+        "train": {
+          "number": "18310",
+          "name": "Sambalpur Express",
+          "type": "MAIL EXPRESS",
+          "runDays": [
+            "tue",
+            "thu",
+            "fri",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "ALJN",
+          "name": "Aligarh Jn",
+          "city": "Aligarh",
+          "departure": "08:50",
+          "day": 2,
+          "sequence": 125
+        },
+        "to": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "arrival": "10:05",
+          "day": 2,
+          "sequence": 135
+        },
+        "distance": 78,
+        "duration": 75,
+        "totalHaltsBetween": 1
+      },
+      {
+        "train": {
+          "number": "02456",
+          "name": "New Delhi - Kanpur Central Special",
+          "type": "TRAIN ON DEMAND",
+          "runDays": [
+            "mon",
+            "wed",
+            "fri",
+            "sat"
+          ]
+        },
+        "from": {
+          "code": "ALJN",
+          "name": "Aligarh Jn",
+          "city": "Aligarh",
+          "departure": "08:57",
+          "day": 1,
+          "sequence": 25
+        },
+        "to": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "arrival": "09:55",
+          "day": 1,
+          "sequence": 35
+        },
+        "distance": 78,
+        "duration": 58,
+        "totalHaltsBetween": 0
+      },
+      {
+        "train": {
+          "number": "02458",
+          "name": "Anand Vihar Terminal - Kanpur Central Special",
+          "type": "TRAIN ON DEMAND",
+          "runDays": [
+            "tue",
+            "thu",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "ALJN",
+          "name": "Aligarh Jn",
+          "city": "Aligarh",
+          "departure": "08:57",
+          "day": 1,
+          "sequence": 22
+        },
+        "to": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "arrival": "09:55",
+          "day": 1,
+          "sequence": 32
+        },
+        "distance": 78,
+        "duration": 58,
+        "totalHaltsBetween": 0
+      },
+      {
+        "train": {
+          "number": "12816",
+          "name": "Nandan Kanan Express",
+          "type": "SUPERFAST",
+          "runDays": [
+            "mon",
+            "wed",
+            "thu",
+            "sat"
+          ]
+        },
+        "from": {
+          "code": "ALJN",
+          "name": "Aligarh Jn",
+          "city": "Aligarh",
+          "departure": "09:07",
+          "day": 1,
+          "sequence": 22
+        },
+        "to": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "arrival": "10:13",
+          "day": 1,
+          "sequence": 32
+        },
+        "distance": 78,
+        "duration": 66,
+        "totalHaltsBetween": 0
+      },
+      {
+        "train": {
+          "number": "12876",
+          "name": "Neelachal Express",
+          "type": "SUPERFAST",
+          "runDays": [
+            "tue",
+            "fri",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "ALJN",
+          "name": "Aligarh Jn",
+          "city": "Aligarh",
+          "departure": "09:07",
+          "day": 1,
+          "sequence": 22
+        },
+        "to": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "arrival": "10:13",
+          "day": 1,
+          "sequence": 32
+        },
+        "distance": 78,
+        "duration": 66,
+        "totalHaltsBetween": 1
+      },
+      {
+        "train": {
+          "number": "12506",
+          "name": "North East Express",
+          "type": "SUPERFAST",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "ALJN",
+          "name": "Aligarh Jn",
+          "city": "Aligarh",
+          "departure": "09:15",
+          "day": 1,
+          "sequence": 22
+        },
+        "to": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "arrival": "10:23",
+          "day": 1,
+          "sequence": 32
+        },
+        "distance": 78,
+        "duration": 68,
+        "totalHaltsBetween": 0
+      },
+      {
+        "train": {
+          "number": "12488",
+          "name": "Seemanchal Express",
+          "type": "SUPERFAST",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "ALJN",
+          "name": "Aligarh Jn",
+          "city": "Aligarh",
+          "departure": "09:42",
+          "day": 1,
+          "sequence": 22
+        },
+        "to": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "arrival": "10:50",
+          "day": 1,
+          "sequence": 32
+        },
+        "distance": 78,
+        "duration": 68,
+        "totalHaltsBetween": 0
+      },
+      {
+        "train": {
+          "number": "15484",
+          "name": "Sikkim Mahananda Express",
+          "type": "MAIL EXPRESS",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "ALJN",
+          "name": "Aligarh Jn",
+          "city": "Aligarh",
+          "departure": "09:52",
+          "day": 1,
+          "sequence": 23
+        },
+        "to": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "arrival": "11:03",
+          "day": 1,
+          "sequence": 33
+        },
+        "distance": 78.1,
+        "duration": 71,
+        "totalHaltsBetween": 2
+      },
+      {
+        "train": {
+          "number": "64154",
+          "name": "Aligarh - Tundla MEMU",
+          "type": "MEMU",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "ALJN",
+          "name": "Aligarh Jn",
+          "city": "Aligarh",
+          "departure": "13:30",
+          "day": 1,
+          "sequence": 1
+        },
+        "to": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "arrival": "15:00",
+          "day": 1,
+          "sequence": 11
+        },
+        "distance": 78.1,
+        "duration": 90,
+        "totalHaltsBetween": 9
+      },
+      {
+        "train": {
+          "number": "64704",
+          "name": "Aligarh - Govindpuri MEMU",
+          "type": "MEMU",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat"
+          ]
+        },
+        "from": {
+          "code": "ALJN",
+          "name": "Aligarh Jn",
+          "city": "Aligarh",
+          "departure": "13:40",
+          "day": 1,
+          "sequence": 1
+        },
+        "to": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "arrival": "15:15",
+          "day": 1,
+          "sequence": 11
+        },
+        "distance": 78.1,
+        "duration": 95,
+        "totalHaltsBetween": 2
+      },
+      {
+        "train": {
+          "number": "02276",
+          "name": "Prayagraj Special Fare Special",
+          "type": "TRAIN ON DEMAND",
+          "runDays": [
+            "mon",
+            "wed",
+            "sat"
+          ]
+        },
+        "from": {
+          "code": "ALJN",
+          "name": "Aligarh Jn",
+          "city": "Aligarh",
+          "departure": "14:12",
+          "day": 1,
+          "sequence": 27
+        },
+        "to": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "arrival": "15:40",
+          "day": 1,
+          "sequence": 37
+        },
+        "distance": 78.1,
+        "duration": 88,
+        "totalHaltsBetween": 0
+      },
+      {
+        "train": {
+          "number": "04148",
+          "name": "Shakur Basti - Subedarganj Special",
+          "type": "TRAIN ON DEMAND",
+          "runDays": [
+            "thu"
+          ]
+        },
+        "from": {
+          "code": "ALJN",
+          "name": "Aligarh Jn",
+          "city": "Aligarh",
+          "departure": "14:12",
+          "day": 1,
+          "sequence": 27
+        },
+        "to": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "arrival": "15:40",
+          "day": 1,
+          "sequence": 37
+        },
+        "distance": 78.1,
+        "duration": 88,
+        "totalHaltsBetween": 0
+      },
+      {
+        "train": {
+          "number": "04164",
+          "name": "Shakur Basti - Subedarganj Special",
+          "type": "TRAIN ON DEMAND",
+          "runDays": [
+            "fri"
+          ]
+        },
+        "from": {
+          "code": "ALJN",
+          "name": "Aligarh Jn",
+          "city": "Aligarh",
+          "departure": "14:12",
+          "day": 1,
+          "sequence": 27
+        },
+        "to": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "arrival": "15:40",
+          "day": 1,
+          "sequence": 37
+        },
+        "distance": 78.1,
+        "duration": 88,
+        "totalHaltsBetween": 0
+      },
+      {
+        "train": {
+          "number": "12420",
+          "name": "Gomti Express",
+          "type": "SUPERFAST",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "ALJN",
+          "name": "Aligarh Jn",
+          "city": "Aligarh",
+          "departure": "14:51",
+          "day": 1,
+          "sequence": 26
+        },
+        "to": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "arrival": "15:55",
+          "day": 1,
+          "sequence": 36
+        },
+        "distance": 78.1,
+        "duration": 64,
+        "totalHaltsBetween": 1
+      },
+      {
+        "train": {
+          "number": "64584",
+          "name": "Delhi - Tundla MEMU",
+          "type": "MEMU",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "ALJN",
+          "name": "Aligarh Jn",
+          "city": "Aligarh",
+          "departure": "16:15",
+          "day": 1,
+          "sequence": 23
+        },
+        "to": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "arrival": "18:15",
+          "day": 1,
+          "sequence": 33
+        },
+        "distance": 78.1,
+        "duration": 120,
+        "totalHaltsBetween": 9
+      },
+      {
+        "train": {
+          "number": "15558",
+          "name": "Anand Vihar Terminal - Darbhanga Amrit Bharat Express",
+          "type": "Amrit Bharat Express",
+          "runDays": [
+            "tue",
+            "fri"
+          ]
+        },
+        "from": {
+          "code": "ALJN",
+          "name": "Aligarh Jn",
+          "city": "Aligarh",
+          "departure": "16:42",
+          "day": 1,
+          "sequence": 22
+        },
+        "to": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "arrival": "17:33",
+          "day": 1,
+          "sequence": 32
+        },
+        "distance": 78,
+        "duration": 51,
+        "totalHaltsBetween": 0
+      },
+      {
+        "train": {
+          "number": "22406",
+          "name": "Anand Vihar Terminal - Bhagalpur Garib Rath Express",
+          "type": "Garib Rath Express",
+          "runDays": [
+            "mon",
+            "wed",
+            "fri"
+          ]
+        },
+        "from": {
+          "code": "ALJN",
+          "name": "Aligarh Jn",
+          "city": "Aligarh",
+          "departure": "18:55",
+          "day": 1,
+          "sequence": 22
+        },
+        "to": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "arrival": "19:50",
+          "day": 1,
+          "sequence": 32
+        },
+        "distance": 78,
+        "duration": 55,
+        "totalHaltsBetween": 0
+      },
+      {
+        "train": {
+          "number": "12304",
+          "name": "Poorva Express",
+          "type": "SUPERFAST",
+          "runDays": [
+            "wed",
+            "thu",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "ALJN",
+          "name": "Aligarh Jn",
+          "city": "Aligarh",
+          "departure": "19:15",
+          "day": 1,
+          "sequence": 25
+        },
+        "to": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "arrival": "20:13",
+          "day": 1,
+          "sequence": 35
+        },
+        "distance": 78,
+        "duration": 58,
+        "totalHaltsBetween": 0
+      },
+      {
+        "train": {
+          "number": "12382",
+          "name": "Poorva Express",
+          "type": "SUPERFAST",
+          "runDays": [
+            "mon",
+            "tue",
+            "fri"
+          ]
+        },
+        "from": {
+          "code": "ALJN",
+          "name": "Aligarh Jn",
+          "city": "Aligarh",
+          "departure": "19:15",
+          "day": 1,
+          "sequence": 25
+        },
+        "to": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "arrival": "20:13",
+          "day": 1,
+          "sequence": 35
+        },
+        "distance": 78,
+        "duration": 58,
+        "totalHaltsBetween": 0
+      },
+      {
+        "train": {
+          "number": "15708",
+          "name": "Amrapali Express",
+          "type": "MAIL EXPRESS",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "ALJN",
+          "name": "Aligarh Jn",
+          "city": "Aligarh",
+          "departure": "19:37",
+          "day": 1,
+          "sequence": 94
+        },
+        "to": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "arrival": "20:43",
+          "day": 1,
+          "sequence": 104
+        },
+        "distance": 78.1,
+        "duration": 66,
+        "totalHaltsBetween": 1
+      },
+      {
+        "train": {
+          "number": "14006",
+          "name": "Lichchavi Express",
+          "type": "MAIL EXPRESS",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "ALJN",
+          "name": "Aligarh Jn",
+          "city": "Aligarh",
+          "departure": "19:57",
+          "day": 1,
+          "sequence": 22
+        },
+        "to": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "arrival": "20:53",
+          "day": 1,
+          "sequence": 32
+        },
+        "distance": 78,
+        "duration": 56,
+        "totalHaltsBetween": 0
+      },
+      {
+        "train": {
+          "number": "14164",
+          "name": "Sangam Express",
+          "type": "MAIL EXPRESS",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "ALJN",
+          "name": "Aligarh Jn",
+          "city": "Aligarh",
+          "departure": "22:07",
+          "day": 1,
+          "sequence": 21
+        },
+        "to": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "arrival": "23:35",
+          "day": 1,
+          "sequence": 31
+        },
+        "distance": 78.1,
+        "duration": 88,
+        "totalHaltsBetween": 1
+      },
+      {
+        "train": {
+          "number": "14152",
+          "name": "Kanpur Central Express",
+          "type": "MAIL EXPRESS",
+          "runDays": [
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "ALJN",
+          "name": "Aligarh Jn",
+          "city": "Aligarh",
+          "departure": "22:25",
+          "day": 1,
+          "sequence": 22
+        },
+        "to": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "arrival": "23:18",
+          "day": 1,
+          "sequence": 32
+        },
+        "distance": 78,
+        "duration": 53,
+        "totalHaltsBetween": 0
+      },
+      {
+        "train": {
+          "number": "15566",
+          "name": "Vaishali Express",
+          "type": "MAIL EXPRESS",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "ALJN",
+          "name": "Aligarh Jn",
+          "city": "Aligarh",
+          "departure": "22:35",
+          "day": 1,
+          "sequence": 26
+        },
+        "to": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "arrival": "23:38",
+          "day": 1,
+          "sequence": 36
+        },
+        "distance": 78.1,
+        "duration": 63,
+        "totalHaltsBetween": 0
+      },
+      {
+        "train": {
+          "number": "14114",
+          "name": "Subedarganj Express",
+          "type": "MAIL EXPRESS",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "ALJN",
+          "name": "Aligarh Jn",
+          "city": "Aligarh",
+          "departure": "22:40",
+          "day": 1,
+          "sequence": 59
+        },
+        "to": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "arrival": "00:01",
+          "day": 2,
+          "sequence": 69
+        },
+        "distance": 78.1,
+        "duration": 81,
+        "totalHaltsBetween": 0
+      },
+      {
+        "train": {
+          "number": "20802",
+          "name": "Magadh Express",
+          "type": "SUPERFAST",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "ALJN",
+          "name": "Aligarh Jn",
+          "city": "Aligarh",
+          "departure": "22:50",
+          "day": 1,
+          "sequence": 25
+        },
+        "to": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "arrival": "00:08",
+          "day": 2,
+          "sequence": 35
+        },
+        "distance": 78,
+        "duration": 78,
+        "totalHaltsBetween": 0
+      },
+      {
+        "train": {
+          "number": "02418",
+          "name": "Prayagraj Special Fare Summer Special",
+          "type": "TRAIN ON DEMAND",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "ALJN",
+          "name": "Aligarh Jn",
+          "city": "Aligarh",
+          "departure": "23:22",
+          "day": 1,
+          "sequence": 16
+        },
+        "to": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "arrival": "00:28",
+          "day": 2,
+          "sequence": 26
+        },
+        "distance": 78,
+        "duration": 66,
+        "totalHaltsBetween": 1
+      },
+      {
+        "train": {
+          "number": "14218",
+          "name": "Unchahar Express",
+          "type": "MAIL EXPRESS",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "ALJN",
+          "name": "Aligarh Jn",
+          "city": "Aligarh",
+          "departure": "23:35",
+          "day": 1,
+          "sequence": 62
+        },
+        "to": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "arrival": "01:10",
+          "day": 2,
+          "sequence": 72
+        },
+        "distance": 78.1,
+        "duration": 95,
+        "totalHaltsBetween": 1
+      }
+    ],
+    "count": 40
+  },
+  "meta": {
+    "timestamp": "2026-09-03T12:52:16+05:30",
+    "traceId": "ffb2beac-4793-4d55-ad18-39e4018ea587",
+    "source": "database",
+    "executionTime": 10
+  }
+}

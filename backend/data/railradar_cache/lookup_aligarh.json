@@ -1,0 +1,81 @@
+{
+  "success": true,
+  "data": [
+    {
+      "code": "ALJN",
+      "name": "Aligarh Jn",
+      "city": "Aligarh",
+      "popularity": 0,
+      "isActive": true
+    },
+    {
+      "code": "PLGH",
+      "name": "Paligarh (Halt)",
+      "city": "Paligarh",
+      "popularity": 0,
+      "isActive": true
+    },
+    {
+      "code": "NMGY",
+      "name": "Numaligarh",
+      "city": "Numaligarh",
+      "popularity": 0,
+      "isActive": true
+    },
+    {
+      "code": "NRSR",
+      "name": "Numaligarh Refinery Oil (Pvt/BG) Siding",
+      "city": null,
+      "popularity": 0,
+      "isActive": false
+    },
+    {
+      "code": "NMGS",
+      "name": "Numaligarh Refinery Project Siding (P) (BG)",
+      "city": null,
+      "popularity": 0,
+      "isActive": false
+    },
+    {
+      "code": "ALJ",
+      "name": "Aliganj",
+      "city": "Aliganj",
+      "popularity": 0,
+      "isActive": true
+    },
+    {
+      "code": "RIG",
+      "name": "Raigarh",
+      "city": "Raigarh",
+      "popularity": 0,
+      "isActive": true
+    },
+    {
+      "code": "LGH",
+      "name": "Lalgarh Jn",
+      "city": "Lalgarh",
+      "popularity": 0,
+      "isActive": true
+    },
+    {
+      "code": "LBT",
+      "name": "Lalgarh Bihar H",
+      "city": "Lalgarh Bihar",
+      "popularity": 0,
+      "isActive": true
+    },
+    {
+      "code": "XX-LGHC",
+      "name": "Lalgarh Chord Cabin",
+      "city": null,
+      "popularity": 0,
+      "isActive": false
+    }
+  ],
+  "meta": {
+    "timestamp": "2026-09-03T12:52:14+05:30",
+    "traceId": "c071e8f9-ae88-405f-8eb6-b636ed3cdde9",
+    "source": "database",
+    "executionTime": 15
+  }
+}

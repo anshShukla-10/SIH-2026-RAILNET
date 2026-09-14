@@ -1,0 +1,174 @@
+{
+  "success": true,
+  "data": {
+    "train": {
+      "number": "64426",
+      "name": "New Delhi - Ghaziabad EMU",
+      "type": "EMU",
+      "category": "Local",
+      "source": {
+        "code": "NDLS",
+        "name": "New Delhi",
+        "lat": 28.6419258,
+        "lng": 77.2217499
+      },
+      "destination": {
+        "code": "GZB",
+        "name": "Ghaziabad Jn",
+        "lat": 28.6528563,
+        "lng": 77.4282442
+      },
+      "runDays": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ],
+      "distance": 24.6,
+      "duration": 50,
+      "avgSpeed": 29.5,
+      "maxSpeed": 102,
+      "totalHalts": 8,
+      "returnTrain": "64425",
+      "coachPosition": "GEN-GEN-GEN-GEN-GEN-GEN-GEN"
+    },
+    "route": [
+      {
+        "sequence": 1,
+        "station": {
+          "code": "NDLS",
+          "name": "New Delhi",
+          "lat": 28.6419258,
+          "lng": 77.2217499
+        },
+        "isHalt": true,
+        "platform": "PF 15",
+        "speedToNextStationKmph": 24,
+        "departure": "09:55",
+        "departureDay": 1,
+        "distance": 0
+      },
+      {
+        "sequence": 2,
+        "station": {
+          "code": "CSB",
+          "name": "Shivaji Bridge",
+          "lat": 28.6334521,
+          "lng": 77.2266682
+        },
+        "isHalt": true,
+        "speedToNextStationKmph": 24,
+        "arrival": "09:58",
+        "arrivalDay": 1,
+        "departure": "09:59",
+        "departureDay": 1,
+        "distance": 1.2
+      },
+      {
+        "sequence": 3,
+        "station": {
+          "code": "TKJ",
+          "name": "Tilak Bridge",
+          "lat": 28.6281166,
+          "lng": 77.2374037
+        },
+        "isHalt": true,
+        "platform": "PF 5",
+        "speedToNextStationKmph": 96,
+        "arrival": "10:02",
+        "arrivalDay": 1,
+        "departure": "10:03",
+        "departureDay": 1,
+        "distance": 2.4
+      },
+      {
+        "sequence": 4,
+        "station": {
+          "code": "MWC",
+          "name": "Mandawali Chander Vihar Halt",
+          "lat": 28.6294332,
+          "lng": 77.2884872
+        },
+        "isHalt": true,
+        "speedToNextStationKmph": 102,
+        "arrival": "10:07",
+        "arrivalDay": 1,
+        "departure": "10:08",
+        "departureDay": 1,
+        "distance": 8.8
+      },
+      {
+        "sequence": 5,
+        "station": {
+          "code": "ANVR",
+          "name": "Anand Vihar Halt",
+          "lat": 28.6498106,
+          "lng": 77.3144992
+        },
+        "isHalt": true,
+        "speedToNextStationKmph": 66,
+        "arrival": "10:10",
+        "arrivalDay": 1,
+        "departure": "10:11",
+        "departureDay": 1,
+        "distance": 12.2
+      },
+      {
+        "sequence": 6,
+        "station": {
+          "code": "CNJ",
+          "name": "Chander Nagar Halt",
+          "lat": 28.6631056,
+          "lng": 77.331206
+        },
+        "isHalt": true,
+        "speedToNextStationKmph": 42,
+        "arrival": "10:13",
+        "arrivalDay": 1,
+        "departure": "10:14",
+        "departureDay": 1,
+        "distance": 14.4
+      },
+      {
+        "sequence": 8,
+        "station": {
+          "code": "SBB",
+          "name": "Sahibabad",
+          "lat": 28.6742784,
+          "lng": 77.3644349
+        },
+        "isHalt": true,
+        "platform": "PF 2",
+        "speedToNextStationKmph": 16.1,
+        "arrival": "10:19",
+        "arrivalDay": 1,
+        "departure": "10:20",
+        "departureDay": 1,
+        "distance": 17.9
+      },
+      {
+        "sequence": 9,
+        "station": {
+          "code": "GZB",
+          "name": "Ghaziabad Jn",
+          "lat": 28.6528563,
+          "lng": 77.4282442
+        },
+        "isHalt": true,
+        "platform": "PF 1",
+        "arrival": "10:45",
+        "arrivalDay": 1,
+        "distance": 24.6
+      }
+    ]
+  },
+  "meta": {
+    "timestamp": "2026-09-03T12:54:10+05:30",
+    "traceId": "1c5de323-80ef-4165-8bd1-10743bd8a23b",
+    "source": "database",
+    "executionTime": 3
+  }
+}

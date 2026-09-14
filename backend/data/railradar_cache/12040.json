@@ -1,0 +1,195 @@
+{
+  "success": true,
+  "data": {
+    "train": {
+      "number": "12040",
+      "name": "New Delhi - Kathgodam Shatabdi Express",
+      "type": "Shatabdi Express",
+      "category": "Premium",
+      "source": {
+        "code": "NDLS",
+        "name": "New Delhi",
+        "lat": 28.6419258,
+        "lng": 77.2217499
+      },
+      "destination": {
+        "code": "KGM",
+        "name": "Kathgodam",
+        "lat": 29.266646,
+        "lng": 79.5466346
+      },
+      "runDays": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ],
+      "distance": 281.4,
+      "duration": 335,
+      "avgSpeed": 50.4,
+      "maxSpeed": 83.1,
+      "totalHalts": 9,
+      "returnTrain": "12039",
+      "coachPosition": "ENG-LPR-E1-C1-C2-C3-C4-C5-C6-C7-C8-C9-C10-C11-LPR"
+    },
+    "route": [
+      {
+        "sequence": 1,
+        "station": {
+          "code": "NDLS",
+          "name": "New Delhi",
+          "lat": 28.6419258,
+          "lng": 77.2217499
+        },
+        "isHalt": true,
+        "platform": "PF 2",
+        "speedToNextStationKmph": 44.7,
+        "departure": "06:20",
+        "departureDay": 1,
+        "distance": 0
+      },
+      {
+        "sequence": 9,
+        "station": {
+          "code": "GZB",
+          "name": "Ghaziabad Jn",
+          "lat": 28.6528563,
+          "lng": 77.4282442
+        },
+        "isHalt": true,
+        "platform": "PF 2",
+        "speedToNextStationKmph": 73.5,
+        "arrival": "06:53",
+        "arrivalDay": 1,
+        "departure": "06:55",
+        "departureDay": 1,
+        "distance": 24.6
+      },
+      {
+        "sequence": 32,
+        "station": {
+          "code": "MB",
+          "name": "Moradabad Jn",
+          "lat": 28.8313915,
+          "lng": 78.7654415
+        },
+        "isHalt": true,
+        "platform": "PF 1",
+        "speedToNextStationKmph": 49.5,
+        "arrival": "08:50",
+        "arrivalDay": 1,
+        "departure": "08:55",
+        "departureDay": 1,
+        "distance": 165.4
+      },
+      {
+        "sequence": 37,
+        "station": {
+          "code": "RMU",
+          "name": "Rampur",
+          "lat": 28.7785349,
+          "lng": 79.0232295
+        },
+        "isHalt": true,
+        "platform": "PF 1",
+        "speedToNextStationKmph": 70.2,
+        "arrival": "09:28",
+        "arrivalDay": 1,
+        "departure": "09:30",
+        "departureDay": 1,
+        "distance": 192.6
+      },
+      {
+        "sequence": 40,
+        "station": {
+          "code": "BLQR",
+          "name": "Bilaspur Road",
+          "lat": 28.8650884,
+          "lng": 79.2538182
+        },
+        "isHalt": true,
+        "platform": "PF 2",
+        "speedToNextStationKmph": 83.1,
+        "arrival": "09:53",
+        "arrivalDay": 1,
+        "departure": "09:55",
+        "departureDay": 1,
+        "distance": 219.5
+      },
+      {
+        "sequence": 41,
+        "station": {
+          "code": "RUPC",
+          "name": "Rudrapur City",
+          "lat": 28.9695395,
+          "lng": 79.3797979
+        },
+        "isHalt": true,
+        "platform": "PF 2",
+        "speedToNextStationKmph": 38.1,
+        "arrival": "10:08",
+        "arrivalDay": 1,
+        "departure": "10:10",
+        "departureDay": 1,
+        "distance": 237.5
+      },
+      {
+        "sequence": 44,
+        "station": {
+          "code": "LKU",
+          "name": "Lalkua Jn",
+          "lat": 29.0710956,
+          "lng": 79.5174276
+        },
+        "isHalt": true,
+        "platform": "PF 4",
+        "speedToNextStationKmph": 27.3,
+        "arrival": "10:44",
+        "arrivalDay": 1,
+        "departure": "10:47",
+        "departureDay": 1,
+        "distance": 259.1
+      },
+      {
+        "sequence": 45,
+        "station": {
+          "code": "HDW",
+          "name": "Haldwani",
+          "lat": 29.2157328,
+          "lng": 79.5334253
+        },
+        "isHalt": true,
+        "platform": "PF 1",
+        "speedToNextStationKmph": 11.8,
+        "arrival": "11:23",
+        "arrivalDay": 1,
+        "departure": "11:25",
+        "departureDay": 1,
+        "distance": 275.5
+      },
+      {
+        "sequence": 46,
+        "station": {
+          "code": "KGM",
+          "name": "Kathgodam",
+          "lat": 29.266646,
+          "lng": 79.5466346
+        },
+        "isHalt": true,
+        "platform": "PF 1",
+        "arrival": "11:55",
+        "arrivalDay": 1,
+        "distance": 281.4
+      }
+    ]
+  },
+  "meta": {
+    "timestamp": "2026-09-03T12:54:02+05:30",
+    "traceId": "fbdbaab7-5194-4915-9371-0b270c6fbe23",
+    "source": "database",
+    "executionTime": 9
+  }
+}

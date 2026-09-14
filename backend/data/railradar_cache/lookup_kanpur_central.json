@@ -1,0 +1,25 @@
+{
+  "success": true,
+  "data": [
+    {
+      "code": "CNB",
+      "name": "Kanpur Central Jn",
+      "city": "Kanpur Central",
+      "popularity": 0,
+      "isActive": true
+    },
+    {
+      "code": "CPC",
+      "name": "Kanpur Central Goods Shed",
+      "city": null,
+      "popularity": 0,
+      "isActive": false
+    }
+  ],
+  "meta": {
+    "timestamp": "2026-09-03T12:52:15+05:30",
+    "traceId": "20cd8f69-b8da-4c32-80ce-1f4d3b9a4f74",
+    "source": "database",
+    "executionTime": 8
+  }
+}

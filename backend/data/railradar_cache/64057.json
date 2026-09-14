@@ -1,0 +1,327 @@
+{
+  "success": true,
+  "data": {
+    "train": {
+      "number": "64057",
+      "name": "Palwal - Ghaziabad EMU",
+      "type": "EMU",
+      "category": "Local",
+      "source": {
+        "code": "PWL",
+        "name": "Palwal",
+        "lat": 28.1515806,
+        "lng": 77.3417952
+      },
+      "destination": {
+        "code": "GZB",
+        "name": "Ghaziabad Jn",
+        "lat": 28.6528563,
+        "lng": 77.4282442
+      },
+      "runDays": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ],
+      "distance": 80.8,
+      "duration": 165,
+      "avgSpeed": 29.4,
+      "maxSpeed": 90,
+      "totalHalts": 17,
+      "coachPosition": "GEN-GEN-GEN-GEN-GEN-GEN"
+    },
+    "route": [
+      {
+        "sequence": 1,
+        "station": {
+          "code": "PWL",
+          "name": "Palwal",
+          "lat": 28.1515806,
+          "lng": 77.3417952
+        },
+        "isHalt": true,
+        "platform": "PF 1B",
+        "speedToNextStationKmph": 85.5,
+        "departure": "10:55",
+        "departureDay": 1,
+        "distance": 0
+      },
+      {
+        "sequence": 2,
+        "station": {
+          "code": "AST",
+          "name": "Asaoti",
+          "lat": 28.2531761,
+          "lng": 77.3236156
+        },
+        "isHalt": true,
+        "platform": "PF 3",
+        "speedToNextStationKmph": 65.3,
+        "arrival": "11:03",
+        "arrivalDay": 1,
+        "departure": "11:03",
+        "departureDay": 1,
+        "distance": 11.4
+      },
+      {
+        "sequence": 4,
+        "station": {
+          "code": "BVH",
+          "name": "Ballabgarh",
+          "lat": 28.3402623,
+          "lng": 77.3121997
+        },
+        "isHalt": true,
+        "platform": "PF 3",
+        "speedToNextStationKmph": 49.2,
+        "arrival": "11:12",
+        "arrivalDay": 1,
+        "departure": "11:12",
+        "departureDay": 1,
+        "distance": 21.2
+      },
+      {
+        "sequence": 5,
+        "station": {
+          "code": "FDN",
+          "name": "Faridabad New Town",
+          "lat": 28.377372,
+          "lng": 77.3094718
+        },
+        "isHalt": true,
+        "platform": "PF 2",
+        "speedToNextStationKmph": 44.4,
+        "arrival": "11:17",
+        "arrivalDay": 1,
+        "departure": "11:17",
+        "departureDay": 1,
+        "distance": 25.3
+      },
+      {
+        "sequence": 6,
+        "station": {
+          "code": "FDB",
+          "name": "Faridabad",
+          "lat": 28.4107617,
+          "lng": 77.3070774
+        },
+        "isHalt": true,
+        "platform": "PF 2",
+        "speedToNextStationKmph": 56.7,
+        "arrival": "11:22",
+        "arrivalDay": 1,
+        "departure": "11:22",
+        "departureDay": 1,
+        "distance": 29
+      },
+      {
+        "sequence": 8,
+        "station": {
+          "code": "TKD",
+          "name": "Tugalakabad",
+          "lat": 28.5034421,
+          "lng": 77.2970508
+        },
+        "isHalt": true,
+        "platform": "PF 2",
+        "speedToNextStationKmph": 42,
+        "arrival": "11:33",
+        "arrivalDay": 1,
+        "departure": "11:33",
+        "departureDay": 1,
+        "distance": 39.4
+      },
+      {
+        "sequence": 10,
+        "station": {
+          "code": "OKA",
+          "name": "Okhla",
+          "lat": 28.5594753,
+          "lng": 77.2656232
+        },
+        "isHalt": true,
+        "platform": "PF 2",
+        "speedToNextStationKmph": 19.6,
+        "arrival": "11:43",
+        "arrivalDay": 1,
+        "departure": "11:43",
+        "departureDay": 1,
+        "distance": 46.4
+      },
+      {
+        "sequence": 11,
+        "station": {
+          "code": "NZM",
+          "name": "Hazrat Nizamuddin Jn",
+          "lat": 28.5889646,
+          "lng": 77.2535202
+        },
+        "isHalt": true,
+        "platform": "PF 3",
+        "speedToNextStationKmph": 72,
+        "arrival": "11:54",
+        "arrivalDay": 1,
+        "departure": "11:55",
+        "departureDay": 1,
+        "distance": 50
+      },
+      {
+        "sequence": 13,
+        "station": {
+          "code": "TKJ",
+          "name": "Tilak Bridge",
+          "lat": 28.6281166,
+          "lng": 77.2374037
+        },
+        "isHalt": true,
+        "platform": "PF 2",
+        "speedToNextStationKmph": 39,
+        "arrival": "11:59",
+        "arrivalDay": 1,
+        "departure": "12:00",
+        "departureDay": 1,
+        "distance": 54.8
+      },
+      {
+        "sequence": 14,
+        "station": {
+          "code": "CSB",
+          "name": "Shivaji Bridge",
+          "lat": 28.6334521,
+          "lng": 77.2266682
+        },
+        "isHalt": true,
+        "speedToNextStationKmph": 3.7,
+        "arrival": "12:02",
+        "arrivalDay": 1,
+        "departure": "12:02",
+        "departureDay": 1,
+        "distance": 56.1
+      },
+      {
+        "sequence": 15,
+        "station": {
+          "code": "NDLS",
+          "name": "New Delhi",
+          "lat": 28.6419258,
+          "lng": 77.2217499
+        },
+        "isHalt": true,
+        "platform": "PF 2",
+        "speedToNextStationKmph": 22.8,
+        "arrival": "12:20",
+        "arrivalDay": 1,
+        "departure": "12:22",
+        "departureDay": 1,
+        "distance": 57.2
+      },
+      {
+        "sequence": 16,
+        "station": {
+          "code": "DSB",
+          "name": "Sadar Bazar",
+          "lat": 28.658087,
+          "lng": 77.2170087
+        },
+        "isHalt": true,
+        "speedToNextStationKmph": 4.2,
+        "arrival": "12:27",
+        "arrivalDay": 1,
+        "departure": "12:28",
+        "departureDay": 1,
+        "distance": 59.1
+      },
+      {
+        "sequence": 17,
+        "station": {
+          "code": "DLI",
+          "name": "Delhi Jn",
+          "lat": 28.660932,
+          "lng": 77.2276494
+        },
+        "isHalt": true,
+        "platform": "PF 11",
+        "speedToNextStationKmph": 30,
+        "arrival": "12:48",
+        "arrivalDay": 1,
+        "departure": "12:50",
+        "departureDay": 1,
+        "distance": 60.5
+      },
+      {
+        "sequence": 18,
+        "station": {
+          "code": "DSA",
+          "name": "Delhi-Shahdara Jn",
+          "lat": 28.6734557,
+          "lng": 77.2922087
+        },
+        "isHalt": true,
+        "platform": "PF 3",
+        "speedToNextStationKmph": 31.2,
+        "arrival": "13:03",
+        "arrivalDay": 1,
+        "departure": "13:04",
+        "departureDay": 1,
+        "distance": 67
+      },
+      {
+        "sequence": 19,
+        "station": {
+          "code": "VVB",
+          "name": "Vivek Vihar",
+          "lat": 28.6731908,
+          "lng": 77.3182947
+        },
+        "isHalt": true,
+        "speedToNextStationKmph": 90,
+        "arrival": "13:09",
+        "arrivalDay": 1,
+        "departure": "13:10",
+        "departureDay": 1,
+        "distance": 69.6
+      },
+      {
+        "sequence": 21,
+        "station": {
+          "code": "SBB",
+          "name": "Sahibabad",
+          "lat": 28.6742784,
+          "lng": 77.3644349
+        },
+        "isHalt": true,
+        "platform": "PF 2",
+        "speedToNextStationKmph": 15.5,
+        "arrival": "13:13",
+        "arrivalDay": 1,
+        "departure": "13:14",
+        "departureDay": 1,
+        "distance": 74.1
+      },
+      {
+        "sequence": 22,
+        "station": {
+          "code": "GZB",
+          "name": "Ghaziabad Jn",
+          "lat": 28.6528563,
+          "lng": 77.4282442
+        },
+        "isHalt": true,
+        "platform": "PF 5",
+        "arrival": "13:40",
+        "arrivalDay": 1,
+        "distance": 80.8
+      }
+    ]
+  },
+  "meta": {
+    "timestamp": "2026-09-03T12:55:06+05:30",
+    "traceId": "e28ed40e-17c8-47c8-9fbc-335bad002008",
+    "source": "database",
+    "executionTime": 3
+  }
+}

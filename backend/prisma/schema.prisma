@@ -1,0 +1,120 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-py"
+}
+
+enum Department {
+  TMS
+  SMMS
+  TDMS
+}
+
+enum DayNightPref {
+  DAY
+  NIGHT
+  ANY
+}
+
+enum JobStatus {
+  PENDING
+  SCHEDULED
+  GRANTED
+}
+
+model Train {
+  train_id    String      @id
+  name        String
+  source      String
+  destination String
+  run_days    String
+  stops       TrainStop[]
+
+  @@map("trains")
+}
+
+model Section {
+  section_id       String           @id
+  name             String
+  single_line      Boolean          @default(false)
+  train_stops      TrainStop[]
+  maintenance_jobs MaintenanceJob[]
+  blocks           Block[]
+
+  @@map("sections")
+}
+
+model TrainStop {
+  id           Int      @id @default(autoincrement())
+  train_id     String
+  station_code String
+  section_id   String
+  sequence     Int
+  arrival      DateTime
+  departure    DateTime
+
+  train   Train   @relation(fields: [train_id], references: [train_id], onDelete: Cascade)
+  section Section @relation(fields: [section_id], references: [section_id])
+
+  @@map("train_stops")
+}
+
+model MaintenanceJob {
+  job_id          String               @id
+  department      Department
+  asset_id        String
+  section_id      String
+  defect_desc     String
+  criticality     Float
+  urgency         Float
+  asset_risk      Float
+  overdue_factor  Float
+  failure_history Float
+  priority_score  Float?               @default(0.0)
+  due_date        DateTime             @db.Date
+  duration_min    Int
+  day_night_pref  DayNightPref
+  status          JobStatus            @default(PENDING)
+  is_synthetic       Boolean              @default(false)
+  source_note        String               @default("")
+  has_hard_conflict  Boolean              @default(false)
+
+  section              Section              @relation(fields: [section_id], references: [section_id])
+  blocks               Block[]
+  optimization_results OptimizationResult[]
+
+  @@map("maintenance_jobs")
+}
+
+model Block {
+  block_id          String    @id
+  job_id            String
+  section_id        String
+  start             DateTime
+  end               DateTime
+  status            JobStatus @default(PENDING)
+  has_hard_conflict Boolean   @default(false)
+
+  job     MaintenanceJob @relation(fields: [job_id], references: [job_id])
+  section Section        @relation(fields: [section_id], references: [section_id])
+
+  @@map("blocks")
+}
+
+model OptimizationResult {
+  id                Int      @id @default(autoincrement())
+  job_id            String
+  recommended_start DateTime
+  recommended_end   DateTime
+  conflict_count    Int      @default(0)
+  priority_score    Float    @default(0.0)
+  reason            String
+
+  job MaintenanceJob @relation(fields: [job_id], references: [job_id])
+
+  @@map("optimization_results")
+}
+

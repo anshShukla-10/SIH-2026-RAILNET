@@ -1,0 +1,1000 @@
+{
+  "success": true,
+  "data": {
+    "from": {
+      "code": "GZB",
+      "name": "Ghaziabad Jn"
+    },
+    "to": {
+      "code": "ALJN",
+      "name": "Aligarh Jn"
+    },
+    "trains": [
+      {
+        "train": {
+          "number": "64167",
+          "name": "Agra City GZB-AGA EMU",
+          "type": "EMU",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "GZB",
+          "name": "Ghaziabad Jn",
+          "city": "Ghaziabad",
+          "departure": "06:10",
+          "day": 1,
+          "sequence": 1
+        },
+        "to": {
+          "code": "ALJN",
+          "name": "Aligarh Jn",
+          "city": "Aligarh",
+          "arrival": "08:25",
+          "day": 1,
+          "sequence": 18
+        },
+        "distance": 106,
+        "duration": 135,
+        "totalHaltsBetween": 15
+      },
+      {
+        "train": {
+          "number": "12004",
+          "name": "New Delhi - Lucknow Swarn Shatabdi Express",
+          "type": "Shatabdi Express",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "GZB",
+          "name": "Ghaziabad Jn",
+          "city": "Ghaziabad",
+          "departure": "06:42",
+          "day": 1,
+          "sequence": 9
+        },
+        "to": {
+          "code": "ALJN",
+          "name": "Aligarh Jn",
+          "city": "Aligarh",
+          "arrival": "07:47",
+          "day": 1,
+          "sequence": 26
+        },
+        "distance": 106,
+        "duration": 65,
+        "totalHaltsBetween": 0
+      },
+      {
+        "train": {
+          "number": "13052",
+          "name": "Netaji Express",
+          "type": "MAIL EXPRESS",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "GZB",
+          "name": "Ghaziabad Jn",
+          "city": "Ghaziabad",
+          "departure": "07:02",
+          "day": 2,
+          "sequence": 48
+        },
+        "to": {
+          "code": "ALJN",
+          "name": "Aligarh Jn",
+          "city": "Aligarh",
+          "arrival": "08:30",
+          "day": 2,
+          "sequence": 65
+        },
+        "distance": 106,
+        "duration": 88,
+        "totalHaltsBetween": 1
+      },
+      {
+        "train": {
+          "number": "18310",
+          "name": "Sambalpur Express",
+          "type": "MAIL EXPRESS",
+          "runDays": [
+            "tue",
+            "thu",
+            "fri",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "GZB",
+          "name": "Ghaziabad Jn",
+          "city": "Ghaziabad",
+          "departure": "07:28",
+          "day": 2,
+          "sequence": 108
+        },
+        "to": {
+          "code": "ALJN",
+          "name": "Aligarh Jn",
+          "city": "Aligarh",
+          "arrival": "08:48",
+          "day": 2,
+          "sequence": 125
+        },
+        "distance": 106.1,
+        "duration": 80,
+        "totalHaltsBetween": 0
+      },
+      {
+        "train": {
+          "number": "18102",
+          "name": "Tatanagar Express",
+          "type": "MAIL EXPRESS",
+          "runDays": [
+            "mon",
+            "wed",
+            "sat"
+          ]
+        },
+        "from": {
+          "code": "GZB",
+          "name": "Ghaziabad Jn",
+          "city": "Ghaziabad",
+          "departure": "07:28",
+          "day": 2,
+          "sequence": 108
+        },
+        "to": {
+          "code": "ALJN",
+          "name": "Aligarh Jn",
+          "city": "Aligarh",
+          "arrival": "08:48",
+          "day": 2,
+          "sequence": 125
+        },
+        "distance": 106.1,
+        "duration": 80,
+        "totalHaltsBetween": 0
+      },
+      {
+        "train": {
+          "number": "15484",
+          "name": "Sikkim Mahananda Express",
+          "type": "MAIL EXPRESS",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "GZB",
+          "name": "Ghaziabad Jn",
+          "city": "Ghaziabad",
+          "departure": "08:18",
+          "day": 1,
+          "sequence": 6
+        },
+        "to": {
+          "code": "ALJN",
+          "name": "Aligarh Jn",
+          "city": "Aligarh",
+          "arrival": "09:50",
+          "day": 1,
+          "sequence": 23
+        },
+        "distance": 106,
+        "duration": 92,
+        "totalHaltsBetween": 2
+      },
+      {
+        "train": {
+          "number": "12488",
+          "name": "Seemanchal Express",
+          "type": "SUPERFAST",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "GZB",
+          "name": "Ghaziabad Jn",
+          "city": "Ghaziabad",
+          "departure": "08:39",
+          "day": 1,
+          "sequence": 5
+        },
+        "to": {
+          "code": "ALJN",
+          "name": "Aligarh Jn",
+          "city": "Aligarh",
+          "arrival": "09:40",
+          "day": 1,
+          "sequence": 22
+        },
+        "distance": 106.1,
+        "duration": 61,
+        "totalHaltsBetween": 0
+      },
+      {
+        "train": {
+          "number": "64152",
+          "name": "Delhi - Aligarh MEMU",
+          "type": "MEMU",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "GZB",
+          "name": "Ghaziabad Jn",
+          "city": "Ghaziabad",
+          "departure": "09:10",
+          "day": 1,
+          "sequence": 6
+        },
+        "to": {
+          "code": "ALJN",
+          "name": "Aligarh Jn",
+          "city": "Aligarh",
+          "arrival": "11:30",
+          "day": 1,
+          "sequence": 23
+        },
+        "distance": 106,
+        "duration": 140,
+        "totalHaltsBetween": 15
+      },
+      {
+        "train": {
+          "number": "04412",
+          "name": "Ghaziabad - Aligarh Special",
+          "type": "TRAIN ON DEMAND",
+          "runDays": [
+            "thu",
+            "fri"
+          ]
+        },
+        "from": {
+          "code": "GZB",
+          "name": "Ghaziabad Jn",
+          "city": "Ghaziabad",
+          "departure": "11:00",
+          "day": 1,
+          "sequence": 1
+        },
+        "to": {
+          "code": "ALJN",
+          "name": "Aligarh Jn",
+          "city": "Aligarh",
+          "arrival": "13:00",
+          "day": 1,
+          "sequence": 18
+        },
+        "distance": 106,
+        "duration": 120,
+        "totalHaltsBetween": 15
+      },
+      {
+        "train": {
+          "number": "12420",
+          "name": "Gomti Express",
+          "type": "SUPERFAST",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "GZB",
+          "name": "Ghaziabad Jn",
+          "city": "Ghaziabad",
+          "departure": "13:31",
+          "day": 1,
+          "sequence": 9
+        },
+        "to": {
+          "code": "ALJN",
+          "name": "Aligarh Jn",
+          "city": "Aligarh",
+          "arrival": "14:46",
+          "day": 1,
+          "sequence": 26
+        },
+        "distance": 106,
+        "duration": 75,
+        "totalHaltsBetween": 1
+      },
+      {
+        "train": {
+          "number": "15026",
+          "name": "Mau Express",
+          "type": "MAIL EXPRESS",
+          "runDays": [
+            "mon",
+            "fri"
+          ]
+        },
+        "from": {
+          "code": "GZB",
+          "name": "Ghaziabad Jn",
+          "city": "Ghaziabad",
+          "departure": "13:55",
+          "day": 1,
+          "sequence": 5
+        },
+        "to": {
+          "code": "ALJN",
+          "name": "Aligarh Jn",
+          "city": "Aligarh",
+          "arrival": "14:58",
+          "day": 1,
+          "sequence": 22
+        },
+        "distance": 106.1,
+        "duration": 63,
+        "totalHaltsBetween": 0
+      },
+      {
+        "train": {
+          "number": "64584",
+          "name": "Delhi - Tundla MEMU",
+          "type": "MEMU",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "GZB",
+          "name": "Ghaziabad Jn",
+          "city": "Ghaziabad",
+          "departure": "14:03",
+          "day": 1,
+          "sequence": 6
+        },
+        "to": {
+          "code": "ALJN",
+          "name": "Aligarh Jn",
+          "city": "Aligarh",
+          "arrival": "16:10",
+          "day": 1,
+          "sequence": 23
+        },
+        "distance": 106,
+        "duration": 127,
+        "totalHaltsBetween": 16
+      },
+      {
+        "train": {
+          "number": "12034",
+          "name": "New Delhi - Kanpur Central Shatabdi Express",
+          "type": "Shatabdi Express",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat"
+          ]
+        },
+        "from": {
+          "code": "GZB",
+          "name": "Ghaziabad Jn",
+          "city": "Ghaziabad",
+          "departure": "16:14",
+          "day": 1,
+          "sequence": 9
+        },
+        "to": {
+          "code": "ALJN",
+          "name": "Aligarh Jn",
+          "city": "Aligarh",
+          "arrival": "17:18",
+          "day": 1,
+          "sequence": 26
+        },
+        "distance": 106,
+        "duration": 64,
+        "totalHaltsBetween": 0
+      },
+      {
+        "train": {
+          "number": "12528",
+          "name": "Chhapra ANVT CPR SF EXP",
+          "type": "SUPERFAST",
+          "runDays": [
+            "mon"
+          ]
+        },
+        "from": {
+          "code": "GZB",
+          "name": "Ghaziabad Jn",
+          "city": "Ghaziabad",
+          "departure": "16:58",
+          "day": 1,
+          "sequence": 5
+        },
+        "to": {
+          "code": "ALJN",
+          "name": "Aligarh Jn",
+          "city": "Aligarh",
+          "arrival": "18:08",
+          "day": 1,
+          "sequence": 22
+        },
+        "distance": 106.1,
+        "duration": 70,
+        "totalHaltsBetween": 0
+      },
+      {
+        "train": {
+          "number": "14006",
+          "name": "Lichchavi Express",
+          "type": "MAIL EXPRESS",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "GZB",
+          "name": "Ghaziabad Jn",
+          "city": "Ghaziabad",
+          "departure": "18:29",
+          "day": 1,
+          "sequence": 5
+        },
+        "to": {
+          "code": "ALJN",
+          "name": "Aligarh Jn",
+          "city": "Aligarh",
+          "arrival": "19:55",
+          "day": 1,
+          "sequence": 22
+        },
+        "distance": 106.1,
+        "duration": 86,
+        "totalHaltsBetween": 2
+      },
+      {
+        "train": {
+          "number": "64582",
+          "name": "Delhi - Hathras Killah MEMU",
+          "type": "MEMU",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "GZB",
+          "name": "Ghaziabad Jn",
+          "city": "Ghaziabad",
+          "departure": "18:41",
+          "day": 1,
+          "sequence": 6
+        },
+        "to": {
+          "code": "ALJN",
+          "name": "Aligarh Jn",
+          "city": "Aligarh",
+          "arrival": "20:40",
+          "day": 1,
+          "sequence": 23
+        },
+        "distance": 106,
+        "duration": 119,
+        "totalHaltsBetween": 15
+      },
+      {
+        "train": {
+          "number": "64110",
+          "name": "New Delhi - Aligarh EMU",
+          "type": "EMU",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "GZB",
+          "name": "Ghaziabad Jn",
+          "city": "Ghaziabad",
+          "departure": "18:53",
+          "day": 1,
+          "sequence": 9
+        },
+        "to": {
+          "code": "ALJN",
+          "name": "Aligarh Jn",
+          "city": "Aligarh",
+          "arrival": "21:00",
+          "day": 1,
+          "sequence": 26
+        },
+        "distance": 106,
+        "duration": 127,
+        "totalHaltsBetween": 15
+      },
+      {
+        "train": {
+          "number": "64114",
+          "name": "New Delhi - Aligarh EMU",
+          "type": "EMU",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "GZB",
+          "name": "Ghaziabad Jn",
+          "city": "Ghaziabad",
+          "departure": "19:04",
+          "day": 1,
+          "sequence": 9
+        },
+        "to": {
+          "code": "ALJN",
+          "name": "Aligarh Jn",
+          "city": "Aligarh",
+          "arrival": "21:25",
+          "day": 1,
+          "sequence": 26
+        },
+        "distance": 106,
+        "duration": 141,
+        "totalHaltsBetween": 15
+      },
+      {
+        "train": {
+          "number": "64102",
+          "name": "Delhi - Aligarh EMU",
+          "type": "EMU",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "GZB",
+          "name": "Ghaziabad Jn",
+          "city": "Ghaziabad",
+          "departure": "19:15",
+          "day": 1,
+          "sequence": 6
+        },
+        "to": {
+          "code": "ALJN",
+          "name": "Aligarh Jn",
+          "city": "Aligarh",
+          "arrival": "21:55",
+          "day": 1,
+          "sequence": 23
+        },
+        "distance": 106,
+        "duration": 160,
+        "totalHaltsBetween": 15
+      },
+      {
+        "train": {
+          "number": "12226",
+          "name": "Kaifiyaat SF Express",
+          "type": "SUPERFAST",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "GZB",
+          "name": "Ghaziabad Jn",
+          "city": "Ghaziabad",
+          "departure": "21:02",
+          "day": 1,
+          "sequence": 6
+        },
+        "to": {
+          "code": "ALJN",
+          "name": "Aligarh Jn",
+          "city": "Aligarh",
+          "arrival": "22:13",
+          "day": 1,
+          "sequence": 23
+        },
+        "distance": 106,
+        "duration": 71,
+        "totalHaltsBetween": 0
+      },
+      {
+        "train": {
+          "number": "15566",
+          "name": "Vaishali Express",
+          "type": "MAIL EXPRESS",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "GZB",
+          "name": "Ghaziabad Jn",
+          "city": "Ghaziabad",
+          "departure": "21:25",
+          "day": 1,
+          "sequence": 9
+        },
+        "to": {
+          "code": "ALJN",
+          "name": "Aligarh Jn",
+          "city": "Aligarh",
+          "arrival": "22:33",
+          "day": 1,
+          "sequence": 26
+        },
+        "distance": 106,
+        "duration": 68,
+        "totalHaltsBetween": 0
+      },
+      {
+        "train": {
+          "number": "04072",
+          "name": "Supaul Special Fare Special",
+          "type": "TRAIN ON DEMAND",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "GZB",
+          "name": "Ghaziabad Jn",
+          "city": "Ghaziabad",
+          "departure": "22:12",
+          "day": 1,
+          "sequence": 9
+        },
+        "to": {
+          "code": "ALJN",
+          "name": "Aligarh Jn",
+          "city": "Aligarh",
+          "arrival": "01:18",
+          "day": 2,
+          "sequence": 26
+        },
+        "distance": 106,
+        "duration": 186,
+        "totalHaltsBetween": 0
+      },
+      {
+        "train": {
+          "number": "14218",
+          "name": "Unchahar Express",
+          "type": "MAIL EXPRESS",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "GZB",
+          "name": "Ghaziabad Jn",
+          "city": "Ghaziabad",
+          "departure": "22:13",
+          "day": 1,
+          "sequence": 45
+        },
+        "to": {
+          "code": "ALJN",
+          "name": "Aligarh Jn",
+          "city": "Aligarh",
+          "arrival": "23:30",
+          "day": 1,
+          "sequence": 62
+        },
+        "distance": 106.1,
+        "duration": 77,
+        "totalHaltsBetween": 0
+      },
+      {
+        "train": {
+          "number": "15744",
+          "name": "Farakka Express",
+          "type": "MAIL EXPRESS",
+          "runDays": [
+            "tue",
+            "thu",
+            "fri",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "GZB",
+          "name": "Ghaziabad Jn",
+          "city": "Ghaziabad",
+          "departure": "22:27",
+          "day": 1,
+          "sequence": 56
+        },
+        "to": {
+          "code": "ALJN",
+          "name": "Aligarh Jn",
+          "city": "Aligarh",
+          "arrival": "00:15",
+          "day": 2,
+          "sequence": 73
+        },
+        "distance": 106.1,
+        "duration": 108,
+        "totalHaltsBetween": 1
+      },
+      {
+        "train": {
+          "number": "15734",
+          "name": "Farakka Express",
+          "type": "MAIL EXPRESS",
+          "runDays": [
+            "mon",
+            "wed",
+            "sat"
+          ]
+        },
+        "from": {
+          "code": "GZB",
+          "name": "Ghaziabad Jn",
+          "city": "Ghaziabad",
+          "departure": "22:27",
+          "day": 1,
+          "sequence": 54
+        },
+        "to": {
+          "code": "ALJN",
+          "name": "Aligarh Jn",
+          "city": "Aligarh",
+          "arrival": "00:15",
+          "day": 2,
+          "sequence": 71
+        },
+        "distance": 106,
+        "duration": 108,
+        "totalHaltsBetween": 1
+      },
+      {
+        "train": {
+          "number": "12428",
+          "name": "Rewa SF Express",
+          "type": "SUPERFAST",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "GZB",
+          "name": "Ghaziabad Jn",
+          "city": "Ghaziabad",
+          "departure": "22:35",
+          "day": 1,
+          "sequence": 5
+        },
+        "to": {
+          "code": "ALJN",
+          "name": "Aligarh Jn",
+          "city": "Aligarh",
+          "arrival": "23:40",
+          "day": 1,
+          "sequence": 22
+        },
+        "distance": 106.1,
+        "duration": 65,
+        "totalHaltsBetween": 0
+      },
+      {
+        "train": {
+          "number": "12418",
+          "name": "Prayagraj Express",
+          "type": "SUPERFAST",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "GZB",
+          "name": "Ghaziabad Jn",
+          "city": "Ghaziabad",
+          "departure": "22:44",
+          "day": 1,
+          "sequence": 9
+        },
+        "to": {
+          "code": "ALJN",
+          "name": "Aligarh Jn",
+          "city": "Aligarh",
+          "arrival": "23:55",
+          "day": 1,
+          "sequence": 26
+        },
+        "distance": 106,
+        "duration": 71,
+        "totalHaltsBetween": 0
+      },
+      {
+        "train": {
+          "number": "14118",
+          "name": "Kalindi Express",
+          "type": "MAIL EXPRESS",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "GZB",
+          "name": "Ghaziabad Jn",
+          "city": "Ghaziabad",
+          "departure": "23:34",
+          "day": 1,
+          "sequence": 29
+        },
+        "to": {
+          "code": "ALJN",
+          "name": "Aligarh Jn",
+          "city": "Aligarh",
+          "arrival": "00:46",
+          "day": 2,
+          "sequence": 46
+        },
+        "distance": 106,
+        "duration": 72,
+        "totalHaltsBetween": 0
+      },
+      {
+        "train": {
+          "number": "19603",
+          "name": "Godda Weekly Express",
+          "type": "MAIL EXPRESS",
+          "runDays": [
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "GZB",
+          "name": "Ghaziabad Jn",
+          "city": "Ghaziabad",
+          "departure": "23:50",
+          "day": 1,
+          "sequence": 69
+        },
+        "to": {
+          "code": "ALJN",
+          "name": "Aligarh Jn",
+          "city": "Aligarh",
+          "arrival": "01:00",
+          "day": 2,
+          "sequence": 86
+        },
+        "distance": 106.1,
+        "duration": 70,
+        "totalHaltsBetween": 0
+      }
+    ],
+    "count": 29
+  },
+  "meta": {
+    "timestamp": "2026-09-03T12:52:15+05:30",
+    "traceId": "6e6f8b67-57ed-47b8-9a85-6fea7b1a103a",
+    "source": "database",
+    "executionTime": 12
+  }
+}

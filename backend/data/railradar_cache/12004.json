@@ -1,0 +1,195 @@
+{
+  "success": true,
+  "data": {
+    "train": {
+      "number": "12004",
+      "name": "New Delhi - Lucknow Swarn Shatabdi Express",
+      "type": "Shatabdi Express",
+      "category": "Premium",
+      "source": {
+        "code": "NDLS",
+        "name": "New Delhi",
+        "lat": 28.6419258,
+        "lng": 77.2217499
+      },
+      "destination": {
+        "code": "LJN",
+        "name": "Lucknow Jn",
+        "lat": 26.8315101,
+        "lng": 80.9222977
+      },
+      "runDays": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ],
+      "distance": 512,
+      "duration": 410,
+      "avgSpeed": 74.9,
+      "maxSpeed": 105.7,
+      "totalHalts": 9,
+      "returnTrain": "12003",
+      "coachPosition": "ENG-LPR-E1-E2-C1-C2-C3-C4-C5-C6-C7-C8-C9-C10-C11-C12-C13-C14-C15-C16-LPR"
+    },
+    "route": [
+      {
+        "sequence": 1,
+        "station": {
+          "code": "NDLS",
+          "name": "New Delhi",
+          "lat": 28.6419258,
+          "lng": 77.2217499
+        },
+        "isHalt": true,
+        "platform": "PF 9",
+        "speedToNextStationKmph": 49.2,
+        "departure": "06:10",
+        "departureDay": 1,
+        "distance": 0
+      },
+      {
+        "sequence": 9,
+        "station": {
+          "code": "GZB",
+          "name": "Ghaziabad Jn",
+          "lat": 28.6528563,
+          "lng": 77.4282442
+        },
+        "isHalt": true,
+        "platform": "PF 2",
+        "speedToNextStationKmph": 97.8,
+        "arrival": "06:40",
+        "arrivalDay": 1,
+        "departure": "06:42",
+        "departureDay": 1,
+        "distance": 24.6
+      },
+      {
+        "sequence": 26,
+        "station": {
+          "code": "ALJN",
+          "name": "Aligarh Jn",
+          "lat": 27.8888068,
+          "lng": 78.0747358
+        },
+        "isHalt": true,
+        "platform": "PF 2",
+        "speedToNextStationKmph": 83.7,
+        "arrival": "07:47",
+        "arrivalDay": 1,
+        "departure": "07:49",
+        "departureDay": 1,
+        "distance": 130.6
+      },
+      {
+        "sequence": 36,
+        "station": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "lat": 27.2080865,
+          "lng": 78.2330444
+        },
+        "isHalt": true,
+        "platform": "PF 5",
+        "speedToNextStationKmph": 103.9,
+        "arrival": "08:45",
+        "arrivalDay": 1,
+        "departure": "08:47",
+        "departureDay": 1,
+        "distance": 208.7
+      },
+      {
+        "sequence": 46,
+        "station": {
+          "code": "ETW",
+          "name": "Etawah",
+          "lat": 26.7869304,
+          "lng": 79.0209359
+        },
+        "isHalt": true,
+        "platform": "PF 3",
+        "speedToNextStationKmph": 105.7,
+        "arrival": "09:40",
+        "arrivalDay": 1,
+        "departure": "09:42",
+        "departureDay": 1,
+        "distance": 300.5
+      },
+      {
+        "sequence": 53,
+        "station": {
+          "code": "PHD",
+          "name": "Phaphund",
+          "lat": 26.6324444,
+          "lng": 79.5545165
+        },
+        "isHalt": true,
+        "platform": "PF 2",
+        "speedToNextStationKmph": 73.3,
+        "arrival": "10:14",
+        "arrivalDay": 1,
+        "departure": "10:15",
+        "departureDay": 1,
+        "distance": 356.9
+      },
+      {
+        "sequence": 65,
+        "station": {
+          "code": "CNB",
+          "name": "Kanpur Central Jn",
+          "lat": 26.4538613,
+          "lng": 80.3512433
+        },
+        "isHalt": true,
+        "platform": "PF 9",
+        "speedToNextStationKmph": 40.6,
+        "arrival": "11:23",
+        "arrivalDay": 1,
+        "departure": "11:28",
+        "departureDay": 1,
+        "distance": 440
+      },
+      {
+        "sequence": 68,
+        "station": {
+          "code": "ON",
+          "name": "Unnao Jn",
+          "lat": 26.5492382,
+          "lng": 80.4874371
+        },
+        "isHalt": true,
+        "platform": "PF 3",
+        "speedToNextStationKmph": 51,
+        "arrival": "11:54",
+        "arrivalDay": 1,
+        "departure": "11:56",
+        "departureDay": 1,
+        "distance": 457.6
+      },
+      {
+        "sequence": 78,
+        "station": {
+          "code": "LJN",
+          "name": "Lucknow Jn",
+          "lat": 26.8315101,
+          "lng": 80.9222977
+        },
+        "isHalt": true,
+        "platform": "PF 6",
+        "arrival": "13:00",
+        "arrivalDay": 1,
+        "distance": 512
+      }
+    ]
+  },
+  "meta": {
+    "timestamp": "2026-09-03T12:54:00+05:30",
+    "traceId": "ca009b52-c3aa-46e7-92fa-839ed09081c5",
+    "source": "database",
+    "executionTime": 4
+  }
+}

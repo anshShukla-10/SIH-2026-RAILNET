@@ -1,0 +1,206 @@
+{
+  "success": true,
+  "data": {
+    "train": {
+      "number": "64434",
+      "name": "Delhi - Ghaziabad EMU",
+      "type": "EMU",
+      "category": "Local",
+      "source": {
+        "code": "DLI",
+        "name": "Delhi Jn",
+        "lat": 28.660932,
+        "lng": 77.2276494
+      },
+      "destination": {
+        "code": "GZB",
+        "name": "Ghaziabad Jn",
+        "lat": 28.6528563,
+        "lng": 77.4282442
+      },
+      "runDays": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ],
+      "distance": 27.9,
+      "duration": 75,
+      "avgSpeed": 22.3,
+      "maxSpeed": 76.8,
+      "totalHalts": 10,
+      "returnTrain": "64433",
+      "coachPosition": "GEN-GEN-GEN-GEN-GEN-GEN-GEN-GEN"
+    },
+    "route": [
+      {
+        "sequence": 1,
+        "station": {
+          "code": "DLI",
+          "name": "Delhi Jn",
+          "lat": 28.660932,
+          "lng": 77.2276494
+        },
+        "isHalt": true,
+        "speedToNextStationKmph": 12.9,
+        "departure": "11:30",
+        "departureDay": 1,
+        "distance": 0
+      },
+      {
+        "sequence": 2,
+        "station": {
+          "code": "DSB",
+          "name": "Sadar Bazar",
+          "lat": 28.658087,
+          "lng": 77.2170087
+        },
+        "isHalt": true,
+        "speedToNextStationKmph": 5.4,
+        "arrival": "11:37",
+        "arrivalDay": 1,
+        "departure": "11:38",
+        "departureDay": 1,
+        "distance": 1.5
+      },
+      {
+        "sequence": 3,
+        "station": {
+          "code": "NDLS",
+          "name": "New Delhi",
+          "lat": 28.6419258,
+          "lng": 77.2217499
+        },
+        "isHalt": true,
+        "platform": "PF 2",
+        "speedToNextStationKmph": 24,
+        "arrival": "11:58",
+        "arrivalDay": 1,
+        "departure": "12:00",
+        "departureDay": 1,
+        "distance": 3.3
+      },
+      {
+        "sequence": 4,
+        "station": {
+          "code": "CSB",
+          "name": "Shivaji Bridge",
+          "lat": 28.6334521,
+          "lng": 77.2266682
+        },
+        "isHalt": true,
+        "speedToNextStationKmph": 24,
+        "arrival": "12:03",
+        "arrivalDay": 1,
+        "departure": "12:04",
+        "departureDay": 1,
+        "distance": 4.5
+      },
+      {
+        "sequence": 5,
+        "station": {
+          "code": "TKJ",
+          "name": "Tilak Bridge",
+          "lat": 28.6281166,
+          "lng": 77.2374037
+        },
+        "isHalt": true,
+        "platform": "PF 5",
+        "speedToNextStationKmph": 76.8,
+        "arrival": "12:07",
+        "arrivalDay": 1,
+        "departure": "12:08",
+        "departureDay": 1,
+        "distance": 5.7
+      },
+      {
+        "sequence": 6,
+        "station": {
+          "code": "MWC",
+          "name": "Mandawali Chander Vihar Halt",
+          "lat": 28.6294332,
+          "lng": 77.2884872
+        },
+        "isHalt": true,
+        "speedToNextStationKmph": 68,
+        "arrival": "12:13",
+        "arrivalDay": 1,
+        "departure": "12:14",
+        "departureDay": 1,
+        "distance": 12.1
+      },
+      {
+        "sequence": 7,
+        "station": {
+          "code": "ANVR",
+          "name": "Anand Vihar Halt",
+          "lat": 28.6498106,
+          "lng": 77.3144992
+        },
+        "isHalt": true,
+        "speedToNextStationKmph": 66,
+        "arrival": "12:17",
+        "arrivalDay": 1,
+        "departure": "12:18",
+        "departureDay": 1,
+        "distance": 15.5
+      },
+      {
+        "sequence": 8,
+        "station": {
+          "code": "CNJ",
+          "name": "Chander Nagar Halt",
+          "lat": 28.6631056,
+          "lng": 77.331206
+        },
+        "isHalt": true,
+        "speedToNextStationKmph": 42,
+        "arrival": "12:20",
+        "arrivalDay": 1,
+        "departure": "12:21",
+        "departureDay": 1,
+        "distance": 17.7
+      },
+      {
+        "sequence": 10,
+        "station": {
+          "code": "SBB",
+          "name": "Sahibabad",
+          "lat": 28.6742784,
+          "lng": 77.3644349
+        },
+        "isHalt": true,
+        "platform": "PF 1",
+        "speedToNextStationKmph": 22.3,
+        "arrival": "12:26",
+        "arrivalDay": 1,
+        "departure": "12:27",
+        "departureDay": 1,
+        "distance": 21.2
+      },
+      {
+        "sequence": 11,
+        "station": {
+          "code": "GZB",
+          "name": "Ghaziabad Jn",
+          "lat": 28.6528563,
+          "lng": 77.4282442
+        },
+        "isHalt": true,
+        "platform": "PF 1",
+        "arrival": "12:45",
+        "arrivalDay": 1,
+        "distance": 27.9
+      }
+    ]
+  },
+  "meta": {
+    "timestamp": "2026-09-03T12:55:04+05:30",
+    "traceId": "837fc32b-19d2-44e0-803b-8a69bdcf07a2",
+    "source": "database",
+    "executionTime": 4
+  }
+}

@@ -1,0 +1,178 @@
+{
+  "success": true,
+  "data": {
+    "train": {
+      "number": "12017",
+      "name": "New Delhi - Dehra Dun Shatabdi Express",
+      "type": "Shatabdi Express",
+      "category": "Premium",
+      "source": {
+        "code": "NDLS",
+        "name": "New Delhi",
+        "lat": 28.6419258,
+        "lng": 77.2217499
+      },
+      "destination": {
+        "code": "DDN",
+        "name": "Dehra Dun",
+        "lat": 30.3143365,
+        "lng": 78.0335573
+      },
+      "runDays": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ],
+      "distance": 313.6,
+      "duration": 370,
+      "avgSpeed": 50.9,
+      "maxSpeed": 87.8,
+      "totalHalts": 8,
+      "returnTrain": "12018",
+      "coachPosition": "ENG-LPR-E1-E2-C1-C2-C3-C4-C5-C6-C7-C8-C9-C10-C11-C12-LPR"
+    },
+    "route": [
+      {
+        "sequence": 1,
+        "station": {
+          "code": "NDLS",
+          "name": "New Delhi",
+          "lat": 28.6419258,
+          "lng": 77.2217499
+        },
+        "isHalt": true,
+        "platform": "PF 16",
+        "speedToNextStationKmph": 41,
+        "departure": "06:45",
+        "departureDay": 1,
+        "distance": 0
+      },
+      {
+        "sequence": 9,
+        "station": {
+          "code": "GZB",
+          "name": "Ghaziabad Jn",
+          "lat": 28.6528563,
+          "lng": 77.4282442
+        },
+        "isHalt": true,
+        "platform": "PF 1",
+        "speedToNextStationKmph": 74.5,
+        "arrival": "07:21",
+        "arrivalDay": 1,
+        "departure": "07:23",
+        "departureDay": 1,
+        "distance": 24.6
+      },
+      {
+        "sequence": 17,
+        "station": {
+          "code": "MTC",
+          "name": "Meerut City Jn",
+          "lat": 28.9789661,
+          "lng": 77.6756994
+        },
+        "isHalt": true,
+        "platform": "PF 3",
+        "speedToNextStationKmph": 87.8,
+        "arrival": "08:01",
+        "arrivalDay": 1,
+        "departure": "08:03",
+        "departureDay": 1,
+        "distance": 71.8
+      },
+      {
+        "sequence": 25,
+        "station": {
+          "code": "MOZ",
+          "name": "Muzaffarnagar",
+          "lat": 29.470013,
+          "lng": 77.7081822
+        },
+        "isHalt": true,
+        "platform": "PF 1",
+        "speedToNextStationKmph": 52.1,
+        "arrival": "08:41",
+        "arrivalDay": 1,
+        "departure": "08:43",
+        "departureDay": 1,
+        "distance": 127.4
+      },
+      {
+        "sequence": 32,
+        "station": {
+          "code": "SRE",
+          "name": "Saharanpur Jn",
+          "lat": 29.9614586,
+          "lng": 77.5412397
+        },
+        "isHalt": true,
+        "platform": "PF 1",
+        "speedToNextStationKmph": 61.1,
+        "arrival": "09:50",
+        "arrivalDay": 1,
+        "departure": "10:15",
+        "departureDay": 1,
+        "distance": 185.6
+      },
+      {
+        "sequence": 40,
+        "station": {
+          "code": "RK",
+          "name": "Roorkee",
+          "lat": 29.8520917,
+          "lng": 77.8749102
+        },
+        "isHalt": true,
+        "platform": "PF 1",
+        "speedToNextStationKmph": 56.6,
+        "arrival": "10:49",
+        "arrivalDay": 1,
+        "departure": "10:51",
+        "departureDay": 1,
+        "distance": 220.2
+      },
+      {
+        "sequence": 50,
+        "station": {
+          "code": "HW",
+          "name": "Haridwar Jn",
+          "lat": 29.9474705,
+          "lng": 78.1543255
+        },
+        "isHalt": true,
+        "platform": "PF 1",
+        "speedToNextStationKmph": 41.5,
+        "arrival": "11:35",
+        "arrivalDay": 1,
+        "departure": "11:40",
+        "departureDay": 1,
+        "distance": 261.7
+      },
+      {
+        "sequence": 56,
+        "station": {
+          "code": "DDN",
+          "name": "Dehra Dun",
+          "lat": 30.3143365,
+          "lng": 78.0335573
+        },
+        "isHalt": true,
+        "platform": "PF 2",
+        "arrival": "12:55",
+        "arrivalDay": 1,
+        "distance": 313.6
+      }
+    ]
+  },
+  "meta": {
+    "timestamp": "2026-09-03T12:54:03+05:30",
+    "traceId": "5587a2d0-2284-4174-8211-60885f5dc25d",
+    "source": "database",
+    "executionTime": 7
+  }
+}

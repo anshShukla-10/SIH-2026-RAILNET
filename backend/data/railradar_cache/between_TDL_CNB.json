@@ -1,0 +1,2135 @@
+{
+  "success": true,
+  "data": {
+    "from": {
+      "code": "TDL",
+      "name": "Tundla Jn"
+    },
+    "to": {
+      "code": "CNB",
+      "name": "Kanpur Central Jn"
+    },
+    "trains": [
+      {
+        "train": {
+          "number": "14114",
+          "name": "Subedarganj Express",
+          "type": "MAIL EXPRESS",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "departure": "00:03",
+          "day": 2,
+          "sequence": 69
+        },
+        "to": {
+          "code": "CNB",
+          "name": "Kanpur Central Jn",
+          "city": "Kanpur Central",
+          "arrival": "03:05",
+          "day": 2,
+          "sequence": 98
+        },
+        "distance": 231.3,
+        "duration": 182,
+        "totalHaltsBetween": 2
+      },
+      {
+        "train": {
+          "number": "20802",
+          "name": "Magadh Express",
+          "type": "SUPERFAST",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "departure": "00:10",
+          "day": 2,
+          "sequence": 35
+        },
+        "to": {
+          "code": "CNB",
+          "name": "Kanpur Central Jn",
+          "city": "Kanpur Central",
+          "arrival": "03:40",
+          "day": 2,
+          "sequence": 64
+        },
+        "distance": 231.3,
+        "duration": 210,
+        "totalHaltsBetween": 2
+      },
+      {
+        "train": {
+          "number": "02418",
+          "name": "Prayagraj Special Fare Summer Special",
+          "type": "TRAIN ON DEMAND",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "departure": "00:33",
+          "day": 2,
+          "sequence": 26
+        },
+        "to": {
+          "code": "CNB",
+          "name": "Kanpur Central Jn",
+          "city": "Kanpur Central",
+          "arrival": "04:50",
+          "day": 2,
+          "sequence": 55
+        },
+        "distance": 231.4,
+        "duration": 257,
+        "totalHaltsBetween": 3
+      },
+      {
+        "train": {
+          "number": "14218",
+          "name": "Unchahar Express",
+          "type": "MAIL EXPRESS",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "departure": "01:15",
+          "day": 2,
+          "sequence": 72
+        },
+        "to": {
+          "code": "CNB",
+          "name": "Kanpur Central Jn",
+          "city": "Kanpur Central",
+          "arrival": "05:30",
+          "day": 2,
+          "sequence": 100
+        },
+        "distance": 231.3,
+        "duration": 255,
+        "totalHaltsBetween": 8
+      },
+      {
+        "train": {
+          "number": "09097",
+          "name": "Udhna - Ayodhya Cantt Summer Special",
+          "type": "MAIL/EXPRESS",
+          "runDays": [
+            "tue"
+          ]
+        },
+        "from": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "departure": "01:35",
+          "day": 2,
+          "sequence": 145
+        },
+        "to": {
+          "code": "CNB",
+          "name": "Kanpur Central Jn",
+          "city": "Kanpur Central",
+          "arrival": "07:00",
+          "day": 2,
+          "sequence": 174
+        },
+        "distance": 231.3,
+        "duration": 325,
+        "totalHaltsBetween": 0
+      },
+      {
+        "train": {
+          "number": "15744",
+          "name": "Farakka Express",
+          "type": "MAIL EXPRESS",
+          "runDays": [
+            "tue",
+            "thu",
+            "fri",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "departure": "01:35",
+          "day": 2,
+          "sequence": 83
+        },
+        "to": {
+          "code": "CNB",
+          "name": "Kanpur Central Jn",
+          "city": "Kanpur Central",
+          "arrival": "06:15",
+          "day": 2,
+          "sequence": 112
+        },
+        "distance": 231.4,
+        "duration": 280,
+        "totalHaltsBetween": 4
+      },
+      {
+        "train": {
+          "number": "15734",
+          "name": "Farakka Express",
+          "type": "MAIL EXPRESS",
+          "runDays": [
+            "mon",
+            "wed",
+            "sat"
+          ]
+        },
+        "from": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "departure": "01:35",
+          "day": 2,
+          "sequence": 81
+        },
+        "to": {
+          "code": "CNB",
+          "name": "Kanpur Central Jn",
+          "city": "Kanpur Central",
+          "arrival": "06:15",
+          "day": 2,
+          "sequence": 110
+        },
+        "distance": 231.3,
+        "duration": 280,
+        "totalHaltsBetween": 4
+      },
+      {
+        "train": {
+          "number": "14118",
+          "name": "Kalindi Express",
+          "type": "MAIL EXPRESS",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "departure": "02:00",
+          "day": 2,
+          "sequence": 56
+        },
+        "to": {
+          "code": "CNB",
+          "name": "Kanpur Central Jn",
+          "city": "Kanpur Central",
+          "arrival": "09:25",
+          "day": 2,
+          "sequence": 102
+        },
+        "distance": 282.4,
+        "duration": 445,
+        "totalHaltsBetween": 15
+      },
+      {
+        "train": {
+          "number": "15657",
+          "name": "Brahmaputra Mail",
+          "type": "MAIL EXPRESS",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "departure": "02:32",
+          "day": 2,
+          "sequence": 33
+        },
+        "to": {
+          "code": "CNB",
+          "name": "Kanpur Central Jn",
+          "city": "Kanpur Central",
+          "arrival": "05:25",
+          "day": 2,
+          "sequence": 62
+        },
+        "distance": 231.3,
+        "duration": 173,
+        "totalHaltsBetween": 1
+      },
+      {
+        "train": {
+          "number": "19725",
+          "name": "Khatipura - Darbhanga Amrit Bharat Express",
+          "type": "Amrit Bharat Express",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "departure": "03:25",
+          "day": 2,
+          "sequence": 38
+        },
+        "to": {
+          "code": "CNB",
+          "name": "Kanpur Central Jn",
+          "city": "Kanpur Central",
+          "arrival": "07:25",
+          "day": 2,
+          "sequence": 67
+        },
+        "distance": 231.3,
+        "duration": 240,
+        "totalHaltsBetween": 1
+      },
+      {
+        "train": {
+          "number": "01906",
+          "name": "Asarva - Kanpur Central Special",
+          "type": "MAIL/EXPRESS",
+          "runDays": [
+            "tue"
+          ]
+        },
+        "from": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "departure": "03:45",
+          "day": 2,
+          "sequence": 117
+        },
+        "to": {
+          "code": "CNB",
+          "name": "Kanpur Central Jn",
+          "city": "Kanpur Central",
+          "arrival": "07:00",
+          "day": 2,
+          "sequence": 146
+        },
+        "distance": 231.4,
+        "duration": 195,
+        "totalHaltsBetween": 2
+      },
+      {
+        "train": {
+          "number": "19623",
+          "name": "Madar - Darbhanga Amrit Bharat Express",
+          "type": "Amrit Bharat Express",
+          "runDays": [
+            "fri"
+          ]
+        },
+        "from": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "departure": "04:45",
+          "day": 2,
+          "sequence": 62
+        },
+        "to": {
+          "code": "CNB",
+          "name": "Kanpur Central Jn",
+          "city": "Kanpur Central",
+          "arrival": "08:00",
+          "day": 2,
+          "sequence": 91
+        },
+        "distance": 231.3,
+        "duration": 195,
+        "totalHaltsBetween": 2
+      },
+      {
+        "train": {
+          "number": "01911",
+          "name": "Kolkata Special Fare Special",
+          "type": "TRAIN ON DEMAND",
+          "runDays": [
+            "thu"
+          ]
+        },
+        "from": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "departure": "04:55",
+          "day": 1,
+          "sequence": 8
+        },
+        "to": {
+          "code": "CNB",
+          "name": "Kanpur Central Jn",
+          "city": "Kanpur Central",
+          "arrival": "08:20",
+          "day": 1,
+          "sequence": 37
+        },
+        "distance": 231.3,
+        "duration": 205,
+        "totalHaltsBetween": 1
+      },
+      {
+        "train": {
+          "number": "64588",
+          "name": "Tundla - Kanpur Central MEMU",
+          "type": "MEMU",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "departure": "06:40",
+          "day": 1,
+          "sequence": 1
+        },
+        "to": {
+          "code": "CNB",
+          "name": "Kanpur Central Jn",
+          "city": "Kanpur Central",
+          "arrival": "13:00",
+          "day": 1,
+          "sequence": 30
+        },
+        "distance": 231.3,
+        "duration": 380,
+        "totalHaltsBetween": 28
+      },
+      {
+        "train": {
+          "number": "20176",
+          "name": "Agra Cantt - Banaras Vande Bharat Express",
+          "type": "Vande Bharat Express",
+          "runDays": [
+            "mon",
+            "tue",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "departure": "06:45",
+          "day": 1,
+          "sequence": 8
+        },
+        "to": {
+          "code": "CNB",
+          "name": "Kanpur Central Jn",
+          "city": "Kanpur Central",
+          "arrival": "09:05",
+          "day": 1,
+          "sequence": 37
+        },
+        "distance": 231.3,
+        "duration": 140,
+        "totalHaltsBetween": 1
+      },
+      {
+        "train": {
+          "number": "12180",
+          "name": "Lucknow Jn. InterCity SF Express",
+          "type": "SUPERFAST",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "departure": "07:12",
+          "day": 1,
+          "sequence": 6
+        },
+        "to": {
+          "code": "CNB",
+          "name": "Kanpur Central Jn",
+          "city": "Kanpur Central",
+          "arrival": "10:40",
+          "day": 1,
+          "sequence": 34
+        },
+        "distance": 231.3,
+        "duration": 208,
+        "totalHaltsBetween": 8
+      },
+      {
+        "train": {
+          "number": "22432",
+          "name": "Subedarganj SF Express",
+          "type": "SUPERFAST",
+          "runDays": [
+            "wed",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "departure": "07:22",
+          "day": 2,
+          "sequence": 129
+        },
+        "to": {
+          "code": "CNB",
+          "name": "Kanpur Central Jn",
+          "city": "Kanpur Central",
+          "arrival": "09:55",
+          "day": 2,
+          "sequence": 158
+        },
+        "distance": 231.4,
+        "duration": 153,
+        "totalHaltsBetween": 1
+      },
+      {
+        "train": {
+          "number": "19053",
+          "name": "Muzaffarpur Express",
+          "type": "MAIL EXPRESS",
+          "runDays": [
+            "fri"
+          ]
+        },
+        "from": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "departure": "07:55",
+          "day": 2,
+          "sequence": 167
+        },
+        "to": {
+          "code": "CNB",
+          "name": "Kanpur Central Jn",
+          "city": "Kanpur Central",
+          "arrival": "11:40",
+          "day": 2,
+          "sequence": 196
+        },
+        "distance": 231.3,
+        "duration": 225,
+        "totalHaltsBetween": 0
+      },
+      {
+        "train": {
+          "number": "15046",
+          "name": "Okha - Gorakhpur Express",
+          "type": "MAIL EXPRESS",
+          "runDays": [
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "departure": "07:55",
+          "day": 3,
+          "sequence": 236
+        },
+        "to": {
+          "code": "CNB",
+          "name": "Kanpur Central Jn",
+          "city": "Kanpur Central",
+          "arrival": "11:30",
+          "day": 3,
+          "sequence": 265
+        },
+        "distance": 231.4,
+        "duration": 215,
+        "totalHaltsBetween": 1
+      },
+      {
+        "train": {
+          "number": "12004",
+          "name": "New Delhi - Lucknow Swarn Shatabdi Express",
+          "type": "Shatabdi Express",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "departure": "08:47",
+          "day": 1,
+          "sequence": 36
+        },
+        "to": {
+          "code": "CNB",
+          "name": "Kanpur Central Jn",
+          "city": "Kanpur Central",
+          "arrival": "11:23",
+          "day": 1,
+          "sequence": 65
+        },
+        "distance": 231.3,
+        "duration": 156,
+        "totalHaltsBetween": 2
+      },
+      {
+        "train": {
+          "number": "09111",
+          "name": "Gorakhpur Special Fare Special",
+          "type": "TRAIN ON DEMAND",
+          "runDays": [
+            "mon"
+          ]
+        },
+        "from": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "departure": "09:25",
+          "day": 2,
+          "sequence": 120
+        },
+        "to": {
+          "code": "CNB",
+          "name": "Kanpur Central Jn",
+          "city": "Kanpur Central",
+          "arrival": "16:10",
+          "day": 2,
+          "sequence": 166
+        },
+        "distance": 282.4,
+        "duration": 405,
+        "totalHaltsBetween": 3
+      },
+      {
+        "train": {
+          "number": "13052",
+          "name": "Netaji Express",
+          "type": "MAIL EXPRESS",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "departure": "09:50",
+          "day": 2,
+          "sequence": 75
+        },
+        "to": {
+          "code": "CNB",
+          "name": "Kanpur Central Jn",
+          "city": "Kanpur Central",
+          "arrival": "13:45",
+          "day": 2,
+          "sequence": 104
+        },
+        "distance": 231.3,
+        "duration": 235,
+        "totalHaltsBetween": 4
+      },
+      {
+        "train": {
+          "number": "12308",
+          "name": "Howrah Superfast Express",
+          "type": "SUPERFAST",
+          "runDays": [
+            "mon",
+            "tue",
+            "thu",
+            "fri"
+          ]
+        },
+        "from": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "departure": "09:55",
+          "day": 2,
+          "sequence": 80
+        },
+        "to": {
+          "code": "CNB",
+          "name": "Kanpur Central Jn",
+          "city": "Kanpur Central",
+          "arrival": "13:00",
+          "day": 2,
+          "sequence": 109
+        },
+        "distance": 231.3,
+        "duration": 185,
+        "totalHaltsBetween": 1
+      },
+      {
+        "train": {
+          "number": "22308",
+          "name": "Howrah SF Express",
+          "type": "SUPERFAST",
+          "runDays": [
+            "wed",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "departure": "09:55",
+          "day": 2,
+          "sequence": 82
+        },
+        "to": {
+          "code": "CNB",
+          "name": "Kanpur Central Jn",
+          "city": "Kanpur Central",
+          "arrival": "13:00",
+          "day": 2,
+          "sequence": 111
+        },
+        "distance": 231.3,
+        "duration": 185,
+        "totalHaltsBetween": 1
+      },
+      {
+        "train": {
+          "number": "02456",
+          "name": "New Delhi - Kanpur Central Special",
+          "type": "TRAIN ON DEMAND",
+          "runDays": [
+            "mon",
+            "wed",
+            "fri",
+            "sat"
+          ]
+        },
+        "from": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "departure": "09:57",
+          "day": 1,
+          "sequence": 35
+        },
+        "to": {
+          "code": "CNB",
+          "name": "Kanpur Central Jn",
+          "city": "Kanpur Central",
+          "arrival": "12:30",
+          "day": 1,
+          "sequence": 64
+        },
+        "distance": 231.3,
+        "duration": 153,
+        "totalHaltsBetween": 1
+      },
+      {
+        "train": {
+          "number": "02458",
+          "name": "Anand Vihar Terminal - Kanpur Central Special",
+          "type": "TRAIN ON DEMAND",
+          "runDays": [
+            "tue",
+            "thu",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "departure": "09:57",
+          "day": 1,
+          "sequence": 32
+        },
+        "to": {
+          "code": "CNB",
+          "name": "Kanpur Central Jn",
+          "city": "Kanpur Central",
+          "arrival": "12:30",
+          "day": 1,
+          "sequence": 61
+        },
+        "distance": 231.4,
+        "duration": 153,
+        "totalHaltsBetween": 1
+      },
+      {
+        "train": {
+          "number": "18102",
+          "name": "Tatanagar Express",
+          "type": "MAIL EXPRESS",
+          "runDays": [
+            "mon",
+            "wed",
+            "sat"
+          ]
+        },
+        "from": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "departure": "10:10",
+          "day": 2,
+          "sequence": 135
+        },
+        "to": {
+          "code": "CNB",
+          "name": "Kanpur Central Jn",
+          "city": "Kanpur Central",
+          "arrival": "14:20",
+          "day": 2,
+          "sequence": 163
+        },
+        "distance": 231.4,
+        "duration": 250,
+        "totalHaltsBetween": 5
+      },
+      {
+        "train": {
+          "number": "18310",
+          "name": "Sambalpur Express",
+          "type": "MAIL EXPRESS",
+          "runDays": [
+            "tue",
+            "thu",
+            "fri",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "departure": "10:10",
+          "day": 2,
+          "sequence": 135
+        },
+        "to": {
+          "code": "CNB",
+          "name": "Kanpur Central Jn",
+          "city": "Kanpur Central",
+          "arrival": "14:20",
+          "day": 2,
+          "sequence": 163
+        },
+        "distance": 231.4,
+        "duration": 250,
+        "totalHaltsBetween": 4
+      },
+      {
+        "train": {
+          "number": "12816",
+          "name": "Nandan Kanan Express",
+          "type": "SUPERFAST",
+          "runDays": [
+            "mon",
+            "wed",
+            "thu",
+            "sat"
+          ]
+        },
+        "from": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "departure": "10:15",
+          "day": 1,
+          "sequence": 32
+        },
+        "to": {
+          "code": "CNB",
+          "name": "Kanpur Central Jn",
+          "city": "Kanpur Central",
+          "arrival": "13:15",
+          "day": 1,
+          "sequence": 61
+        },
+        "distance": 231.4,
+        "duration": 180,
+        "totalHaltsBetween": 0
+      },
+      {
+        "train": {
+          "number": "12876",
+          "name": "Neelachal Express",
+          "type": "SUPERFAST",
+          "runDays": [
+            "tue",
+            "fri",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "departure": "10:15",
+          "day": 1,
+          "sequence": 32
+        },
+        "to": {
+          "code": "CNB",
+          "name": "Kanpur Central Jn",
+          "city": "Kanpur Central",
+          "arrival": "13:15",
+          "day": 1,
+          "sequence": 61
+        },
+        "distance": 231.4,
+        "duration": 180,
+        "totalHaltsBetween": 2
+      },
+      {
+        "train": {
+          "number": "12506",
+          "name": "North East Express",
+          "type": "SUPERFAST",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "departure": "10:25",
+          "day": 1,
+          "sequence": 32
+        },
+        "to": {
+          "code": "CNB",
+          "name": "Kanpur Central Jn",
+          "city": "Kanpur Central",
+          "arrival": "13:25",
+          "day": 1,
+          "sequence": 61
+        },
+        "distance": 231.4,
+        "duration": 180,
+        "totalHaltsBetween": 1
+      },
+      {
+        "train": {
+          "number": "15270",
+          "name": "Muzaffarpur Jan Sadharan Express",
+          "type": "MAIL EXPRESS",
+          "runDays": [
+            "sat"
+          ]
+        },
+        "from": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "departure": "10:45",
+          "day": 2,
+          "sequence": 139
+        },
+        "to": {
+          "code": "CNB",
+          "name": "Kanpur Central Jn",
+          "city": "Kanpur Central",
+          "arrival": "14:00",
+          "day": 2,
+          "sequence": 168
+        },
+        "distance": 231.3,
+        "duration": 195,
+        "totalHaltsBetween": 0
+      },
+      {
+        "train": {
+          "number": "12488",
+          "name": "Seemanchal Express",
+          "type": "SUPERFAST",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "departure": "10:52",
+          "day": 1,
+          "sequence": 32
+        },
+        "to": {
+          "code": "CNB",
+          "name": "Kanpur Central Jn",
+          "city": "Kanpur Central",
+          "arrival": "14:10",
+          "day": 1,
+          "sequence": 61
+        },
+        "distance": 231.4,
+        "duration": 198,
+        "totalHaltsBetween": 0
+      },
+      {
+        "train": {
+          "number": "19201",
+          "name": "Ayodhya Cantt Express",
+          "type": "MAIL EXPRESS",
+          "runDays": [
+            "mon"
+          ]
+        },
+        "from": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "departure": "10:55",
+          "day": 2,
+          "sequence": 166
+        },
+        "to": {
+          "code": "CNB",
+          "name": "Kanpur Central Jn",
+          "city": "Kanpur Central",
+          "arrival": "14:05",
+          "day": 2,
+          "sequence": 195
+        },
+        "distance": 231.3,
+        "duration": 190,
+        "totalHaltsBetween": 0
+      },
+      {
+        "train": {
+          "number": "15484",
+          "name": "Sikkim Mahananda Express",
+          "type": "MAIL EXPRESS",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "departure": "11:05",
+          "day": 1,
+          "sequence": 33
+        },
+        "to": {
+          "code": "CNB",
+          "name": "Kanpur Central Jn",
+          "city": "Kanpur Central",
+          "arrival": "14:45",
+          "day": 1,
+          "sequence": 61
+        },
+        "distance": 231.3,
+        "duration": 220,
+        "totalHaltsBetween": 6
+      },
+      {
+        "train": {
+          "number": "12947",
+          "name": "Azimabad SF Express",
+          "type": "SUPERFAST",
+          "runDays": [
+            "mon",
+            "wed"
+          ]
+        },
+        "from": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "departure": "14:10",
+          "day": 2,
+          "sequence": 140
+        },
+        "to": {
+          "code": "CNB",
+          "name": "Kanpur Central Jn",
+          "city": "Kanpur Central",
+          "arrival": "18:45",
+          "day": 2,
+          "sequence": 169
+        },
+        "distance": 231.3,
+        "duration": 275,
+        "totalHaltsBetween": 0
+      },
+      {
+        "train": {
+          "number": "15631",
+          "name": "Barmer - Guwahati Express",
+          "type": "MAIL EXPRESS",
+          "runDays": [
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "departure": "14:10",
+          "day": 2,
+          "sequence": 103
+        },
+        "to": {
+          "code": "CNB",
+          "name": "Kanpur Central Jn",
+          "city": "Kanpur Central",
+          "arrival": "18:45",
+          "day": 2,
+          "sequence": 132
+        },
+        "distance": 231.3,
+        "duration": 275,
+        "totalHaltsBetween": 0
+      },
+      {
+        "train": {
+          "number": "15633",
+          "name": "Guwahati Express",
+          "type": "MAIL EXPRESS",
+          "runDays": [
+            "wed"
+          ]
+        },
+        "from": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "departure": "14:10",
+          "day": 1,
+          "sequence": 82
+        },
+        "to": {
+          "code": "CNB",
+          "name": "Kanpur Central Jn",
+          "city": "Kanpur Central",
+          "arrival": "18:45",
+          "day": 1,
+          "sequence": 111
+        },
+        "distance": 231.3,
+        "duration": 275,
+        "totalHaltsBetween": 0
+      },
+      {
+        "train": {
+          "number": "15635",
+          "name": "Guwahati Dwarka Express",
+          "type": "MAIL EXPRESS",
+          "runDays": [
+            "fri"
+          ]
+        },
+        "from": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "departure": "14:10",
+          "day": 2,
+          "sequence": 213
+        },
+        "to": {
+          "code": "CNB",
+          "name": "Kanpur Central Jn",
+          "city": "Kanpur Central",
+          "arrival": "19:05",
+          "day": 2,
+          "sequence": 242
+        },
+        "distance": 231.4,
+        "duration": 295,
+        "totalHaltsBetween": 0
+      },
+      {
+        "train": {
+          "number": "15667",
+          "name": "Kamakhya Express",
+          "type": "MAIL EXPRESS",
+          "runDays": [
+            "sat"
+          ]
+        },
+        "from": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "departure": "14:10",
+          "day": 2,
+          "sequence": 199
+        },
+        "to": {
+          "code": "CNB",
+          "name": "Kanpur Central Jn",
+          "city": "Kanpur Central",
+          "arrival": "19:05",
+          "day": 2,
+          "sequence": 228
+        },
+        "distance": 231.4,
+        "duration": 295,
+        "totalHaltsBetween": 0
+      },
+      {
+        "train": {
+          "number": "02276",
+          "name": "Prayagraj Special Fare Special",
+          "type": "TRAIN ON DEMAND",
+          "runDays": [
+            "mon",
+            "wed",
+            "sat"
+          ]
+        },
+        "from": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "departure": "15:42",
+          "day": 1,
+          "sequence": 37
+        },
+        "to": {
+          "code": "CNB",
+          "name": "Kanpur Central Jn",
+          "city": "Kanpur Central",
+          "arrival": "18:45",
+          "day": 1,
+          "sequence": 66
+        },
+        "distance": 231.3,
+        "duration": 183,
+        "totalHaltsBetween": 1
+      },
+      {
+        "train": {
+          "number": "04148",
+          "name": "Shakur Basti - Subedarganj Special",
+          "type": "TRAIN ON DEMAND",
+          "runDays": [
+            "thu"
+          ]
+        },
+        "from": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "departure": "15:42",
+          "day": 1,
+          "sequence": 37
+        },
+        "to": {
+          "code": "CNB",
+          "name": "Kanpur Central Jn",
+          "city": "Kanpur Central",
+          "arrival": "18:45",
+          "day": 1,
+          "sequence": 66
+        },
+        "distance": 231.3,
+        "duration": 183,
+        "totalHaltsBetween": 1
+      },
+      {
+        "train": {
+          "number": "04164",
+          "name": "Shakur Basti - Subedarganj Special",
+          "type": "TRAIN ON DEMAND",
+          "runDays": [
+            "fri"
+          ]
+        },
+        "from": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "departure": "15:42",
+          "day": 1,
+          "sequence": 37
+        },
+        "to": {
+          "code": "CNB",
+          "name": "Kanpur Central Jn",
+          "city": "Kanpur Central",
+          "arrival": "18:45",
+          "day": 1,
+          "sequence": 66
+        },
+        "distance": 231.3,
+        "duration": 183,
+        "totalHaltsBetween": 1
+      },
+      {
+        "train": {
+          "number": "12420",
+          "name": "Gomti Express",
+          "type": "SUPERFAST",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "departure": "15:57",
+          "day": 1,
+          "sequence": 36
+        },
+        "to": {
+          "code": "CNB",
+          "name": "Kanpur Central Jn",
+          "city": "Kanpur Central",
+          "arrival": "19:45",
+          "day": 1,
+          "sequence": 64
+        },
+        "distance": 231.3,
+        "duration": 228,
+        "totalHaltsBetween": 8
+      },
+      {
+        "train": {
+          "number": "12495",
+          "name": "Pratap SF Express",
+          "type": "SUPERFAST",
+          "runDays": [
+            "thu"
+          ]
+        },
+        "from": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "departure": "16:35",
+          "day": 1,
+          "sequence": 82
+        },
+        "to": {
+          "code": "CNB",
+          "name": "Kanpur Central Jn",
+          "city": "Kanpur Central",
+          "arrival": "19:30",
+          "day": 1,
+          "sequence": 111
+        },
+        "distance": 231.3,
+        "duration": 175,
+        "totalHaltsBetween": 0
+      },
+      {
+        "train": {
+          "number": "12937",
+          "name": "Garba SF Express",
+          "type": "SUPERFAST",
+          "runDays": [
+            "sat"
+          ]
+        },
+        "from": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "departure": "16:35",
+          "day": 2,
+          "sequence": 177
+        },
+        "to": {
+          "code": "CNB",
+          "name": "Kanpur Central Jn",
+          "city": "Kanpur Central",
+          "arrival": "19:30",
+          "day": 2,
+          "sequence": 206
+        },
+        "distance": 231.3,
+        "duration": 175,
+        "totalHaltsBetween": 0
+      },
+      {
+        "train": {
+          "number": "12941",
+          "name": "Parasnath Express",
+          "type": "Superfast Express",
+          "runDays": [
+            "tue"
+          ]
+        },
+        "from": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "departure": "16:35",
+          "day": 2,
+          "sequence": 186
+        },
+        "to": {
+          "code": "CNB",
+          "name": "Kanpur Central Jn",
+          "city": "Kanpur Central",
+          "arrival": "19:30",
+          "day": 2,
+          "sequence": 215
+        },
+        "distance": 231.3,
+        "duration": 175,
+        "totalHaltsBetween": 0
+      },
+      {
+        "train": {
+          "number": "14048",
+          "name": "Delhi - Sitamarhi Amrit Bharat Express",
+          "type": "Amrit Bharat Express",
+          "runDays": [
+            "sat"
+          ]
+        },
+        "from": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "departure": "16:55",
+          "day": 1,
+          "sequence": 33
+        },
+        "to": {
+          "code": "CNB",
+          "name": "Kanpur Central Jn",
+          "city": "Kanpur Central",
+          "arrival": "20:00",
+          "day": 1,
+          "sequence": 62
+        },
+        "distance": 231.3,
+        "duration": 185,
+        "totalHaltsBetween": 0
+      },
+      {
+        "train": {
+          "number": "15086",
+          "name": "Amrit B Express",
+          "type": "AMRIT BHARAT",
+          "runDays": [
+            "sat"
+          ]
+        },
+        "from": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "departure": "17:25",
+          "day": 2,
+          "sequence": 195
+        },
+        "to": {
+          "code": "CNB",
+          "name": "Kanpur Central Jn",
+          "city": "Kanpur Central",
+          "arrival": "22:40",
+          "day": 2,
+          "sequence": 224
+        },
+        "distance": 231.3,
+        "duration": 315,
+        "totalHaltsBetween": 0
+      },
+      {
+        "train": {
+          "number": "05054",
+          "name": "Bandra Terminus - Gorakhpur Special",
+          "type": "Mail/Express",
+          "runDays": [
+            "sat"
+          ]
+        },
+        "from": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "departure": "17:35",
+          "day": 2,
+          "sequence": 195
+        },
+        "to": {
+          "code": "CNB",
+          "name": "Kanpur Central Jn",
+          "city": "Kanpur Central",
+          "arrival": "22:50",
+          "day": 2,
+          "sequence": 224
+        },
+        "distance": 231.3,
+        "duration": 315,
+        "totalHaltsBetween": 0
+      },
+      {
+        "train": {
+          "number": "15558",
+          "name": "Anand Vihar Terminal - Darbhanga Amrit Bharat Express",
+          "type": "Amrit Bharat Express",
+          "runDays": [
+            "tue",
+            "fri"
+          ]
+        },
+        "from": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "departure": "17:35",
+          "day": 1,
+          "sequence": 32
+        },
+        "to": {
+          "code": "CNB",
+          "name": "Kanpur Central Jn",
+          "city": "Kanpur Central",
+          "arrival": "20:10",
+          "day": 1,
+          "sequence": 61
+        },
+        "distance": 231.4,
+        "duration": 155,
+        "totalHaltsBetween": 1
+      },
+      {
+        "train": {
+          "number": "14050",
+          "name": "Godda Weekly Express",
+          "type": "MAIL EXPRESS",
+          "runDays": [
+            "mon"
+          ]
+        },
+        "from": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "departure": "17:35",
+          "day": 1,
+          "sequence": 33
+        },
+        "to": {
+          "code": "CNB",
+          "name": "Kanpur Central Jn",
+          "city": "Kanpur Central",
+          "arrival": "20:10",
+          "day": 1,
+          "sequence": 62
+        },
+        "distance": 231.3,
+        "duration": 155,
+        "totalHaltsBetween": 0
+      },
+      {
+        "train": {
+          "number": "82502",
+          "name": "Lucknow Jn. IRCTC Tejas Express",
+          "type": "Tejas Express",
+          "runDays": [
+            "mon",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "departure": "17:59",
+          "day": 1,
+          "sequence": 36
+        },
+        "to": {
+          "code": "CNB",
+          "name": "Kanpur Central Jn",
+          "city": "Kanpur Central",
+          "arrival": "20:35",
+          "day": 1,
+          "sequence": 65
+        },
+        "distance": 231.3,
+        "duration": 156,
+        "totalHaltsBetween": 0
+      },
+      {
+        "train": {
+          "number": "09183",
+          "name": "Banaras Special Fare AC Summer Special",
+          "type": "TRAIN ON DEMAND",
+          "runDays": [
+            "wed"
+          ]
+        },
+        "from": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "departure": "19:25",
+          "day": 2,
+          "sequence": 204
+        },
+        "to": {
+          "code": "CNB",
+          "name": "Kanpur Central Jn",
+          "city": "Kanpur Central",
+          "arrival": "02:20",
+          "day": 3,
+          "sequence": 250
+        },
+        "distance": 282.4,
+        "duration": 415,
+        "totalHaltsBetween": 5
+      },
+      {
+        "train": {
+          "number": "14854",
+          "name": "Marudhar Express",
+          "type": "MAIL EXPRESS",
+          "runDays": [
+            "mon",
+            "thu",
+            "sat"
+          ]
+        },
+        "from": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "departure": "19:45",
+          "day": 1,
+          "sequence": 80
+        },
+        "to": {
+          "code": "CNB",
+          "name": "Kanpur Central Jn",
+          "city": "Kanpur Central",
+          "arrival": "23:40",
+          "day": 1,
+          "sequence": 109
+        },
+        "distance": 231.3,
+        "duration": 235,
+        "totalHaltsBetween": 2
+      },
+      {
+        "train": {
+          "number": "14864",
+          "name": "Marudhar Express",
+          "type": "MAIL EXPRESS",
+          "runDays": [
+            "tue",
+            "fri",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "departure": "19:45",
+          "day": 1,
+          "sequence": 80
+        },
+        "to": {
+          "code": "CNB",
+          "name": "Kanpur Central Jn",
+          "city": "Kanpur Central",
+          "arrival": "23:40",
+          "day": 1,
+          "sequence": 109
+        },
+        "distance": 231.3,
+        "duration": 235,
+        "totalHaltsBetween": 2
+      },
+      {
+        "train": {
+          "number": "14866",
+          "name": "Marudhar Express",
+          "type": "Mail/Express",
+          "runDays": [
+            "wed"
+          ]
+        },
+        "from": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "departure": "19:45",
+          "day": 1,
+          "sequence": 80
+        },
+        "to": {
+          "code": "CNB",
+          "name": "Kanpur Central Jn",
+          "city": "Kanpur Central",
+          "arrival": "23:40",
+          "day": 1,
+          "sequence": 109
+        },
+        "distance": 231.3,
+        "duration": 235,
+        "totalHaltsBetween": 2
+      },
+      {
+        "train": {
+          "number": "22406",
+          "name": "Anand Vihar Terminal - Bhagalpur Garib Rath Express",
+          "type": "Garib Rath Express",
+          "runDays": [
+            "mon",
+            "wed",
+            "fri"
+          ]
+        },
+        "from": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "departure": "19:52",
+          "day": 1,
+          "sequence": 32
+        },
+        "to": {
+          "code": "CNB",
+          "name": "Kanpur Central Jn",
+          "city": "Kanpur Central",
+          "arrival": "22:12",
+          "day": 1,
+          "sequence": 61
+        },
+        "distance": 231.4,
+        "duration": 140,
+        "totalHaltsBetween": 0
+      },
+      {
+        "train": {
+          "number": "18428",
+          "name": "Puri Weekly Express",
+          "type": "MAIL EXPRESS",
+          "runDays": [
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "departure": "19:52",
+          "day": 1,
+          "sequence": 32
+        },
+        "to": {
+          "code": "CNB",
+          "name": "Kanpur Central Jn",
+          "city": "Kanpur Central",
+          "arrival": "22:12",
+          "day": 1,
+          "sequence": 61
+        },
+        "distance": 231.4,
+        "duration": 140,
+        "totalHaltsBetween": 0
+      },
+      {
+        "train": {
+          "number": "12304",
+          "name": "Poorva Express",
+          "type": "SUPERFAST",
+          "runDays": [
+            "wed",
+            "thu",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "departure": "20:15",
+          "day": 1,
+          "sequence": 35
+        },
+        "to": {
+          "code": "CNB",
+          "name": "Kanpur Central Jn",
+          "city": "Kanpur Central",
+          "arrival": "22:55",
+          "day": 1,
+          "sequence": 64
+        },
+        "distance": 231.3,
+        "duration": 160,
+        "totalHaltsBetween": 1
+      },
+      {
+        "train": {
+          "number": "12382",
+          "name": "Poorva Express",
+          "type": "SUPERFAST",
+          "runDays": [
+            "mon",
+            "tue",
+            "fri"
+          ]
+        },
+        "from": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "departure": "20:15",
+          "day": 1,
+          "sequence": 35
+        },
+        "to": {
+          "code": "CNB",
+          "name": "Kanpur Central Jn",
+          "city": "Kanpur Central",
+          "arrival": "22:55",
+          "day": 1,
+          "sequence": 64
+        },
+        "distance": 231.3,
+        "duration": 160,
+        "totalHaltsBetween": 1
+      },
+      {
+        "train": {
+          "number": "15708",
+          "name": "Amrapali Express",
+          "type": "MAIL EXPRESS",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "departure": "20:45",
+          "day": 1,
+          "sequence": 104
+        },
+        "to": {
+          "code": "CNB",
+          "name": "Kanpur Central Jn",
+          "city": "Kanpur Central",
+          "arrival": "00:25",
+          "day": 2,
+          "sequence": 133
+        },
+        "distance": 231.3,
+        "duration": 220,
+        "totalHaltsBetween": 2
+      },
+      {
+        "train": {
+          "number": "19037",
+          "name": "Avadh Express",
+          "type": "MAIL EXPRESS",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "departure": "20:50",
+          "day": 2,
+          "sequence": 195
+        },
+        "to": {
+          "code": "CNB",
+          "name": "Kanpur Central Jn",
+          "city": "Kanpur Central",
+          "arrival": "01:35",
+          "day": 3,
+          "sequence": 224
+        },
+        "distance": 231.3,
+        "duration": 285,
+        "totalHaltsBetween": 5
+      },
+      {
+        "train": {
+          "number": "14006",
+          "name": "Lichchavi Express",
+          "type": "MAIL EXPRESS",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "departure": "20:55",
+          "day": 1,
+          "sequence": 32
+        },
+        "to": {
+          "code": "CNB",
+          "name": "Kanpur Central Jn",
+          "city": "Kanpur Central",
+          "arrival": "00:15",
+          "day": 2,
+          "sequence": 61
+        },
+        "distance": 231.4,
+        "duration": 200,
+        "totalHaltsBetween": 0
+      },
+      {
+        "train": {
+          "number": "14152",
+          "name": "Kanpur Central Express",
+          "type": "MAIL EXPRESS",
+          "runDays": [
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "departure": "23:20",
+          "day": 1,
+          "sequence": 32
+        },
+        "to": {
+          "code": "CNB",
+          "name": "Kanpur Central Jn",
+          "city": "Kanpur Central",
+          "arrival": "06:20",
+          "day": 2,
+          "sequence": 78
+        },
+        "distance": 282.4,
+        "duration": 420,
+        "totalHaltsBetween": 10
+      },
+      {
+        "train": {
+          "number": "14164",
+          "name": "Sangam Express",
+          "type": "MAIL EXPRESS",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "departure": "23:40",
+          "day": 1,
+          "sequence": 31
+        },
+        "to": {
+          "code": "CNB",
+          "name": "Kanpur Central Jn",
+          "city": "Kanpur Central",
+          "arrival": "04:10",
+          "day": 2,
+          "sequence": 60
+        },
+        "distance": 231.3,
+        "duration": 270,
+        "totalHaltsBetween": 4
+      },
+      {
+        "train": {
+          "number": "15566",
+          "name": "Vaishali Express",
+          "type": "MAIL EXPRESS",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "city": "Tundla",
+          "departure": "23:40",
+          "day": 1,
+          "sequence": 36
+        },
+        "to": {
+          "code": "CNB",
+          "name": "Kanpur Central Jn",
+          "city": "Kanpur Central",
+          "arrival": "02:25",
+          "day": 2,
+          "sequence": 65
+        },
+        "distance": 231.3,
+        "duration": 165,
+        "totalHaltsBetween": 1
+      }
+    ],
+    "count": 67
+  },
+  "meta": {
+    "timestamp": "2026-09-03T12:52:16+05:30",
+    "traceId": "3a56e1d1-5af8-4d96-b564-c197b5fd7d7c",
+    "source": "database",
+    "executionTime": 25
+  }
+}

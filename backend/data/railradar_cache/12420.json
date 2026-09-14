@@ -1,0 +1,331 @@
+{
+  "success": true,
+  "data": {
+    "train": {
+      "number": "12420",
+      "name": "Gomti Express",
+      "type": "SUPERFAST",
+      "category": "Express",
+      "source": {
+        "code": "NDLS",
+        "name": "New Delhi",
+        "lat": 28.6419258,
+        "lng": 77.2217499
+      },
+      "destination": {
+        "code": "LKO",
+        "name": "Lucknow Jn",
+        "lat": 26.8311583,
+        "lng": 80.9243609
+      },
+      "runDays": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ],
+      "distance": 512,
+      "duration": 515,
+      "avgSpeed": 59.7,
+      "maxSpeed": 106.6,
+      "totalHalts": 17,
+      "returnTrain": "12419",
+      "coachPosition": "ENG-SLRD-GEN-GEN-HA1-C1-C2-D1-D2-D3-D4-D5-D6-D7-D8-D9-D10-D11-D12-GEN-GEN-GEN-LPR"
+    },
+    "route": [
+      {
+        "sequence": 1,
+        "station": {
+          "code": "NDLS",
+          "name": "New Delhi",
+          "lat": 28.6419258,
+          "lng": 77.2217499
+        },
+        "isHalt": true,
+        "platform": "PF 12",
+        "speedToNextStationKmph": 43.4,
+        "departure": "12:55",
+        "departureDay": 1,
+        "distance": 0
+      },
+      {
+        "sequence": 9,
+        "station": {
+          "code": "GZB",
+          "name": "Ghaziabad Jn",
+          "lat": 28.6528563,
+          "lng": 77.4282442
+        },
+        "isHalt": true,
+        "platform": "PF 2",
+        "speedToNextStationKmph": 83.5,
+        "arrival": "13:29",
+        "arrivalDay": 1,
+        "departure": "13:31",
+        "departureDay": 1,
+        "distance": 24.6
+      },
+      {
+        "sequence": 20,
+        "station": {
+          "code": "KRJ",
+          "name": "Khurja Jn",
+          "lat": 28.2073699,
+          "lng": 77.8185117
+        },
+        "isHalt": true,
+        "platform": "PF 3",
+        "speedToNextStationKmph": 93,
+        "arrival": "14:16",
+        "arrivalDay": 1,
+        "departure": "14:18",
+        "departureDay": 1,
+        "distance": 87.2
+      },
+      {
+        "sequence": 26,
+        "station": {
+          "code": "ALJN",
+          "name": "Aligarh Jn",
+          "lat": 27.8888068,
+          "lng": 78.0747358
+        },
+        "isHalt": true,
+        "platform": "PF 2",
+        "speedToNextStationKmph": 106.6,
+        "arrival": "14:46",
+        "arrivalDay": 1,
+        "departure": "14:51",
+        "departureDay": 1,
+        "distance": 130.6
+      },
+      {
+        "sequence": 30,
+        "station": {
+          "code": "HRS",
+          "name": "Hathras Jn",
+          "lat": 27.6245866,
+          "lng": 78.1372829
+        },
+        "isHalt": true,
+        "platform": "PF 1",
+        "speedToNextStationKmph": 63.9,
+        "arrival": "15:08",
+        "arrivalDay": 1,
+        "departure": "15:10",
+        "departureDay": 1,
+        "distance": 160.8
+      },
+      {
+        "sequence": 36,
+        "station": {
+          "code": "TDL",
+          "name": "Tundla Jn",
+          "lat": 27.2080865,
+          "lng": 78.2330444
+        },
+        "isHalt": true,
+        "platform": "PF 5",
+        "speedToNextStationKmph": 62.3,
+        "arrival": "15:55",
+        "arrivalDay": 1,
+        "departure": "15:57",
+        "departureDay": 1,
+        "distance": 208.7
+      },
+      {
+        "sequence": 38,
+        "station": {
+          "code": "FZD",
+          "name": "Firozabad",
+          "lat": 27.1478821,
+          "lng": 78.3863833
+        },
+        "isHalt": true,
+        "platform": "PF 2",
+        "speedToNextStationKmph": 59.7,
+        "arrival": "16:13",
+        "arrivalDay": 1,
+        "departure": "16:15",
+        "departureDay": 1,
+        "distance": 225.3
+      },
+      {
+        "sequence": 40,
+        "station": {
+          "code": "SKB",
+          "name": "Shikohabad Jn",
+          "lat": 27.0862941,
+          "lng": 78.5754177
+        },
+        "isHalt": true,
+        "platform": "PF 2",
+        "speedToNextStationKmph": 100.5,
+        "arrival": "16:35",
+        "arrivalDay": 1,
+        "departure": "16:37",
+        "departureDay": 1,
+        "distance": 245.2
+      },
+      {
+        "sequence": 46,
+        "station": {
+          "code": "ETW",
+          "name": "Etawah",
+          "lat": 26.7869304,
+          "lng": 79.0209359
+        },
+        "isHalt": true,
+        "platform": "PF 3",
+        "speedToNextStationKmph": 66.7,
+        "arrival": "17:10",
+        "arrivalDay": 1,
+        "departure": "17:12",
+        "departureDay": 1,
+        "distance": 300.5
+      },
+      {
+        "sequence": 48,
+        "station": {
+          "code": "BNT",
+          "name": "Bharthana",
+          "lat": 26.7507313,
+          "lng": 79.2171107
+        },
+        "isHalt": true,
+        "platform": "PF 2",
+        "speedToNextStationKmph": 95,
+        "arrival": "17:30",
+        "arrivalDay": 1,
+        "departure": "17:31",
+        "departureDay": 1,
+        "distance": 320.5
+      },
+      {
+        "sequence": 53,
+        "station": {
+          "code": "PHD",
+          "name": "Phaphund",
+          "lat": 26.6324444,
+          "lng": 79.5545165
+        },
+        "isHalt": true,
+        "platform": "PF 2",
+        "speedToNextStationKmph": 85.3,
+        "arrival": "17:54",
+        "arrivalDay": 1,
+        "departure": "17:55",
+        "departureDay": 1,
+        "distance": 356.9
+      },
+      {
+        "sequence": 56,
+        "station": {
+          "code": "JJK",
+          "name": "Jhinjhak",
+          "lat": 26.5548037,
+          "lng": 79.7346485
+        },
+        "isHalt": true,
+        "platform": "PF 2",
+        "speedToNextStationKmph": 75.6,
+        "arrival": "18:09",
+        "arrivalDay": 1,
+        "departure": "18:10",
+        "departureDay": 1,
+        "distance": 376.8
+      },
+      {
+        "sequence": 58,
+        "station": {
+          "code": "RURA",
+          "name": "Rura",
+          "lat": 26.4852935,
+          "lng": 79.9080474
+        },
+        "isHalt": true,
+        "platform": "PF 2",
+        "speedToNextStationKmph": 58.2,
+        "arrival": "18:25",
+        "arrivalDay": 1,
+        "departure": "18:26",
+        "departureDay": 1,
+        "distance": 395.7
+      },
+      {
+        "sequence": 62,
+        "station": {
+          "code": "PNKD",
+          "name": "Panki Dham",
+          "lat": 26.459725,
+          "lng": 80.238383
+        },
+        "isHalt": true,
+        "platform": "PF 1",
+        "speedToNextStationKmph": 15.8,
+        "arrival": "19:00",
+        "arrivalDay": 1,
+        "departure": "19:02",
+        "departureDay": 1,
+        "distance": 428.7
+      },
+      {
+        "sequence": 64,
+        "station": {
+          "code": "CNB",
+          "name": "Kanpur Central Jn",
+          "lat": 26.4538613,
+          "lng": 80.3512433
+        },
+        "isHalt": true,
+        "platform": "PF 9",
+        "speedToNextStationKmph": 40.6,
+        "arrival": "19:45",
+        "arrivalDay": 1,
+        "departure": "19:50",
+        "departureDay": 1,
+        "distance": 440
+      },
+      {
+        "sequence": 67,
+        "station": {
+          "code": "ON",
+          "name": "Unnao Jn",
+          "lat": 26.5492382,
+          "lng": 80.4874371
+        },
+        "isHalt": true,
+        "platform": "PF 3",
+        "speedToNextStationKmph": 45.3,
+        "arrival": "20:16",
+        "arrivalDay": 1,
+        "departure": "20:18",
+        "departureDay": 1,
+        "distance": 457.6
+      },
+      {
+        "sequence": 77,
+        "station": {
+          "code": "LKO",
+          "name": "Lucknow Jn",
+          "lat": 26.8311583,
+          "lng": 80.9243609
+        },
+        "isHalt": true,
+        "platform": "PF 2",
+        "arrival": "21:30",
+        "arrivalDay": 1,
+        "distance": 512
+      }
+    ]
+  },
+  "meta": {
+    "timestamp": "2026-09-03T12:55:07+05:30",
+    "traceId": "cb0983e7-c420-4eb4-9f5b-1975eceaa760",
+    "source": "database",
+    "executionTime": 4
+  }
+}

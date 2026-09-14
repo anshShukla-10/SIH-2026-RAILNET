@@ -1,0 +1,32 @@
+{
+  "success": true,
+  "data": [
+    {
+      "code": "GZB",
+      "name": "Ghaziabad Jn",
+      "city": "Ghaziabad",
+      "popularity": 0,
+      "isActive": true
+    },
+    {
+      "code": "GZN",
+      "name": "Naya Ghaziabad",
+      "city": "New Ghaziabad",
+      "popularity": 0,
+      "isActive": true
+    },
+    {
+      "code": "GTMS",
+      "name": "Temp. Material Rly Sdg, Ghaziabad",
+      "city": null,
+      "popularity": 0,
+      "isActive": false
+    }
+  ],
+  "meta": {
+    "timestamp": "2026-09-03T12:52:14+05:30",
+    "traceId": "e9fa95da-f503-421d-b553-85620b772847",
+    "source": "database",
+    "executionTime": 22
+  }
+}

@@ -1,0 +1,1528 @@
+{
+  "success": true,
+  "data": {
+    "from": {
+      "code": "NDLS",
+      "name": "New Delhi"
+    },
+    "to": {
+      "code": "GZB",
+      "name": "Ghaziabad Jn"
+    },
+    "trains": [
+      {
+        "train": {
+          "number": "64422",
+          "name": "New Delhi - Ghaziabad EMU",
+          "type": "EMU",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "NDLS",
+          "name": "New Delhi",
+          "city": "New Delhi",
+          "departure": "00:10",
+          "day": 1,
+          "sequence": 1
+        },
+        "to": {
+          "code": "GZB",
+          "name": "Ghaziabad Jn",
+          "city": "Ghaziabad",
+          "arrival": "01:00",
+          "day": 1,
+          "sequence": 9
+        },
+        "distance": 24.6,
+        "duration": 50,
+        "totalHaltsBetween": 4
+      },
+      {
+        "train": {
+          "number": "64051",
+          "name": "Kosi Kalan - Ghaziabad EMU",
+          "type": "EMU",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "NDLS",
+          "name": "New Delhi",
+          "city": "New Delhi",
+          "departure": "00:30",
+          "day": 2,
+          "sequence": 20
+        },
+        "to": {
+          "code": "GZB",
+          "name": "Ghaziabad Jn",
+          "city": "Ghaziabad",
+          "arrival": "01:40",
+          "day": 2,
+          "sequence": 27
+        },
+        "distance": 23.6,
+        "duration": 70,
+        "totalHaltsBetween": 5
+      },
+      {
+        "train": {
+          "number": "12004",
+          "name": "New Delhi - Lucknow Swarn Shatabdi Express",
+          "type": "Shatabdi Express",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "NDLS",
+          "name": "New Delhi",
+          "city": "New Delhi",
+          "departure": "06:10",
+          "day": 1,
+          "sequence": 1
+        },
+        "to": {
+          "code": "GZB",
+          "name": "Ghaziabad Jn",
+          "city": "Ghaziabad",
+          "arrival": "06:40",
+          "day": 1,
+          "sequence": 9
+        },
+        "distance": 24.6,
+        "duration": 30,
+        "totalHaltsBetween": 0
+      },
+      {
+        "train": {
+          "number": "12040",
+          "name": "New Delhi - Kathgodam Shatabdi Express",
+          "type": "Shatabdi Express",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "NDLS",
+          "name": "New Delhi",
+          "city": "New Delhi",
+          "departure": "06:20",
+          "day": 1,
+          "sequence": 1
+        },
+        "to": {
+          "code": "GZB",
+          "name": "Ghaziabad Jn",
+          "city": "Ghaziabad",
+          "arrival": "06:53",
+          "day": 1,
+          "sequence": 9
+        },
+        "distance": 24.6,
+        "duration": 33,
+        "totalHaltsBetween": 0
+      },
+      {
+        "train": {
+          "number": "12017",
+          "name": "New Delhi - Dehra Dun Shatabdi Express",
+          "type": "Shatabdi Express",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "NDLS",
+          "name": "New Delhi",
+          "city": "New Delhi",
+          "departure": "06:45",
+          "day": 1,
+          "sequence": 1
+        },
+        "to": {
+          "code": "GZB",
+          "name": "Ghaziabad Jn",
+          "city": "Ghaziabad",
+          "arrival": "07:21",
+          "day": 1,
+          "sequence": 9
+        },
+        "distance": 24.6,
+        "duration": 36,
+        "totalHaltsBetween": 0
+      },
+      {
+        "train": {
+          "number": "64053",
+          "name": "Palwal - Ghaziabad EMU",
+          "type": "EMU",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "NDLS",
+          "name": "New Delhi",
+          "city": "New Delhi",
+          "departure": "07:50",
+          "day": 1,
+          "sequence": 15
+        },
+        "to": {
+          "code": "GZB",
+          "name": "Ghaziabad Jn",
+          "city": "Ghaziabad",
+          "arrival": "08:40",
+          "day": 1,
+          "sequence": 23
+        },
+        "distance": 24.6,
+        "duration": 50,
+        "totalHaltsBetween": 5
+      },
+      {
+        "train": {
+          "number": "64472",
+          "name": "Panipat - Ghaziabad MEMU",
+          "type": "MEMU",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "NDLS",
+          "name": "New Delhi",
+          "city": "New Delhi",
+          "departure": "08:18",
+          "day": 1,
+          "sequence": 19
+        },
+        "to": {
+          "code": "GZB",
+          "name": "Ghaziabad Jn",
+          "city": "Ghaziabad",
+          "arrival": "09:10",
+          "day": 1,
+          "sequence": 27
+        },
+        "distance": 24.6,
+        "duration": 52,
+        "totalHaltsBetween": 6
+      },
+      {
+        "train": {
+          "number": "64903",
+          "name": "Mathura - Ghaziabad EMU",
+          "type": "EMU",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "NDLS",
+          "name": "New Delhi",
+          "city": "New Delhi",
+          "departure": "09:10",
+          "day": 1,
+          "sequence": 25
+        },
+        "to": {
+          "code": "GZB",
+          "name": "Ghaziabad Jn",
+          "city": "Ghaziabad",
+          "arrival": "10:15",
+          "day": 1,
+          "sequence": 32
+        },
+        "distance": 23.6,
+        "duration": 65,
+        "totalHaltsBetween": 5
+      },
+      {
+        "train": {
+          "number": "64428",
+          "name": "New Delhi - Ghaziabad EMU",
+          "type": "EMU",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ]
+        },
+        "from": {
+          "code": "NDLS",
+          "name": "New Delhi",
+          "city": "New Delhi",
+          "departure": "09:35",
+          "day": 1,
+          "sequence": 1
+        },
+        "to": {
+          "code": "GZB",
+          "name": "Ghaziabad Jn",
+          "city": "Ghaziabad",
+          "arrival": "10:25",
+          "day": 1,
+          "sequence": 9
+        },
+        "distance": 24.6,
+        "duration": 50,
+        "totalHaltsBetween": 5
+      },
+      {
+        "train": {
+          "number": "64055",
+          "name": "Palwal - Ghaziabad EMU",
+          "type": "EMU",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "NDLS",
+          "name": "New Delhi",
+          "city": "New Delhi",
+          "departure": "09:50",
+          "day": 1,
+          "sequence": 15
+        },
+        "to": {
+          "code": "GZB",
+          "name": "Ghaziabad Jn",
+          "city": "Ghaziabad",
+          "arrival": "10:30",
+          "day": 1,
+          "sequence": 23
+        },
+        "distance": 24.6,
+        "duration": 40,
+        "totalHaltsBetween": 6
+      },
+      {
+        "train": {
+          "number": "64426",
+          "name": "New Delhi - Ghaziabad EMU",
+          "type": "EMU",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "NDLS",
+          "name": "New Delhi",
+          "city": "New Delhi",
+          "departure": "09:55",
+          "day": 1,
+          "sequence": 1
+        },
+        "to": {
+          "code": "GZB",
+          "name": "Ghaziabad Jn",
+          "city": "Ghaziabad",
+          "arrival": "10:45",
+          "day": 1,
+          "sequence": 9
+        },
+        "distance": 24.6,
+        "duration": 50,
+        "totalHaltsBetween": 6
+      },
+      {
+        "train": {
+          "number": "19565",
+          "name": "Uttaranchal Express",
+          "type": "MAIL EXPRESS",
+          "runDays": [
+            "fri"
+          ]
+        },
+        "from": {
+          "code": "NDLS",
+          "name": "New Delhi",
+          "city": "New Delhi",
+          "departure": "10:40",
+          "day": 2,
+          "sequence": 207
+        },
+        "to": {
+          "code": "GZB",
+          "name": "Ghaziabad Jn",
+          "city": "Ghaziabad",
+          "arrival": "11:13",
+          "day": 2,
+          "sequence": 215
+        },
+        "distance": 24.6,
+        "duration": 33,
+        "totalHaltsBetween": 0
+      },
+      {
+        "train": {
+          "number": "64430",
+          "name": "New Delhi - Ghaziabad EMU",
+          "type": "EMU",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "NDLS",
+          "name": "New Delhi",
+          "city": "New Delhi",
+          "departure": "10:50",
+          "day": 1,
+          "sequence": 1
+        },
+        "to": {
+          "code": "GZB",
+          "name": "Ghaziabad Jn",
+          "city": "Ghaziabad",
+          "arrival": "11:35",
+          "day": 1,
+          "sequence": 9
+        },
+        "distance": 24.6,
+        "duration": 45,
+        "totalHaltsBetween": 5
+      },
+      {
+        "train": {
+          "number": "15128",
+          "name": "Kashi Vishwanath Express",
+          "type": "MAIL EXPRESS",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "NDLS",
+          "name": "New Delhi",
+          "city": "New Delhi",
+          "departure": "11:35",
+          "day": 1,
+          "sequence": 1
+        },
+        "to": {
+          "code": "GZB",
+          "name": "Ghaziabad Jn",
+          "city": "Ghaziabad",
+          "arrival": "12:15",
+          "day": 1,
+          "sequence": 9
+        },
+        "distance": 24.6,
+        "duration": 40,
+        "totalHaltsBetween": 0
+      },
+      {
+        "train": {
+          "number": "64434",
+          "name": "Delhi - Ghaziabad EMU",
+          "type": "EMU",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "NDLS",
+          "name": "New Delhi",
+          "city": "New Delhi",
+          "departure": "12:00",
+          "day": 1,
+          "sequence": 3
+        },
+        "to": {
+          "code": "GZB",
+          "name": "Ghaziabad Jn",
+          "city": "Ghaziabad",
+          "arrival": "12:45",
+          "day": 1,
+          "sequence": 11
+        },
+        "distance": 24.6,
+        "duration": 45,
+        "totalHaltsBetween": 6
+      },
+      {
+        "train": {
+          "number": "64057",
+          "name": "Palwal - Ghaziabad EMU",
+          "type": "EMU",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "NDLS",
+          "name": "New Delhi",
+          "city": "New Delhi",
+          "departure": "12:22",
+          "day": 1,
+          "sequence": 15
+        },
+        "to": {
+          "code": "GZB",
+          "name": "Ghaziabad Jn",
+          "city": "Ghaziabad",
+          "arrival": "13:40",
+          "day": 1,
+          "sequence": 22
+        },
+        "distance": 23.6,
+        "duration": 78,
+        "totalHaltsBetween": 5
+      },
+      {
+        "train": {
+          "number": "12420",
+          "name": "Gomti Express",
+          "type": "SUPERFAST",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "NDLS",
+          "name": "New Delhi",
+          "city": "New Delhi",
+          "departure": "12:55",
+          "day": 1,
+          "sequence": 1
+        },
+        "to": {
+          "code": "GZB",
+          "name": "Ghaziabad Jn",
+          "city": "Ghaziabad",
+          "arrival": "13:29",
+          "day": 1,
+          "sequence": 9
+        },
+        "distance": 24.6,
+        "duration": 34,
+        "totalHaltsBetween": 0
+      },
+      {
+        "train": {
+          "number": "12392",
+          "name": "Shramjeevi SF Express",
+          "type": "SUPERFAST",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "NDLS",
+          "name": "New Delhi",
+          "city": "New Delhi",
+          "departure": "13:10",
+          "day": 1,
+          "sequence": 1
+        },
+        "to": {
+          "code": "GZB",
+          "name": "Ghaziabad Jn",
+          "city": "Ghaziabad",
+          "arrival": "13:51",
+          "day": 1,
+          "sequence": 9
+        },
+        "distance": 24.6,
+        "duration": 41,
+        "totalHaltsBetween": 0
+      },
+      {
+        "train": {
+          "number": "64432",
+          "name": "New Delhi - Ghaziabad EMU",
+          "type": "EMU",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "NDLS",
+          "name": "New Delhi",
+          "city": "New Delhi",
+          "departure": "13:50",
+          "day": 1,
+          "sequence": 1
+        },
+        "to": {
+          "code": "GZB",
+          "name": "Ghaziabad Jn",
+          "city": "Ghaziabad",
+          "arrival": "14:35",
+          "day": 1,
+          "sequence": 9
+        },
+        "distance": 24.6,
+        "duration": 45,
+        "totalHaltsBetween": 5
+      },
+      {
+        "train": {
+          "number": "12055",
+          "name": "New Delhi - Dehra Dun Shatabdi Express",
+          "type": "Shatabdi Express",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "NDLS",
+          "name": "New Delhi",
+          "city": "New Delhi",
+          "departure": "15:20",
+          "day": 1,
+          "sequence": 1
+        },
+        "to": {
+          "code": "GZB",
+          "name": "Ghaziabad Jn",
+          "city": "Ghaziabad",
+          "arrival": "15:53",
+          "day": 1,
+          "sequence": 9
+        },
+        "distance": 24.6,
+        "duration": 33,
+        "totalHaltsBetween": 0
+      },
+      {
+        "train": {
+          "number": "82502",
+          "name": "Lucknow Jn. IRCTC Tejas Express",
+          "type": "Tejas Express",
+          "runDays": [
+            "mon",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "NDLS",
+          "name": "New Delhi",
+          "city": "New Delhi",
+          "departure": "15:30",
+          "day": 1,
+          "sequence": 1
+        },
+        "to": {
+          "code": "GZB",
+          "name": "Ghaziabad Jn",
+          "city": "Ghaziabad",
+          "arrival": "16:02",
+          "day": 1,
+          "sequence": 9
+        },
+        "distance": 24.6,
+        "duration": 32,
+        "totalHaltsBetween": 0
+      },
+      {
+        "train": {
+          "number": "12034",
+          "name": "New Delhi - Kanpur Central Shatabdi Express",
+          "type": "Shatabdi Express",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat"
+          ]
+        },
+        "from": {
+          "code": "NDLS",
+          "name": "New Delhi",
+          "city": "New Delhi",
+          "departure": "15:40",
+          "day": 1,
+          "sequence": 1
+        },
+        "to": {
+          "code": "GZB",
+          "name": "Ghaziabad Jn",
+          "city": "Ghaziabad",
+          "arrival": "16:12",
+          "day": 1,
+          "sequence": 9
+        },
+        "distance": 24.6,
+        "duration": 32,
+        "totalHaltsBetween": 0
+      },
+      {
+        "train": {
+          "number": "64419",
+          "name": "Hazrat Nizamuddin - Ghaziabad EMU",
+          "type": "EMU",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "NDLS",
+          "name": "New Delhi",
+          "city": "New Delhi",
+          "departure": "16:05",
+          "day": 1,
+          "sequence": 5
+        },
+        "to": {
+          "code": "GZB",
+          "name": "Ghaziabad Jn",
+          "city": "Ghaziabad",
+          "arrival": "17:30",
+          "day": 1,
+          "sequence": 12
+        },
+        "distance": 23.6,
+        "duration": 85,
+        "totalHaltsBetween": 5
+      },
+      {
+        "train": {
+          "number": "15304",
+          "name": "Kasganj Intercity Express",
+          "type": "MAIL EXPRESS",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "NDLS",
+          "name": "New Delhi",
+          "city": "New Delhi",
+          "departure": "16:35",
+          "day": 1,
+          "sequence": 1
+        },
+        "to": {
+          "code": "GZB",
+          "name": "Ghaziabad Jn",
+          "city": "Ghaziabad",
+          "arrival": "17:21",
+          "day": 1,
+          "sequence": 9
+        },
+        "distance": 24.6,
+        "duration": 46,
+        "totalHaltsBetween": 4
+      },
+      {
+        "train": {
+          "number": "64450",
+          "name": "New Delhi - Ghaziabad Ladies Special",
+          "type": "EMU",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ]
+        },
+        "from": {
+          "code": "NDLS",
+          "name": "New Delhi",
+          "city": "New Delhi",
+          "departure": "17:50",
+          "day": 1,
+          "sequence": 1
+        },
+        "to": {
+          "code": "GZB",
+          "name": "Ghaziabad Jn",
+          "city": "Ghaziabad",
+          "arrival": "18:40",
+          "day": 1,
+          "sequence": 9
+        },
+        "distance": 24.6,
+        "duration": 50,
+        "totalHaltsBetween": 6
+      },
+      {
+        "train": {
+          "number": "14004",
+          "name": "Malda Town Express",
+          "type": "MAIL EXPRESS",
+          "runDays": [
+            "thu",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "NDLS",
+          "name": "New Delhi",
+          "city": "New Delhi",
+          "departure": "18:00",
+          "day": 1,
+          "sequence": 1
+        },
+        "to": {
+          "code": "GZB",
+          "name": "Ghaziabad Jn",
+          "city": "Ghaziabad",
+          "arrival": "18:44",
+          "day": 1,
+          "sequence": 9
+        },
+        "distance": 24.6,
+        "duration": 44,
+        "totalHaltsBetween": 0
+      },
+      {
+        "train": {
+          "number": "64110",
+          "name": "New Delhi - Aligarh EMU",
+          "type": "EMU",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "NDLS",
+          "name": "New Delhi",
+          "city": "New Delhi",
+          "departure": "18:05",
+          "day": 1,
+          "sequence": 1
+        },
+        "to": {
+          "code": "GZB",
+          "name": "Ghaziabad Jn",
+          "city": "Ghaziabad",
+          "arrival": "18:52",
+          "day": 1,
+          "sequence": 9
+        },
+        "distance": 24.6,
+        "duration": 47,
+        "totalHaltsBetween": 6
+      },
+      {
+        "train": {
+          "number": "54411",
+          "name": "Rewari - Meerut Cantt. Passenger",
+          "type": "PASSENGER",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "NDLS",
+          "name": "New Delhi",
+          "city": "New Delhi",
+          "departure": "18:10",
+          "day": 1,
+          "sequence": 23
+        },
+        "to": {
+          "code": "GZB",
+          "name": "Ghaziabad Jn",
+          "city": "Ghaziabad",
+          "arrival": "19:13",
+          "day": 1,
+          "sequence": 31
+        },
+        "distance": 24.6,
+        "duration": 63,
+        "totalHaltsBetween": 6
+      },
+      {
+        "train": {
+          "number": "64114",
+          "name": "New Delhi - Aligarh EMU",
+          "type": "EMU",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "NDLS",
+          "name": "New Delhi",
+          "city": "New Delhi",
+          "departure": "18:20",
+          "day": 1,
+          "sequence": 1
+        },
+        "to": {
+          "code": "GZB",
+          "name": "Ghaziabad Jn",
+          "city": "Ghaziabad",
+          "arrival": "19:03",
+          "day": 1,
+          "sequence": 9
+        },
+        "distance": 24.6,
+        "duration": 43,
+        "totalHaltsBetween": 6
+      },
+      {
+        "train": {
+          "number": "64568",
+          "name": "Tilak Bridge - Bulandshahr MEMU",
+          "type": "MEMU",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "NDLS",
+          "name": "New Delhi",
+          "city": "New Delhi",
+          "departure": "18:26",
+          "day": 1,
+          "sequence": 3
+        },
+        "to": {
+          "code": "GZB",
+          "name": "Ghaziabad Jn",
+          "city": "Ghaziabad",
+          "arrival": "19:38",
+          "day": 1,
+          "sequence": 10
+        },
+        "distance": 23.6,
+        "duration": 72,
+        "totalHaltsBetween": 5
+      },
+      {
+        "train": {
+          "number": "64410",
+          "name": "New Delhi - Ghaziabad EMU",
+          "type": "EMU",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "NDLS",
+          "name": "New Delhi",
+          "city": "New Delhi",
+          "departure": "18:30",
+          "day": 1,
+          "sequence": 1
+        },
+        "to": {
+          "code": "GZB",
+          "name": "Ghaziabad Jn",
+          "city": "Ghaziabad",
+          "arrival": "19:20",
+          "day": 1,
+          "sequence": 9
+        },
+        "distance": 24.6,
+        "duration": 50,
+        "totalHaltsBetween": 6
+      },
+      {
+        "train": {
+          "number": "22418",
+          "name": "Varanasi Mahamana Express",
+          "type": "SUPERFAST",
+          "runDays": [
+            "mon",
+            "wed",
+            "fri"
+          ]
+        },
+        "from": {
+          "code": "NDLS",
+          "name": "New Delhi",
+          "city": "New Delhi",
+          "departure": "18:40",
+          "day": 1,
+          "sequence": 1
+        },
+        "to": {
+          "code": "GZB",
+          "name": "Ghaziabad Jn",
+          "city": "Ghaziabad",
+          "arrival": "19:23",
+          "day": 1,
+          "sequence": 9
+        },
+        "distance": 24.6,
+        "duration": 43,
+        "totalHaltsBetween": 0
+      },
+      {
+        "train": {
+          "number": "54473",
+          "name": "Delhi - Saharanpur Passenger",
+          "type": "PASSENGER",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "NDLS",
+          "name": "New Delhi",
+          "city": "New Delhi",
+          "departure": "18:45",
+          "day": 1,
+          "sequence": 3
+        },
+        "to": {
+          "code": "GZB",
+          "name": "Ghaziabad Jn",
+          "city": "Ghaziabad",
+          "arrival": "19:38",
+          "day": 1,
+          "sequence": 11
+        },
+        "distance": 24.6,
+        "duration": 53,
+        "totalHaltsBetween": 6
+      },
+      {
+        "train": {
+          "number": "64418",
+          "name": "Delhi - Ghaziabad MEMU",
+          "type": "MEMU",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "NDLS",
+          "name": "New Delhi",
+          "city": "New Delhi",
+          "departure": "18:57",
+          "day": 1,
+          "sequence": 3
+        },
+        "to": {
+          "code": "GZB",
+          "name": "Ghaziabad Jn",
+          "city": "Ghaziabad",
+          "arrival": "19:50",
+          "day": 1,
+          "sequence": 11
+        },
+        "distance": 24.6,
+        "duration": 53,
+        "totalHaltsBetween": 6
+      },
+      {
+        "train": {
+          "number": "22362",
+          "name": "New Delhi - Rejendranagar Terminal Amrit Bharat Express",
+          "type": "Amrit Bharat Express",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "NDLS",
+          "name": "New Delhi",
+          "city": "New Delhi",
+          "departure": "19:10",
+          "day": 1,
+          "sequence": 1
+        },
+        "to": {
+          "code": "GZB",
+          "name": "Ghaziabad Jn",
+          "city": "Ghaziabad",
+          "arrival": "19:46",
+          "day": 1,
+          "sequence": 9
+        },
+        "distance": 24.6,
+        "duration": 36,
+        "totalHaltsBetween": 0
+      },
+      {
+        "train": {
+          "number": "64534",
+          "name": "Panipat - Ghaziabad MEMU",
+          "type": "MEMU",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "NDLS",
+          "name": "New Delhi",
+          "city": "New Delhi",
+          "departure": "19:52",
+          "day": 1,
+          "sequence": 19
+        },
+        "to": {
+          "code": "GZB",
+          "name": "Ghaziabad Jn",
+          "city": "Ghaziabad",
+          "arrival": "20:40",
+          "day": 1,
+          "sequence": 27
+        },
+        "distance": 24.6,
+        "duration": 48,
+        "totalHaltsBetween": 6
+      },
+      {
+        "train": {
+          "number": "15566",
+          "name": "Vaishali Express",
+          "type": "MAIL EXPRESS",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "NDLS",
+          "name": "New Delhi",
+          "city": "New Delhi",
+          "departure": "20:40",
+          "day": 1,
+          "sequence": 1
+        },
+        "to": {
+          "code": "GZB",
+          "name": "Ghaziabad Jn",
+          "city": "Ghaziabad",
+          "arrival": "21:23",
+          "day": 1,
+          "sequence": 9
+        },
+        "distance": 24.6,
+        "duration": 43,
+        "totalHaltsBetween": 0
+      },
+      {
+        "train": {
+          "number": "04072",
+          "name": "Supaul Special Fare Special",
+          "type": "TRAIN ON DEMAND",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "NDLS",
+          "name": "New Delhi",
+          "city": "New Delhi",
+          "departure": "21:35",
+          "day": 1,
+          "sequence": 1
+        },
+        "to": {
+          "code": "GZB",
+          "name": "Ghaziabad Jn",
+          "city": "Ghaziabad",
+          "arrival": "22:10",
+          "day": 1,
+          "sequence": 9
+        },
+        "distance": 24.6,
+        "duration": 35,
+        "totalHaltsBetween": 0
+      },
+      {
+        "train": {
+          "number": "04012",
+          "name": "Delhi - Varanasi Special",
+          "type": "TRAIN ON DEMAND",
+          "runDays": [
+            "thu"
+          ]
+        },
+        "from": {
+          "code": "NDLS",
+          "name": "New Delhi",
+          "city": "New Delhi",
+          "departure": "21:40",
+          "day": 1,
+          "sequence": 3
+        },
+        "to": {
+          "code": "GZB",
+          "name": "Ghaziabad Jn",
+          "city": "Ghaziabad",
+          "arrival": "22:30",
+          "day": 1,
+          "sequence": 11
+        },
+        "distance": 24.6,
+        "duration": 50,
+        "totalHaltsBetween": 0
+      },
+      {
+        "train": {
+          "number": "12230",
+          "name": "Lucknow Mail",
+          "type": "SUPERFAST",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "NDLS",
+          "name": "New Delhi",
+          "city": "New Delhi",
+          "departure": "22:00",
+          "day": 1,
+          "sequence": 1
+        },
+        "to": {
+          "code": "GZB",
+          "name": "Ghaziabad Jn",
+          "city": "Ghaziabad",
+          "arrival": "22:43",
+          "day": 1,
+          "sequence": 9
+        },
+        "distance": 24.6,
+        "duration": 43,
+        "totalHaltsBetween": 0
+      },
+      {
+        "train": {
+          "number": "12418",
+          "name": "Prayagraj Express",
+          "type": "SUPERFAST",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "NDLS",
+          "name": "New Delhi",
+          "city": "New Delhi",
+          "departure": "22:10",
+          "day": 1,
+          "sequence": 1
+        },
+        "to": {
+          "code": "GZB",
+          "name": "Ghaziabad Jn",
+          "city": "Ghaziabad",
+          "arrival": "22:42",
+          "day": 1,
+          "sequence": 9
+        },
+        "distance": 24.6,
+        "duration": 32,
+        "totalHaltsBetween": 0
+      },
+      {
+        "train": {
+          "number": "12582",
+          "name": "Banaras SF Express",
+          "type": "SUPERFAST",
+          "runDays": [
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "NDLS",
+          "name": "New Delhi",
+          "city": "New Delhi",
+          "departure": "22:50",
+          "day": 1,
+          "sequence": 1
+        },
+        "to": {
+          "code": "GZB",
+          "name": "Ghaziabad Jn",
+          "city": "Ghaziabad",
+          "arrival": "23:20",
+          "day": 1,
+          "sequence": 9
+        },
+        "distance": 24.6,
+        "duration": 30,
+        "totalHaltsBetween": 0
+      },
+      {
+        "train": {
+          "number": "22582",
+          "name": "Ballia Superfast Express",
+          "type": "SUPERFAST",
+          "runDays": [
+            "mon",
+            "tue"
+          ]
+        },
+        "from": {
+          "code": "NDLS",
+          "name": "New Delhi",
+          "city": "New Delhi",
+          "departure": "22:50",
+          "day": 1,
+          "sequence": 1
+        },
+        "to": {
+          "code": "GZB",
+          "name": "Ghaziabad Jn",
+          "city": "Ghaziabad",
+          "arrival": "23:20",
+          "day": 1,
+          "sequence": 9
+        },
+        "distance": 24.6,
+        "duration": 30,
+        "totalHaltsBetween": 0
+      },
+      {
+        "train": {
+          "number": "12430",
+          "name": "Lucknow AC SF Express",
+          "type": "SUPERFAST",
+          "runDays": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ]
+        },
+        "from": {
+          "code": "NDLS",
+          "name": "New Delhi",
+          "city": "New Delhi",
+          "departure": "23:25",
+          "day": 1,
+          "sequence": 1
+        },
+        "to": {
+          "code": "GZB",
+          "name": "Ghaziabad Jn",
+          "city": "Ghaziabad",
+          "arrival": "00:03",
+          "day": 2,
+          "sequence": 9
+        },
+        "distance": 24.6,
+        "duration": 38,
+        "totalHaltsBetween": 0
+      }
+    ],
+    "count": 44
+  },
+  "meta": {
+    "timestamp": "2026-09-03T12:52:15+05:30",
+    "traceId": "b929c704-c1d3-4e61-93b6-17674b9ce4b8",
+    "source": "database",
+    "executionTime": 13
+  }
+}
