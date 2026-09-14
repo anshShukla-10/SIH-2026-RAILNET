@@ -37,7 +37,17 @@ export class ApiError extends Error {
  * Strips any trailing slash to prevent double-slash paths.
  */
 export function getApiBaseUrl(): string {
-  const url = process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:8000";
+  let url = (
+    process.env.NEXT_PUBLIC_API_BASE_URL ||
+    process.env.NEXT_PUBLIC_API_URL ||
+    "http://localhost:8000"
+  ).trim();
+
+  // If provided domain lacks protocol (e.g. "sih-2026-railnet-production.up.railway.app"), prepend https://
+  if (url && !url.startsWith("http://") && !url.startsWith("https://")) {
+    url = `https://${url}`;
+  }
+
   return url.replace(/\/+$/, "");
 }
 
