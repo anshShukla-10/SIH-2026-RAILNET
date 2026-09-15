@@ -19,6 +19,7 @@ import { useMaintenanceJobs, type MaintenanceJob } from "@/lib/api/hooks";
 import { DataTable } from "@/components/data-table/data-table";
 import { DataTableColumnHeader } from "@/components/data-table/data-table-column-header";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -159,10 +160,12 @@ const jobColumns: ColumnDef<MaintenanceJob>[] = [
               {token.shortName}
             </Badge>
             <Link
+              href="/plans/weekly"
               href={`/blocks/${row.original.job_id}`}
               className={cn("inline-flex items-center gap-1 text-[11px] font-medium hover:underline", token.textClass)}
             >
               <CalendarRange className={cn("size-3", token.textClass)} />
+              <span>Scheduled — view in weekly plan →</span>
               <span>Scheduled — view audit →</span>
             </Link>
           </div>
@@ -176,10 +179,12 @@ const jobColumns: ColumnDef<MaintenanceJob>[] = [
               {token.shortName}
             </Badge>
             <Link
+              href="/plans/weekly"
               href={`/blocks/${row.original.job_id}`}
               className={cn("inline-flex items-center gap-1 text-[11px] font-medium hover:underline", token.textClass)}
             >
               <CheckCircle2 className={cn("size-3", token.textClass)} />
+              <span>Granted — view in plan →</span>
               <span>Granted — view audit →</span>
             </Link>
           </div>

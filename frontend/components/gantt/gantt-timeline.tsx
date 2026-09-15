@@ -411,6 +411,8 @@ function BlockCard({ item }: { item: PlanItem }) {
         type="button"
         className={cn(
           "w-full max-w-full overflow-hidden box-border text-left p-1.5 rounded-md cursor-pointer transition-all hover:scale-[1.02] hover:shadow-md border",
+          isHard ? "border-2 shadow-md animate-pulse" : isRelaxed ? "border-2 shadow-xs" : "",
+          conflictToken.borderClass
           isLocked
             ? "border-2 shadow-xs border-orange-400 dark:border-orange-600 ring-1 ring-orange-400/30"
             : isHard
@@ -421,6 +423,8 @@ function BlockCard({ item }: { item: PlanItem }) {
           !isLocked && conflictToken.borderClass
         )}
         style={{
+          borderColor: isHard || isRelaxed ? conflictToken.hex : undefined,
+          backgroundColor: isHard ? conflictToken.bgHex : deptToken.bgHex,
           borderColor: isLocked
             ? LOCKED_STATUS_TOKEN.hex
             : isHard || isRelaxed
@@ -532,6 +536,7 @@ function CompactBlockBadge({ item }: { item: PlanItem }) {
         type="button"
         className={cn(
           "size-6 rounded-full flex items-center justify-center font-bold text-[9px] text-white cursor-pointer shadow-xs transition-transform hover:scale-110",
+          isHard ? "ring-2 ring-offset-1 animate-pulse" : isRelaxed ? "ring-2 ring-offset-1" : ""
           isLocked
             ? "ring-2 ring-offset-1 ring-orange-500"
             : isHard
@@ -541,6 +546,7 @@ function CompactBlockBadge({ item }: { item: PlanItem }) {
             : ""
         )}
         style={{
+          backgroundColor: isHard ? conflictToken.hex : deptToken.hex,
           boxShadow: isHard || isRelaxed ? `0 0 0 2px ${conflictToken.hex}` : undefined,
           backgroundColor: isLocked
             ? LOCKED_STATUS_TOKEN.hex
@@ -548,8 +554,10 @@ function CompactBlockBadge({ item }: { item: PlanItem }) {
             ? conflictToken.hex
             : deptToken.hex,
         }}
+        title={`${item.job_id} (${item.department})${isHard ? " — HARD CLASH" : isRelaxed ? " — Relaxed" : ""}`}
         title={`${item.job_id} (${item.department})${isLocked ? " — LOCKED OVERRIDE" : isHard ? " — HARD CLASH" : isRelaxed ? " — Relaxed" : ""}`}
       >
+        {isHard ? "!" : item.department[0]}
         {isLocked ? <Lock className="size-3" /> : isHard ? "!" : item.department[0]}
       </button>
     </GanttBlockPopover>

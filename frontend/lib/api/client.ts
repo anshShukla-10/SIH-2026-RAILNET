@@ -37,6 +37,7 @@ export class ApiError extends Error {
  * Strips any trailing slash to prevent double-slash paths.
  */
 export function getApiBaseUrl(): string {
+  const url = process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:8000";
   let url = (
     process.env.NEXT_PUBLIC_API_BASE_URL ||
     process.env.NEXT_PUBLIC_API_URL ||

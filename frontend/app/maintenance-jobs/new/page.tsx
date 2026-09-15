@@ -2,6 +2,8 @@
 
 import React, { useState, useMemo } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useForm, Controller } from "react-hook-form";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
@@ -13,12 +15,16 @@ import {
   CalendarBlank,
   Clock,
   WarningCircle,
+  Sparkle,
 } from "@phosphor-icons/react/dist/ssr";
 
 import { useSections, useCreateMaintenanceJob, type MaintenanceJob } from "@/lib/api/hooks";
 import {
+  DEPARTMENT_TOKENS,
   PRIORITY_FACTOR_TOKENS,
+  MAINTENANCE_BAND_TOKENS,
   getDepartmentToken,
+  type DepartmentKey,
 } from "@/lib/theme/tokens";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from "@/components/ui/card";
 import { Button, buttonVariants } from "@/components/ui/button";
@@ -26,10 +32,14 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
 import { Popover, PopoverTrigger, PopoverContent } from "@/components/ui/popover";
+import { Calendar } from "@/components/ui/calendar";
 import { cn } from "@/lib/utils";
 
 // Strict Zod schema matching backend MaintenanceJobCreateIn
 const jobFormSchema = z.object({
+  department: z.enum(["TMS", "SMMS", "TDMS"], {
+    required_error: "Please select a maintenance department",
+  }),
   department: z.enum(["TMS", "SMMS", "TDMS"]),
   asset_id: z
     .string()
@@ -42,12 +52,18 @@ const jobFormSchema = z.object({
     .min(5, "Defect description must be at least 5 characters")
     .max(500, "Defect description cannot exceed 500 characters")
     .trim(),
+  criticality: z.coerce.number().min(0).max(100),
+  urgency: z.coerce.number().min(0).max(100),
+  asset_risk: z.coerce.number().min(0).max(100),
+  overdue_factor: z.coerce.number().min(0).max(100),
+  failure_history: z.coerce.number().min(0).max(100),
   criticality: z.number().min(0).max(100),
   urgency: z.number().min(0).max(100),
   asset_risk: z.number().min(0).max(100),
   overdue_factor: z.number().min(0).max(100),
   failure_history: z.number().min(0).max(100),
   due_date: z.string().min(10, "Please select a valid due date (YYYY-MM-DD)"),
+  duration_min: z.coerce
   duration_min: z
     .number()
     .int()
@@ -59,6 +75,7 @@ const jobFormSchema = z.object({
 type JobFormValues = z.infer<typeof jobFormSchema>;
 
 export default function NewMaintenanceJobPage() {
+  const router = useRouter();
   const { data: sections = [], isLoading: isSectionsLoading } = useSections();
   const createJobMutation = useCreateMaintenanceJob();
 
@@ -66,6 +83,7 @@ export default function NewMaintenanceJobPage() {
   const [createdJob, setCreatedJob] = useState<MaintenanceJob | null>(null);
   const [sectionSearch, setSectionSearch] = useState("");
   const [isSectionOpen, setIsSectionOpen] = useState(false);
+  const [isCalendarOpen, setIsCalendarOpen] = useState(false);
 
   const defaultDate = useMemo(() => {
     const d = new Date();
@@ -94,6 +112,7 @@ export default function NewMaintenanceJobPage() {
   const {
     register,
     handleSubmit,
+    control,
     watch,
     setValue,
     formState: { errors, isSubmitting },
@@ -101,6 +120,7 @@ export default function NewMaintenanceJobPage() {
 
   const selectedDept = watch("department");
   const selectedSectionId = watch("section_id");
+  const selectedDueDate = watch("due_date");
   const deptToken = getDepartmentToken(selectedDept);
 
   // Filter sections for searchable select
@@ -111,6 +131,9 @@ export default function NewMaintenanceJobPage() {
       .filter(
         (s) =>
           s.section_id.toLowerCase().includes(q) ||
+          s.name.toLowerCase().includes(q) ||
+          s.start_station.toLowerCase().includes(q) ||
+          s.end_station.toLowerCase().includes(q)
           s.name.toLowerCase().includes(q)
       )
       .slice(0, 50);
@@ -137,6 +160,7 @@ export default function NewMaintenanceJobPage() {
         day_night_pref: values.day_night_pref,
       });
       setCreatedJob(result);
+    } catch (err: any) {
     } catch (err: unknown) {
       console.error("Failed to create maintenance job:", err);
     }
@@ -226,6 +250,7 @@ export default function NewMaintenanceJobPage() {
             </div>
 
             <p className="text-xs text-muted-foreground italic text-center">
+              "{createdJob.defect_desc}"
               &quot;{createdJob.defect_desc}&quot;
             </p>
           </CardContent>
@@ -327,6 +352,7 @@ export default function NewMaintenanceJobPage() {
                 >
                   {selectedSectionObj ? (
                     <span className="truncate">
+                      <strong className="text-foreground">{selectedSectionObj.section_id}</strong> — {selectedSectionObj.name} ({selectedSectionObj.start_station} → {selectedSectionObj.end_station})
                       <strong className="text-foreground">{selectedSectionObj.section_id}</strong> — {selectedSectionObj.name} ({selectedSectionObj.single_line ? "Single Line" : "Double Line"})
                     </span>
                   ) : (
@@ -363,12 +389,14 @@ export default function NewMaintenanceJobPage() {
                         >
                           <span className="font-bold">{sec.section_id}</span>
                           <span className="text-[11px] text-muted-foreground font-sans truncate">
+                            {sec.name} · {sec.start_station} → {sec.end_station}
                             {sec.name} · {sec.single_line ? "Single Line" : "Double Line"}
                           </span>
                         </button>
                       ))}
                       {filteredSections.length === 0 && (
                         <p className="text-xs text-muted-foreground text-center py-3">
+                          No sections match "{sectionSearch}"
                           No sections match &quot;{sectionSearch}&quot;
                         </p>
                       )}
@@ -633,6 +661,7 @@ export default function NewMaintenanceJobPage() {
           <div className="p-3 rounded-lg border border-destructive/30 bg-destructive/10 text-destructive text-xs flex items-center gap-2">
             <WarningCircle className="size-4 shrink-0" />
             <span>
+              Failed to register job: {(createJobMutation.error as any)?.message || "Internal server error"}
               Failed to register job: {(createJobMutation.error as Error)?.message || "Internal server error"}
             </span>
           </div>

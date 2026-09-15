@@ -9,6 +9,7 @@ import {
   LOCKED_STATUS_TOKEN,
   type DepartmentKey,
 } from "@/lib/theme/tokens";
+import { ShieldCheck, Warning as AlertTriangle } from "@phosphor-icons/react/dist/ssr";
 import { ShieldCheck, Warning as AlertTriangle, Lock } from "@phosphor-icons/react/dist/ssr";
 
 export function GanttLegend() {

@@ -42,6 +42,7 @@ app = FastAPI(
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
+    allow_origin_regex=r"^https://.*\.vercel\.app$",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -54,6 +55,17 @@ async def not_found_exception_handler(request: Request, exc: NotFoundError) -> J
     return JSONResponse(
         status_code=status.HTTP_404_NOT_FOUND,
         content={"detail": exc.detail},
+    )
+
+
+@app.exception_handler(Exception)
+async def unhandled_exception_handler(request: Request, exc: Exception) -> JSONResponse:
+    """Ensure any unhandled 500 error returns proper JSON with CORS headers instead of raw ASGI crash."""
+    import logging
+    logging.getLogger("uvicorn.error").exception("Unhandled server error: %s", exc)
+    return JSONResponse(
+        status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+        content={"detail": "Internal server error", "error": str(exc)},
     )
 
 
