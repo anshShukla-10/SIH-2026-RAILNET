@@ -1,6 +1,5 @@
 "use client";
 
-import React, { useMemo } from "react";
 import React, { useMemo, useState } from "react";
 import Link from "next/link";
 import { useParams } from "next/navigation";
@@ -22,7 +21,6 @@ import {
 } from "@phosphor-icons/react/dist/ssr";
 import { Bar, BarChart, CartesianGrid, XAxis, YAxis, Cell } from "recharts";
 
-import { useBlockExplain, useMaintenanceJobs } from "@/lib/api/hooks";
 import {
   useBlockExplain,
   useMaintenanceJobs,
@@ -159,8 +157,8 @@ export default function BlockExplainPage() {
         end: new Date(overrideEnd).toISOString(),
       });
       setConflictResult(res);
-    } catch (err: any) {
-      setOverrideError(err?.message || "Failed to check timetable conflicts");
+    } catch (err: unknown) {
+      setOverrideError(err instanceof Error ? err.message : "Failed to check timetable conflicts");
     }
   };
 
@@ -174,8 +172,8 @@ export default function BlockExplainPage() {
       });
       setIsOverrideOpen(false);
       refetchExplain();
-    } catch (err: any) {
-      setOverrideError(err?.message || "Failed to pin block schedule");
+    } catch (err: unknown) {
+      setOverrideError(err instanceof Error ? err.message : "Failed to pin block schedule");
     }
   };
 
@@ -185,7 +183,7 @@ export default function BlockExplainPage() {
       await unpinMutation.mutateAsync();
       setIsUnpinOpen(false);
       refetchExplain();
-    } catch (err: any) {
+    } catch (err: unknown) {
       console.error("Failed to unpin block:", err);
     }
   };
@@ -459,7 +457,6 @@ export default function BlockExplainPage() {
             <Badge variant="outline" className={lifecycleToken.badgeClass}>
               {lifecycleToken.name}
             </Badge>
-            {isHardConflict ? (
             {explainData.is_locked ? (
               <Badge variant="outline" className={LOCKED_STATUS_TOKEN.badgeClass}>
                 <Lock className="size-3 mr-1" />
@@ -615,7 +612,6 @@ export default function BlockExplainPage() {
           <div
             className={cn(
               "p-4 rounded-lg border space-y-2",
-              isHardConflict
               explainData.is_locked
                 ? `${LOCKED_STATUS_TOKEN.bgClass} ${LOCKED_STATUS_TOKEN.borderClass}`
                 : isHardConflict
@@ -627,7 +623,6 @@ export default function BlockExplainPage() {
           >
             <div className="flex items-center justify-between gap-2">
               <div className="flex items-center gap-1.5 font-bold">
-                {isHardConflict ? (
                 {explainData.is_locked ? (
                   <>
                     <Lock className={cn("size-4", LOCKED_STATUS_TOKEN.textClass)} />
@@ -661,7 +656,6 @@ export default function BlockExplainPage() {
               <Badge
                 variant="outline"
                 className={
-                  isHardConflict
                   explainData.is_locked
                     ? LOCKED_STATUS_TOKEN.badgeClass
                     : isHardConflict
@@ -671,7 +665,6 @@ export default function BlockExplainPage() {
                     : CONFLICT_STATUS_TOKENS.clean.badgeClass
                 }
               >
-                {isHardConflict
                 {explainData.is_locked
                   ? "Operator Override"
                   : isHardConflict
@@ -687,7 +680,6 @@ export default function BlockExplainPage() {
             </p>
 
             <div className="text-[11px] text-muted-foreground leading-relaxed pt-1">
-              {isHardConflict ? (
               {explainData.is_locked ? (
                 <p>
                   <strong>Operator Override Constraint:</strong> This maintenance block window was manually fixed by a railway section controller rather than automatically assigned by the CP-SAT optimizer.

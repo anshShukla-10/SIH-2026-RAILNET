@@ -15,6 +15,7 @@ COPY . .
 # Pass build-time environment variable for Next.js public config if needed
 ARG NEXT_PUBLIC_API_BASE_URL
 ENV NEXT_PUBLIC_API_BASE_URL=${NEXT_PUBLIC_API_BASE_URL}
+ENV OUTPUT_STANDALONE=true
 
 RUN npm run build
 

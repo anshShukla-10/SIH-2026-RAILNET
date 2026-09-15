@@ -659,8 +659,6 @@ export default function OptimizerPage() {
                 </Link>
               </div>
 
-              {/* 5-Metric Results Panel: Clean vs Relaxed vs Hard-Conflict Stat Tiles (PRD 5.5) */}
-              <div className="grid grid-cols-2 sm:grid-cols-5 gap-3">
               {/* 5-Metric (or 6-Metric when locked blocks present) Results Panel (PRD 5.5) */}
               <div
                 className={cn(
