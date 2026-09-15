@@ -64,6 +64,7 @@ class MaintenanceJobOut(BaseModel):
     is_synthetic: bool
     source_note: str
     has_hard_conflict: bool = False
+    is_locked: bool = False
 
     model_config = ConfigDict(from_attributes=True)
 
@@ -123,6 +124,23 @@ class BlockUnpinOut(BaseModel):
     message: str
 
 
+class ConflictCheckIn(BaseModel):
+    """Payload for checking timetable conflicts for a proposed window."""
+
+    start: datetime
+    end: datetime
+
+
+class ConflictCheckOut(BaseModel):
+    """Conflict inspection result for a candidate window."""
+
+    section_id: str
+    start: datetime
+    end: datetime
+    conflict_count: int
+    conflicting_trains: List[str] = []
+
+
 class OptimizationResultOut(BaseModel):
     """Pydantic model for OptimizationResult."""
 
@@ -152,6 +170,7 @@ class BlockExplainOut(BaseModel):
     conflict_count: int
     hard_conflict: bool
     relaxed: bool
+    is_locked: bool = False
     reason: str
 
 
@@ -169,6 +188,7 @@ class PlanItemOut(BaseModel):
     conflict_count: int
     status: str
     has_hard_conflict: bool
+    is_locked: bool = False
     reason: str
 
 

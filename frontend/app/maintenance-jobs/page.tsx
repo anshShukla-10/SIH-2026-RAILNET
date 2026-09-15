@@ -11,6 +11,8 @@ import {
   Clock,
   Calendar as CalendarRange,
   CheckCircle as CheckCircle2,
+  Lock,
+  PlusCircle,
 } from "@phosphor-icons/react/dist/ssr";
 
 import { useMaintenanceJobs, type MaintenanceJob } from "@/lib/api/hooks";
@@ -18,6 +20,7 @@ import { DataTable } from "@/components/data-table/data-table";
 import { DataTableColumnHeader } from "@/components/data-table/data-table-column-header";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ErrorCard } from "@/components/ui/error-card";
@@ -27,6 +30,7 @@ import {
   DEPARTMENT_TOKENS,
   CONFLICT_STATUS_TOKENS,
   DATA_SOURCE_TOKENS,
+  LOCKED_STATUS_TOKEN,
   type DepartmentKey,
 } from "@/lib/theme/tokens";
 import { cn } from "@/lib/utils";
@@ -126,6 +130,26 @@ const jobColumns: ColumnDef<MaintenanceJob>[] = [
     accessorKey: "status",
     header: "Status / Scheduling",
     cell: ({ row }) => {
+      const isLocked = Boolean(row.original.is_locked);
+      const lockedToken = LOCKED_STATUS_TOKEN;
+
+      if (isLocked) {
+        return (
+          <div className="flex items-center gap-2">
+            <Badge variant="outline" className={lockedToken.badgeClass}>
+              <Lock className="size-3 mr-1" />
+              {lockedToken.shortName}
+            </Badge>
+            <Link
+              href={`/blocks/${row.original.job_id}`}
+              className={cn("inline-flex items-center gap-1 text-[11px] font-medium hover:underline", lockedToken.textClass)}
+            >
+              <span>Locked Override — view audit →</span>
+            </Link>
+          </div>
+        );
+      }
+
       const status = (row.getValue("status") as string) || "PENDING";
       const token = getLifecycleStatusToken(status);
 
@@ -137,10 +161,12 @@ const jobColumns: ColumnDef<MaintenanceJob>[] = [
             </Badge>
             <Link
               href="/plans/weekly"
+              href={`/blocks/${row.original.job_id}`}
               className={cn("inline-flex items-center gap-1 text-[11px] font-medium hover:underline", token.textClass)}
             >
               <CalendarRange className={cn("size-3", token.textClass)} />
               <span>Scheduled — view in weekly plan →</span>
+              <span>Scheduled — view audit →</span>
             </Link>
           </div>
         );
@@ -154,10 +180,12 @@ const jobColumns: ColumnDef<MaintenanceJob>[] = [
             </Badge>
             <Link
               href="/plans/weekly"
+              href={`/blocks/${row.original.job_id}`}
               className={cn("inline-flex items-center gap-1 text-[11px] font-medium hover:underline", token.textClass)}
             >
               <CheckCircle2 className={cn("size-3", token.textClass)} />
               <span>Granted — view in plan →</span>
+              <span>Granted — view audit →</span>
             </Link>
           </div>
         );
@@ -273,6 +301,24 @@ export default function MaintenanceJobsPage() {
           <RefreshCw className="size-3.5" />
           <span>Refresh</span>
         </Button>
+        <div className="flex items-center gap-2 self-start sm:self-auto">
+          <Link
+            href="/maintenance-jobs/new"
+            className={cn(buttonVariants({ size: "sm" }), "gap-1.5 text-xs shadow-2xs")}
+          >
+            <PlusCircle className="size-3.5" />
+            <span>Create New Job</span>
+          </Link>
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => refetch()}
+            className="gap-1.5 text-xs shadow-2xs"
+          >
+            <RefreshCw className="size-3.5" />
+            <span>Refresh</span>
+          </Button>
+        </div>
       </div>
 
       {/* Backend Scope & Non-Navigating Rows Note */}

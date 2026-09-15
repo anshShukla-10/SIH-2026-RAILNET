@@ -17,9 +17,9 @@ async def _get_plan_items(
     db: Prisma,
 ) -> List[PlanItemOut]:
     """Helper querying scheduled blocks within the specified day window."""
-    # Find all scheduled blocks with linked jobs
+    # Find all scheduled/granted blocks with linked jobs
     blocks = await db.block.find_many(
-        where={"status": "SCHEDULED"},
+        where={"status": {"in": ["SCHEDULED", "GRANTED"]}},
         include={"job": True},
         order={"start": "asc"},
     )
@@ -63,6 +63,7 @@ async def _get_plan_items(
                 conflict_count=conflict_count,
                 status=b.status,
                 has_hard_conflict=b.has_hard_conflict,
+                is_locked=b.is_locked,
                 reason=reason,
             )
         )

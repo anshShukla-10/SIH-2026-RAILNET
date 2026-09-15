@@ -77,7 +77,11 @@ export interface paths {
          */
         get: operations["list_maintenance_jobs_api_maintenance_jobs_get"];
         put?: never;
-        post?: never;
+        /**
+         * Create Maintenance Job
+         * @description Manually create a new maintenance job via the API.
+         */
+        post: operations["create_maintenance_job_api_maintenance_jobs_post"];
         delete?: never;
         options?: never;
         head?: never;
@@ -138,6 +142,70 @@ export interface paths {
         get: operations["explain_block_api_blocks__id__explain_get"];
         put?: never;
         post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/blocks/{job_id}/check-conflict": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /**
+         * Check Window Conflict
+         * @description Pre-check train timetable conflicts for a candidate override window before pinning.
+         */
+        post: operations["check_window_conflict_api_blocks__job_id__check_conflict_post"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/blocks/{job_id}/pin": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /**
+         * Pin Block
+         * @description Manually pin a maintenance job to an exact time window (operator schedule override).
+         */
+        post: operations["pin_block_api_blocks__job_id__pin_post"];
+        /**
+         * Unpin Block
+         * @description Unpin a locked maintenance job, reverting it to PENDING and clearing fixed block schedule.
+         */
+        delete: operations["unpin_block_api_blocks__job_id__pin_delete"];
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/blocks/{job_id}/unpin": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /**
+         * Unpin Block
+         * @description Unpin a locked maintenance job, reverting it to PENDING and clearing fixed block schedule.
+         */
+        post: operations["unpin_block_api_blocks__job_id__unpin_post"];
         delete?: never;
         options?: never;
         head?: never;
@@ -293,8 +361,122 @@ export interface components {
             hard_conflict: boolean;
             /** Relaxed */
             relaxed: boolean;
+            /**
+             * Is Locked
+             * @default false
+             */
+            is_locked: boolean;
             /** Reason */
             reason: string;
+        };
+        /**
+         * BlockPinIn
+         * @description Payload for manually pinning a maintenance job to a block window.
+         */
+        BlockPinIn: {
+            /**
+             * Start
+             * Format: date-time
+             */
+            start: string;
+            /**
+             * End
+             * Format: date-time
+             */
+            end: string;
+        };
+        /**
+         * BlockPinOut
+         * @description Response returned after manually pinning a block.
+         */
+        BlockPinOut: {
+            /** Block Id */
+            block_id: string;
+            /** Job Id */
+            job_id: string;
+            /** Section Id */
+            section_id: string;
+            /**
+             * Start
+             * Format: date-time
+             */
+            start: string;
+            /**
+             * End
+             * Format: date-time
+             */
+            end: string;
+            /** Status */
+            status: string;
+            /**
+             * Has Hard Conflict
+             * @default false
+             */
+            has_hard_conflict: boolean;
+            /**
+             * Is Locked
+             * @default false
+             */
+            is_locked: boolean;
+            /** Conflict Count */
+            conflict_count: number;
+            /** Reason */
+            reason: string;
+        };
+        /**
+         * BlockUnpinOut
+         * @description Response returned after unpinning a block.
+         */
+        BlockUnpinOut: {
+            /** Job Id */
+            job_id: string;
+            /** Status */
+            status: string;
+            /** Is Locked */
+            is_locked: boolean;
+            /** Message */
+            message: string;
+        };
+        /**
+         * ConflictCheckIn
+         * @description Payload for checking timetable conflicts for a proposed window.
+         */
+        ConflictCheckIn: {
+            /**
+             * Start
+             * Format: date-time
+             */
+            start: string;
+            /**
+             * End
+             * Format: date-time
+             */
+            end: string;
+        };
+        /**
+         * ConflictCheckOut
+         * @description Conflict inspection result for a candidate window.
+         */
+        ConflictCheckOut: {
+            /** Section Id */
+            section_id: string;
+            /**
+             * Start
+             * Format: date-time
+             */
+            start: string;
+            /**
+             * End
+             * Format: date-time
+             */
+            end: string;
+            /** Conflict Count */
+            conflict_count: number;
+            /**
+             * Conflicting Trains
+             * @default []
+             */
+            conflicting_trains: string[];
         };
         /**
          * CriticalDelayDetail
@@ -360,6 +542,42 @@ export interface components {
             no_overlap_violations_prevented_vs_edd: number;
         };
         /**
+         * MaintenanceJobCreateIn
+         * @description Payload for creating a manual maintenance job.
+         */
+        MaintenanceJobCreateIn: {
+            /** Department */
+            department: string;
+            /** Asset Id */
+            asset_id: string;
+            /** Section Id */
+            section_id: string;
+            /** Defect Desc */
+            defect_desc: string;
+            /** Criticality */
+            criticality: number;
+            /** Urgency */
+            urgency: number;
+            /** Asset Risk */
+            asset_risk: number;
+            /** Overdue Factor */
+            overdue_factor: number;
+            /** Failure History */
+            failure_history: number;
+            /**
+             * Due Date
+             * Format: date
+             */
+            due_date: string;
+            /** Duration Min */
+            duration_min: number;
+            /**
+             * Day Night Pref
+             * @default ANY
+             */
+            day_night_pref: string;
+        };
+        /**
          * MaintenanceJobOut
          * @description Pydantic model for MaintenanceJob.
          */
@@ -409,6 +627,11 @@ export interface components {
              * @default false
              */
             has_hard_conflict: boolean;
+            /**
+             * Is Locked
+             * @default false
+             */
+            is_locked: boolean;
         };
         /**
          * OptimizerRunSummary
@@ -425,6 +648,11 @@ export interface components {
             hard_conflict_jobs: number;
             /** Total Conflicts */
             total_conflicts: number;
+            /**
+             * Locked Skipped Jobs
+             * @default 0
+             */
+            locked_skipped_jobs: number;
             /** Assignments */
             assignments: components["schemas"]["Assignment"][];
         };
@@ -461,6 +689,11 @@ export interface components {
             status: string;
             /** Has Hard Conflict */
             has_hard_conflict: boolean;
+            /**
+             * Is Locked
+             * @default false
+             */
+            is_locked: boolean;
             /** Reason */
             reason: string;
         };
@@ -670,6 +903,39 @@ export interface operations {
             };
         };
     };
+    create_maintenance_job_api_maintenance_jobs_post: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["MaintenanceJobCreateIn"];
+            };
+        };
+        responses: {
+            /** @description Successful Response */
+            201: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["MaintenanceJobOut"];
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
     optimize_blocks_api_blocks_optimize_post: {
         parameters: {
             query?: never;
@@ -728,6 +994,138 @@ export interface operations {
                 };
                 content: {
                     "application/json": components["schemas"]["BlockExplainOut"];
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
+    check_window_conflict_api_blocks__job_id__check_conflict_post: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                job_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["ConflictCheckIn"];
+            };
+        };
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ConflictCheckOut"];
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
+    pin_block_api_blocks__job_id__pin_post: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                job_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["BlockPinIn"];
+            };
+        };
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["BlockPinOut"];
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
+    unpin_block_api_blocks__job_id__pin_delete: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                job_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["BlockUnpinOut"];
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
+    unpin_block_api_blocks__job_id__unpin_post: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                job_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["BlockUnpinOut"];
                 };
             };
             /** @description Validation Error */

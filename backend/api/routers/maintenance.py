@@ -36,6 +36,7 @@ async def list_maintenance_jobs(
     jobs = await db.maintenancejob.find_many(
         where=where_clause,
         order={"priority_score": "desc"},
+        include={"block": True},
     )
 
     return [
@@ -58,6 +59,7 @@ async def list_maintenance_jobs(
             is_synthetic=j.is_synthetic,
             source_note=j.source_note,
             has_hard_conflict=j.has_hard_conflict,
+            is_locked=bool(j.block and j.block.is_locked),
         )
         for j in jobs
     ]

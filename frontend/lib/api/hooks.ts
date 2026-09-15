@@ -15,11 +15,17 @@ import type { components } from "@/lib/api/types";
 export type Train = components["schemas"]["TrainOut"];
 export type Section = components["schemas"]["SectionOut"];
 export type MaintenanceJob = components["schemas"]["MaintenanceJobOut"];
+export type MaintenanceJobCreateIn = components["schemas"]["MaintenanceJobCreateIn"];
 export type OptimizerRunSummary = components["schemas"]["OptimizerRunSummary"];
 export type Assignment = components["schemas"]["Assignment"];
 export type PlanItem = components["schemas"]["PlanItemOut"];
 export type BlockExplain = components["schemas"]["BlockExplainOut"];
 export type BenchmarkReport = components["schemas"]["BenchmarkReport"];
+export type BlockPinIn = components["schemas"]["BlockPinIn"];
+export type BlockPinOut = components["schemas"]["BlockPinOut"];
+export type BlockUnpinOut = components["schemas"]["BlockUnpinOut"];
+export type ConflictCheckIn = components["schemas"]["ConflictCheckIn"];
+export type ConflictCheckOut = components["schemas"]["ConflictCheckOut"];
 
 export const queryKeys = {
   health: ["health"] as const,
@@ -125,6 +131,67 @@ export function useBenchmarkReport() {
   return useQuery({
     queryKey: queryKeys.benchmarkReport,
     queryFn: () => apiClient.get<BenchmarkReport>("/api/blocks/benchmark"),
+  });
+}
+
+/**
+ * Hook to create a manual maintenance job (FR5.1 / Phase 6).
+ * Invalidates maintenance-jobs queries on success.
+ */
+export function useCreateMaintenanceJob() {
+  const queryClient = useQueryClient();
+  return useMutation({
+    mutationFn: (data: MaintenanceJobCreateIn) =>
+      apiClient.post<MaintenanceJob>("/api/maintenance-jobs", data),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["maintenance-jobs"] });
+    },
+  });
+}
+
+/**
+ * Hook to pre-check train timetable conflicts for a candidate override window.
+ */
+export function useCheckBlockConflict(jobId: string) {
+  return useMutation({
+    mutationFn: (data: ConflictCheckIn) =>
+      apiClient.post<ConflictCheckOut>(`/api/blocks/${jobId}/check-conflict`, data),
+  });
+}
+
+/**
+ * Hook to manually pin a maintenance job to a fixed time window (operator schedule override).
+ * Invalidates jobs, plans, and block explainability audits on success.
+ */
+export function usePinBlock(jobId: string) {
+  const queryClient = useQueryClient();
+  return useMutation({
+    mutationFn: (data: BlockPinIn) =>
+      apiClient.post<BlockPinOut>(`/api/blocks/${jobId}/pin`, data),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["maintenance-jobs"] });
+      queryClient.invalidateQueries({ queryKey: ["plans"] });
+      queryClient.invalidateQueries({ queryKey: queryKeys.blockExplain(jobId) });
+      queryClient.invalidateQueries({ queryKey: queryKeys.blockExplain(`BLK-${jobId}`) });
+    },
+  });
+}
+
+/**
+ * Hook to unpin a manually overridden block and return it to optimizer control.
+ * Invalidates jobs, plans, and block explainability audits on success.
+ */
+export function useUnpinBlock(jobId: string) {
+  const queryClient = useQueryClient();
+  return useMutation({
+    mutationFn: () =>
+      apiClient.post<BlockUnpinOut>(`/api/blocks/${jobId}/unpin`),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["maintenance-jobs"] });
+      queryClient.invalidateQueries({ queryKey: ["plans"] });
+      queryClient.invalidateQueries({ queryKey: queryKeys.blockExplain(jobId) });
+      queryClient.invalidateQueries({ queryKey: queryKeys.blockExplain(`BLK-${jobId}`) });
+    },
   });
 }
 

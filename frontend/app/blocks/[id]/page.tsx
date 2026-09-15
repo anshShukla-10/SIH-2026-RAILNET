@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useMemo } from "react";
+import React, { useMemo, useState } from "react";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import {
@@ -15,15 +16,35 @@ import {
   Stack as Layers,
   Question as FileQuestion,
   ArrowClockwise as RotateCw,
+  Lock,
+  LockOpen,
+  PencilSimple,
 } from "@phosphor-icons/react/dist/ssr";
 import { Bar, BarChart, CartesianGrid, XAxis, YAxis, Cell } from "recharts";
 
 import { useBlockExplain, useMaintenanceJobs } from "@/lib/api/hooks";
+import {
+  useBlockExplain,
+  useMaintenanceJobs,
+  usePinBlock,
+  useUnpinBlock,
+  useCheckBlockConflict,
+  type ConflictCheckOut,
+} from "@/lib/api/hooks";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button, buttonVariants } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { Skeleton } from "@/components/ui/skeleton";
 import { ErrorCard } from "@/components/ui/error-card";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 import {
   ChartContainer,
   ChartTooltip,
@@ -37,6 +58,7 @@ import {
   LIFECYCLE_STATUS_TOKENS,
   CONFLICT_STATUS_TOKENS,
   PRIORITY_FACTOR_TOKENS,
+  LOCKED_STATUS_TOKEN,
   type DepartmentKey,
 } from "@/lib/theme/tokens";
 import { cn } from "@/lib/utils";
@@ -51,6 +73,18 @@ function formatTimestamp(isoStr?: string): string {
     return `${date} ${time}`;
   } catch {
     return isoStr;
+  }
+}
+
+// Convert ISO string to format expected by HTML5 datetime-local input
+function toLocalDatetimeInput(isoStr?: string): string {
+  if (!isoStr) return "";
+  try {
+    const d = new Date(isoStr);
+    const pad = (n: number) => n.toString().padStart(2, "0");
+    return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}T${pad(d.getHours())}:${pad(d.getMinutes())}`;
+  } catch {
+    return "";
   }
 }
 
@@ -91,6 +125,70 @@ export default function BlockExplainPage() {
   } = useBlockExplain(blockId);
 
   const { data: allJobs = [] } = useMaintenanceJobs();
+
+  // Schedule Override & Pinning State
+  const [isOverrideOpen, setIsOverrideOpen] = useState(false);
+  const [isUnpinOpen, setIsUnpinOpen] = useState(false);
+  const [overrideStart, setOverrideStart] = useState("");
+  const [overrideEnd, setOverrideEnd] = useState("");
+  const [conflictResult, setConflictResult] = useState<ConflictCheckOut | null>(null);
+  const [overrideAcknowledged, setOverrideAcknowledged] = useState(false);
+  const [overrideError, setOverrideError] = useState<string | null>(null);
+
+  const effectiveJobId = explainData?.job_id || "";
+  const pinMutation = usePinBlock(effectiveJobId);
+  const unpinMutation = useUnpinBlock(effectiveJobId);
+  const checkConflictMutation = useCheckBlockConflict(effectiveJobId);
+
+  const initOverrideWindow = () => {
+    if (explainData?.start && explainData?.end) {
+      setOverrideStart(toLocalDatetimeInput(explainData.start));
+      setOverrideEnd(toLocalDatetimeInput(explainData.end));
+    }
+    setConflictResult(null);
+    setOverrideAcknowledged(false);
+    setOverrideError(null);
+  };
+
+  const handleCheckConflict = async () => {
+    if (!overrideStart || !overrideEnd || !effectiveJobId) return;
+    setOverrideError(null);
+    try {
+      const res = await checkConflictMutation.mutateAsync({
+        start: new Date(overrideStart).toISOString(),
+        end: new Date(overrideEnd).toISOString(),
+      });
+      setConflictResult(res);
+    } catch (err: any) {
+      setOverrideError(err?.message || "Failed to check timetable conflicts");
+    }
+  };
+
+  const handleConfirmPin = async () => {
+    if (!overrideStart || !overrideEnd || !effectiveJobId) return;
+    setOverrideError(null);
+    try {
+      await pinMutation.mutateAsync({
+        start: new Date(overrideStart).toISOString(),
+        end: new Date(overrideEnd).toISOString(),
+      });
+      setIsOverrideOpen(false);
+      refetchExplain();
+    } catch (err: any) {
+      setOverrideError(err?.message || "Failed to pin block schedule");
+    }
+  };
+
+  const handleConfirmUnpin = async () => {
+    if (!effectiveJobId) return;
+    try {
+      await unpinMutation.mutateAsync();
+      setIsUnpinOpen(false);
+      refetchExplain();
+    } catch (err: any) {
+      console.error("Failed to unpin block:", err);
+    }
+  };
 
   // Match corresponding MaintenanceJob for raw factor breakdown
   const matchingJob = useMemo(() => {
@@ -295,6 +393,56 @@ export default function BlockExplainPage() {
           <RotateCw className="size-3" />
           <span>Refresh Audit</span>
         </Button>
+        <div className="flex items-center gap-2">
+          {explainData.is_locked ? (
+            <>
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => {
+                  initOverrideWindow();
+                  setIsOverrideOpen(true);
+                }}
+                className="h-7 text-xs gap-1.5"
+              >
+                <PencilSimple className="size-3" />
+                <span>Change Override Window</span>
+              </Button>
+              <Button
+                variant="destructive"
+                size="sm"
+                onClick={() => setIsUnpinOpen(true)}
+                className="h-7 text-xs gap-1.5"
+              >
+                <LockOpen className="size-3" />
+                <span>Unpin / Return to Optimizer</span>
+              </Button>
+            </>
+          ) : (
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => {
+                initOverrideWindow();
+                setIsOverrideOpen(true);
+              }}
+              className="h-7 text-xs gap-1.5 border-orange-200 text-orange-700 hover:bg-orange-50 dark:border-orange-800 dark:text-orange-300 dark:hover:bg-orange-950/40"
+            >
+              <Lock className="size-3" />
+              <span>Override Schedule</span>
+            </Button>
+          )}
+
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => refetchExplain()}
+            className="h-7 text-xs gap-1.5"
+          >
+            <RotateCw className="size-3" />
+            <span>Refresh Audit</span>
+          </Button>
+        </div>
       </div>
 
       {/* Header Block Card */}
@@ -312,6 +460,12 @@ export default function BlockExplainPage() {
               {lifecycleToken.name}
             </Badge>
             {isHardConflict ? (
+            {explainData.is_locked ? (
+              <Badge variant="outline" className={LOCKED_STATUS_TOKEN.badgeClass}>
+                <Lock className="size-3 mr-1" />
+                {LOCKED_STATUS_TOKEN.shortName} Override
+              </Badge>
+            ) : isHardConflict ? (
               <Badge variant="outline" className={CONFLICT_STATUS_TOKENS["hard-conflict"].badgeClass}>
                 <AlertTriangle className="size-3 mr-1" />
                 Hard Clash
@@ -425,6 +579,7 @@ export default function BlockExplainPage() {
       </div>
 
       {/* Solver Decision Explanation & Invariant Audits */}
+      {/* Solver Decision & Explanatory Reasoning Card */}
       <Card className="shadow-xs border">
         <CardHeader className="pb-3">
           <div className="flex items-center gap-2">
@@ -432,9 +587,27 @@ export default function BlockExplainPage() {
             <CardTitle className="text-base font-semibold">
               CP-SAT Solver Decision Audit
             </CardTitle>
+            {explainData.is_locked ? (
+              <>
+                <Lock className="size-4 text-orange-600" />
+                <CardTitle className="text-base font-semibold text-foreground">
+                  Manual Schedule Override Audit
+                </CardTitle>
+              </>
+            ) : (
+              <>
+                <CheckCircle2 className="size-4 text-primary" />
+                <CardTitle className="text-base font-semibold">
+                  CP-SAT Solver Decision Audit
+                </CardTitle>
+              </>
+            )}
           </div>
           <CardDescription className="text-xs">
             Algorithmic justification for window allocation under OR-Tools constraint satisfaction.
+            {explainData.is_locked
+              ? "Human operator schedule override audit and mathematical barrier constraint notice."
+              : "Algorithmic justification for window allocation under OR-Tools constraint satisfaction."}
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4 text-xs">
@@ -443,6 +616,9 @@ export default function BlockExplainPage() {
             className={cn(
               "p-4 rounded-lg border space-y-2",
               isHardConflict
+              explainData.is_locked
+                ? `${LOCKED_STATUS_TOKEN.bgClass} ${LOCKED_STATUS_TOKEN.borderClass}`
+                : isHardConflict
                 ? `${CONFLICT_STATUS_TOKENS["hard-conflict"].bgClass} ${CONFLICT_STATUS_TOKENS["hard-conflict"].borderClass}`
                 : isRelaxed
                 ? `${CONFLICT_STATUS_TOKENS.relaxed.bgClass} ${CONFLICT_STATUS_TOKENS.relaxed.borderClass}`
@@ -452,6 +628,14 @@ export default function BlockExplainPage() {
             <div className="flex items-center justify-between gap-2">
               <div className="flex items-center gap-1.5 font-bold">
                 {isHardConflict ? (
+                {explainData.is_locked ? (
+                  <>
+                    <Lock className={cn("size-4", LOCKED_STATUS_TOKEN.textClass)} />
+                    <span className={LOCKED_STATUS_TOKEN.textClass}>
+                      Manual Schedule Pin Notice (Operator Override)
+                    </span>
+                  </>
+                ) : isHardConflict ? (
                   <>
                     <AlertTriangle className={cn("size-4", CONFLICT_STATUS_TOKENS["hard-conflict"].textClass)} />
                     <span className={CONFLICT_STATUS_TOKENS["hard-conflict"].textClass}>
@@ -478,6 +662,9 @@ export default function BlockExplainPage() {
                 variant="outline"
                 className={
                   isHardConflict
+                  explainData.is_locked
+                    ? LOCKED_STATUS_TOKEN.badgeClass
+                    : isHardConflict
                     ? CONFLICT_STATUS_TOKENS["hard-conflict"].badgeClass
                     : isRelaxed
                     ? CONFLICT_STATUS_TOKENS.relaxed.badgeClass
@@ -485,6 +672,9 @@ export default function BlockExplainPage() {
                 }
               >
                 {isHardConflict
+                {explainData.is_locked
+                  ? "Operator Override"
+                  : isHardConflict
                   ? "Action Required"
                   : isRelaxed
                   ? "Relaxed Preference"
@@ -498,6 +688,21 @@ export default function BlockExplainPage() {
 
             <div className="text-[11px] text-muted-foreground leading-relaxed pt-1">
               {isHardConflict ? (
+              {explainData.is_locked ? (
+                <p>
+                  <strong>Operator Override Constraint:</strong> This maintenance block window was manually fixed by a railway section controller rather than automatically assigned by the CP-SAT optimizer.
+                  The solver enforces this fixed interval as an immutable barrier constraint under section <code className="font-mono font-bold text-foreground">NoOverlap</code> — guaranteeing that subsequent optimizer runs will never move this job or allocate overlapping maintenance on section <code className="font-mono font-bold text-foreground">{explainData.section_id}</code>.
+                  {explainData.conflict_count > 0 ? (
+                    <span className="block mt-1 text-destructive font-semibold">
+                      ⚠️ Note: {explainData.conflict_count} train timetable conflict(s) are recorded for this pinned window. Hard conflict flag is active.
+                    </span>
+                  ) : (
+                    <span className="block mt-1 text-emerald-700 dark:text-emerald-300 font-semibold">
+                      ✓ Timetable analysis confirms 0 conflicting passenger/freight trains at this pinned window.
+                    </span>
+                  )}
+                </p>
+              ) : isHardConflict ? (
                 <p>
                   <strong>Why this conflict occurred:</strong> High train traffic density on choke point{" "}
                   <code className="font-mono font-bold text-foreground">{explainData.section_id}</code> left zero
@@ -701,6 +906,197 @@ export default function BlockExplainPage() {
           )}
         </CardContent>
       </Card>
+
+      {/* Schedule Override Modal */}
+      <Dialog open={isOverrideOpen} onOpenChange={setIsOverrideOpen}>
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader>
+            <DialogTitle className="flex items-center gap-2">
+              <Lock className="size-5 text-orange-600" />
+              <span>Override Maintenance Schedule</span>
+            </DialogTitle>
+            <DialogDescription>
+              Fix job <strong className="font-mono text-foreground">{explainData.job_id}</strong> on section{" "}
+              <strong className="font-mono text-foreground">{explainData.section_id}</strong> to an exact time window.
+              The CP-SAT optimizer will treat this window as an immutable constraint and will not re-optimize it.
+            </DialogDescription>
+          </DialogHeader>
+
+          <div className="space-y-4 py-2">
+            <div className="grid grid-cols-1 gap-3 text-xs">
+              <div className="space-y-1">
+                <label className="font-semibold text-foreground">Window Start (Date & Time)</label>
+                <Input
+                  type="datetime-local"
+                  value={overrideStart}
+                  onChange={(e) => {
+                    setOverrideStart(e.target.value);
+                    setConflictResult(null);
+                    setOverrideAcknowledged(false);
+                  }}
+                  className="font-mono text-xs"
+                />
+              </div>
+              <div className="space-y-1">
+                <label className="font-semibold text-foreground">Window End (Date & Time)</label>
+                <Input
+                  type="datetime-local"
+                  value={overrideEnd}
+                  onChange={(e) => {
+                    setOverrideEnd(e.target.value);
+                    setConflictResult(null);
+                    setOverrideAcknowledged(false);
+                  }}
+                  className="font-mono text-xs"
+                />
+              </div>
+            </div>
+
+            {/* Check Conflicts Action */}
+            <div className="flex items-center justify-between pt-1">
+              <span className="text-[11px] text-muted-foreground">
+                Required duration: {matchingJob?.duration_min || durationMin} min
+              </span>
+              <Button
+                type="button"
+                variant="outline"
+                size="sm"
+                onClick={handleCheckConflict}
+                disabled={!overrideStart || !overrideEnd || checkConflictMutation.isPending}
+                className="h-7 text-xs gap-1"
+              >
+                {checkConflictMutation.isPending ? "Checking Timetable..." : "Check Train Conflicts"}
+              </Button>
+            </div>
+
+            {/* Conflict Inspection Feedback */}
+            {conflictResult !== null && (
+              <div
+                className={cn(
+                  "p-3 rounded-lg border text-xs space-y-1.5",
+                  conflictResult.conflict_count > 0
+                    ? "bg-amber-50 dark:bg-amber-950/40 border-amber-300 text-amber-900 dark:text-amber-200"
+                    : "bg-emerald-50 dark:bg-emerald-950/40 border-emerald-300 text-emerald-900 dark:text-emerald-200"
+                )}
+              >
+                <div className="flex items-center gap-1.5 font-semibold">
+                  {conflictResult.conflict_count > 0 ? (
+                    <>
+                      <AlertTriangle className="size-4 text-amber-600 shrink-0" />
+                      <span>Warning: {conflictResult.conflict_count} Timetable Conflict(s) Detected</span>
+                    </>
+                  ) : (
+                    <>
+                      <ShieldCheck className="size-4 text-emerald-600 shrink-0" />
+                      <span>Zero Conflicts: Clean Window Verified</span>
+                    </>
+                  )}
+                </div>
+                {conflictResult.conflict_count > 0 ? (
+                  <>
+                    <p className="text-[11px] leading-relaxed">
+                      This window intersects with {conflictResult.conflict_count} train run(s) on section {conflictResult.section_id}:{" "}
+                      <strong className="font-mono">{conflictResult.conflicting_trains.join(", ") || "Passenger Paths"}</strong>.
+                      Pinning will assert a hard conflict flag requiring manual train regulation.
+                    </p>
+                    <label className="flex items-center gap-2 pt-1 cursor-pointer font-medium text-xs">
+                      <input
+                        type="checkbox"
+                        checked={overrideAcknowledged}
+                        onChange={(e) => setOverrideAcknowledged(e.target.checked)}
+                        className="rounded border-amber-400"
+                      />
+                      <span>I acknowledge this will cause train timetable conflicts</span>
+                    </label>
+                  </>
+                ) : (
+                  <p className="text-[11px]">
+                    No conflicting passenger or freight trains operate on this corridor section during the selected window.
+                  </p>
+                )}
+              </div>
+            )}
+
+            {overrideError && (
+              <div className="p-2.5 rounded-lg bg-destructive/10 border border-destructive/30 text-destructive text-xs">
+                {overrideError}
+              </div>
+            )}
+          </div>
+
+          <DialogFooter>
+            <Button
+              type="button"
+              variant="outline"
+              size="sm"
+              onClick={() => setIsOverrideOpen(false)}
+              className="text-xs"
+            >
+              Cancel
+            </Button>
+            <Button
+              type="button"
+              size="sm"
+              onClick={handleConfirmPin}
+              disabled={
+                !overrideStart ||
+                !overrideEnd ||
+                pinMutation.isPending ||
+                (conflictResult !== null && conflictResult.conflict_count > 0 && !overrideAcknowledged)
+              }
+              className="text-xs bg-orange-600 hover:bg-orange-700 text-white"
+            >
+              {pinMutation.isPending ? "Pinning Window..." : "Confirm & Pin Schedule"}
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
+
+      {/* Unpin Confirmation Modal */}
+      <Dialog open={isUnpinOpen} onOpenChange={setIsUnpinOpen}>
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader>
+            <DialogTitle className="flex items-center gap-2 text-destructive">
+              <LockOpen className="size-5" />
+              <span>Unpin Block & Return to Optimizer</span>
+            </DialogTitle>
+            <DialogDescription>
+              Job <strong className="font-mono text-foreground">{explainData.job_id}</strong> will be unpinned and reverted to <strong className="text-foreground">PENDING</strong> status.
+            </DialogDescription>
+          </DialogHeader>
+
+          <div className="py-2 text-xs text-muted-foreground leading-relaxed space-y-2">
+            <p>
+              Its manually fixed block window will be cleared. On the next CP-SAT optimization run, this maintenance job will be re-evaluated alongside all other pending corridor demands and freely reassigned based on priority score and timetable availability.
+            </p>
+            <div className="p-3 rounded-lg border border-amber-200 bg-amber-50/50 dark:border-amber-900 dark:bg-amber-950/20 text-amber-800 dark:text-amber-200 text-[11px]">
+              ⚠️ Are you sure you want to release operator control over this maintenance block?
+            </div>
+          </div>
+
+          <DialogFooter>
+            <Button
+              type="button"
+              variant="outline"
+              size="sm"
+              onClick={() => setIsUnpinOpen(false)}
+              className="text-xs"
+            >
+              Cancel
+            </Button>
+            <Button
+              type="button"
+              variant="destructive"
+              size="sm"
+              onClick={handleConfirmUnpin}
+              disabled={unpinMutation.isPending}
+              className="text-xs"
+            >
+              {unpinMutation.isPending ? "Unpinning..." : "Confirm Unpin"}
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }

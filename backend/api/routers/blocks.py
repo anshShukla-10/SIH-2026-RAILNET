@@ -12,6 +12,8 @@ from api.schemas import (
     BlockPinIn,
     BlockPinOut,
     BlockUnpinOut,
+    ConflictCheckIn,
+    ConflictCheckOut,
 )
 from optimization.solver import OptimizerRunSummary, run_optimizer_and_persist
 from services.benchmark import run_baseline_comparison
@@ -80,7 +82,32 @@ async def explain_block(
         conflict_count=opt_res.conflict_count,
         hard_conflict=block.has_hard_conflict,
         relaxed="relaxed" in opt_res.reason.lower(),
+        is_locked=block.is_locked,
         reason=opt_res.reason,
+    )
+
+
+@router.post("/{job_id}/check-conflict", response_model=ConflictCheckOut)
+async def check_window_conflict(
+    job_id: str,
+    payload: ConflictCheckIn,
+    db: Prisma = Depends(get_db),
+) -> ConflictCheckOut:
+    """Pre-check train timetable conflicts for a candidate override window before pinning."""
+    from services.conflict import find_conflicts
+
+    job = await db.maintenancejob.find_unique(where={"job_id": job_id})
+    if not job:
+        raise NotFoundError(f"Maintenance job with id '{job_id}' was not found.")
+
+    conflict_res = await find_conflicts(job.section_id, payload.start, payload.end, db=db)
+    train_ids = [c.train_id for c in conflict_res.conflicts]
+    return ConflictCheckOut(
+        section_id=job.section_id,
+        start=payload.start,
+        end=payload.end,
+        conflict_count=conflict_res.conflict_count,
+        conflicting_trains=train_ids,
     )
 
 

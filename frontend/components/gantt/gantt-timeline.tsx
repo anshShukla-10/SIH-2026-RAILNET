@@ -6,6 +6,7 @@ import {
   MagnifyingGlass as Search,
   Stack as Layers,
   Warning as AlertTriangle,
+  Lock,
 } from "@phosphor-icons/react/dist/ssr";
 
 import { Input } from "@/components/ui/input";
@@ -18,6 +19,7 @@ import {
   DEPARTMENT_TOKENS,
   MAINTENANCE_BAND_TOKENS,
   CONFLICT_STATUS_TOKENS,
+  LOCKED_STATUS_TOKEN,
   getDepartmentToken,
   type DepartmentKey,
 } from "@/lib/theme/tokens";
@@ -389,6 +391,7 @@ function BlockCard({ item }: { item: PlanItem }) {
   const isHard = item.has_hard_conflict;
   // PlanItemOut does not expose a dedicated relaxed boolean (only BlockExplainOut does), so we inspect the solver rationale string.
   const isRelaxed = item.reason.toLowerCase().includes("relaxed");
+  const isLocked = Boolean(item.is_locked);
 
   const conflictToken = isHard
     ? CONFLICT_STATUS_TOKENS["hard-conflict"]
@@ -410,13 +413,32 @@ function BlockCard({ item }: { item: PlanItem }) {
           "w-full max-w-full overflow-hidden box-border text-left p-1.5 rounded-md cursor-pointer transition-all hover:scale-[1.02] hover:shadow-md border",
           isHard ? "border-2 shadow-md animate-pulse" : isRelaxed ? "border-2 shadow-xs" : "",
           conflictToken.borderClass
+          isLocked
+            ? "border-2 shadow-xs border-orange-400 dark:border-orange-600 ring-1 ring-orange-400/30"
+            : isHard
+            ? "border-2 shadow-md animate-pulse"
+            : isRelaxed
+            ? "border-2 shadow-xs"
+            : "",
+          !isLocked && conflictToken.borderClass
         )}
         style={{
           borderColor: isHard || isRelaxed ? conflictToken.hex : undefined,
           backgroundColor: isHard ? conflictToken.bgHex : deptToken.bgHex,
+          borderColor: isLocked
+            ? LOCKED_STATUS_TOKEN.hex
+            : isHard || isRelaxed
+            ? conflictToken.hex
+            : undefined,
+          backgroundColor: isLocked
+            ? LOCKED_STATUS_TOKEN.bgHex
+            : isHard
+            ? conflictToken.bgHex
+            : deptToken.bgHex,
         }}
       >
         {/* Row 1: Department Badge and Start Time */}
+        {/* Row 1: Department Badge, Locked Flag, and Start Time */}
         <div className="flex items-center justify-between gap-1 min-w-0">
           <Badge
             variant="outline"
@@ -425,6 +447,27 @@ function BlockCard({ item }: { item: PlanItem }) {
           >
             {deptToken.shortName}
           </Badge>
+          <div className="flex items-center gap-1 min-w-0">
+            <Badge
+              variant="outline"
+              className="text-[9px] py-0 px-1 font-bold h-4 shrink-0"
+              style={{ color: deptToken.hex, borderColor: deptToken.hex + "60" }}
+            >
+              {deptToken.shortName}
+            </Badge>
+            {isLocked && (
+              <Badge
+                variant="outline"
+                className={cn(
+                  "text-[8px] py-0 px-1 h-3.5 font-bold uppercase gap-0.5 shrink-0",
+                  LOCKED_STATUS_TOKEN.badgeClass
+                )}
+              >
+                <Lock className="size-2 shrink-0" />
+                <span>Locked</span>
+              </Badge>
+            )}
+          </div>
           <span className="font-mono text-[10px] font-bold text-foreground shrink-0">
             {startTime}
           </span>
@@ -479,6 +522,7 @@ function CompactBlockBadge({ item }: { item: PlanItem }) {
   const isHard = item.has_hard_conflict;
   // PlanItemOut does not expose a dedicated relaxed boolean (only BlockExplainOut does), so we inspect the solver rationale string.
   const isRelaxed = item.reason.toLowerCase().includes("relaxed");
+  const isLocked = Boolean(item.is_locked);
 
   const conflictToken = isHard
     ? CONFLICT_STATUS_TOKENS["hard-conflict"]
@@ -493,14 +537,28 @@ function CompactBlockBadge({ item }: { item: PlanItem }) {
         className={cn(
           "size-6 rounded-full flex items-center justify-center font-bold text-[9px] text-white cursor-pointer shadow-xs transition-transform hover:scale-110",
           isHard ? "ring-2 ring-offset-1 animate-pulse" : isRelaxed ? "ring-2 ring-offset-1" : ""
+          isLocked
+            ? "ring-2 ring-offset-1 ring-orange-500"
+            : isHard
+            ? "ring-2 ring-offset-1 animate-pulse ring-red-500"
+            : isRelaxed
+            ? "ring-2 ring-offset-1 ring-amber-500"
+            : ""
         )}
         style={{
           backgroundColor: isHard ? conflictToken.hex : deptToken.hex,
           boxShadow: isHard || isRelaxed ? `0 0 0 2px ${conflictToken.hex}` : undefined,
+          backgroundColor: isLocked
+            ? LOCKED_STATUS_TOKEN.hex
+            : isHard
+            ? conflictToken.hex
+            : deptToken.hex,
         }}
         title={`${item.job_id} (${item.department})${isHard ? " — HARD CLASH" : isRelaxed ? " — Relaxed" : ""}`}
+        title={`${item.job_id} (${item.department})${isLocked ? " — LOCKED OVERRIDE" : isHard ? " — HARD CLASH" : isRelaxed ? " — Relaxed" : ""}`}
       >
         {isHard ? "!" : item.department[0]}
+        {isLocked ? <Lock className="size-3" /> : isHard ? "!" : item.department[0]}
       </button>
     </GanttBlockPopover>
   );

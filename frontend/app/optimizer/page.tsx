@@ -13,6 +13,7 @@ import {
   Stack as Layers,
   CaretRight as ChevronRight,
   ShieldCheck,
+  Lock,
 } from "@phosphor-icons/react/dist/ssr";
 import { Bar, BarChart, CartesianGrid, XAxis, YAxis, Cell } from "recharts";
 
@@ -36,6 +37,7 @@ import {
   DEPARTMENT_TOKENS,
   CONFLICT_STATUS_TOKENS,
   LIFECYCLE_STATUS_TOKENS,
+  LOCKED_STATUS_TOKEN,
   getDepartmentToken,
   type DepartmentKey,
 } from "@/lib/theme/tokens";
@@ -634,6 +636,11 @@ export default function OptimizerPage() {
                       : summary.relaxed_but_clean_jobs > 0
                       ? `Optimization Solved: ${summary.jobs_scheduled} Blocks Allocated (${summary.zero_conflict_jobs} Clean, ${summary.relaxed_but_clean_jobs} Relaxed Clean Windows)`
                       : `Optimization Solved & Persisted: ${summary.jobs_scheduled} Blocks Allocated (100% Zero Conflicts)`}
+                    {(summary.locked_skipped_jobs ?? 0) > 0 && (
+                      <span className="ml-2 font-normal text-muted-foreground">
+                        • {summary.locked_skipped_jobs} {summary.locked_skipped_jobs === 1 ? "job" : "jobs"} skipped (manually locked)
+                      </span>
+                    )}
                   </span>
                 </div>
                 <Link
@@ -654,6 +661,15 @@ export default function OptimizerPage() {
 
               {/* 5-Metric Results Panel: Clean vs Relaxed vs Hard-Conflict Stat Tiles (PRD 5.5) */}
               <div className="grid grid-cols-2 sm:grid-cols-5 gap-3">
+              {/* 5-Metric (or 6-Metric when locked blocks present) Results Panel (PRD 5.5) */}
+              <div
+                className={cn(
+                  "grid grid-cols-2 gap-3",
+                  (summary.locked_skipped_jobs ?? 0) > 0
+                    ? "sm:grid-cols-3 lg:grid-cols-6"
+                    : "sm:grid-cols-5"
+                )}
+              >
                 <KpiCard
                   label="Total Scheduled"
                   value={summary.jobs_scheduled}
@@ -711,6 +727,19 @@ export default function OptimizerPage() {
                     </Badge>
                   }
                 />
+                {(summary.locked_skipped_jobs ?? 0) > 0 && (
+                  <KpiCard
+                    label="Manually Locked"
+                    value={summary.locked_skipped_jobs!}
+                    subtext="Preserved schedule"
+                    badge={
+                      <Badge variant="outline" className={LOCKED_STATUS_TOKEN.badgeClass}>
+                        <Lock className="size-3 mr-1" />
+                        Locked
+                      </Badge>
+                    }
+                  />
+                )}
               </div>
 
               {/* Department Balance Chart */}

@@ -396,5 +396,26 @@ export const PRIORITY_FACTOR_TOKENS = {
   },
 } as const;
 
+/**
+ * Manual Schedule Override Token (Phase 6 / PRD Section 6):
+ * Distinct visual token for jobs/blocks whose schedules have been locked by an operator.
+ */
+export const LOCKED_STATUS_TOKEN: ColorToken = {
+  key: "locked",
+  name: "Manual Override (Locked)",
+  shortName: "Locked",
+  description: "Schedule manually pinned by railway operator — excluded from CP-SAT re-optimization",
+  hex: "#ea580c", // Orange-600
+  bgHex: "#fff7ed", // Orange-50
+  bgClass: "bg-orange-50 dark:bg-orange-950/60",
+  textClass: "text-orange-700 dark:text-orange-300",
+  borderClass: "border-orange-200 dark:border-orange-800",
+  badgeClass:
+    "bg-orange-50 text-orange-700 border border-orange-200 dark:bg-orange-950/60 dark:text-orange-300 dark:border-orange-800",
+  dotClass: "bg-orange-600",
+};
 
 
+export function getLockedStatusToken(): ColorToken {
+  return LOCKED_STATUS_TOKEN;
+}

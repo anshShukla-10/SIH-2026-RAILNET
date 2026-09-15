@@ -6,9 +6,11 @@ import {
   DEPARTMENT_TOKENS,
   MAINTENANCE_BAND_TOKENS,
   CONFLICT_STATUS_TOKENS,
+  LOCKED_STATUS_TOKEN,
   type DepartmentKey,
 } from "@/lib/theme/tokens";
 import { ShieldCheck, Warning as AlertTriangle } from "@phosphor-icons/react/dist/ssr";
+import { ShieldCheck, Warning as AlertTriangle, Lock } from "@phosphor-icons/react/dist/ssr";
 
 export function GanttLegend() {
   return (
@@ -68,6 +70,22 @@ export function GanttLegend() {
           <Badge variant="outline" className={CONFLICT_STATUS_TOKENS["hard-conflict"].badgeClass}>
             <AlertTriangle className="size-3 mr-1" />
             Hard Clash
+          </Badge>
+        </div>
+      </div>
+
+      <span className="hidden sm:inline text-border">|</span>
+
+      {/* 4. Scheduling Allocation Mode */}
+      <div className="flex items-center gap-2">
+        <span className="font-semibold text-foreground">Allocation:</span>
+        <div className="flex items-center gap-1.5">
+          <Badge variant="outline" className="bg-sky-50 text-sky-700 border-sky-200 dark:bg-sky-950/60 dark:text-sky-300 dark:border-sky-800">
+            CP-SAT Optimizer
+          </Badge>
+          <Badge variant="outline" className={LOCKED_STATUS_TOKEN.badgeClass}>
+            <Lock className="size-3 mr-1" />
+            Manual Override
           </Badge>
         </div>
       </div>
