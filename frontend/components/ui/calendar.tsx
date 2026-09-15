@@ -1,7 +1,6 @@
 "use client";
 
 import * as React from "react";
-import { DayPicker, getDefaultClassNames } from "react-day-picker";
 import { DayPicker } from "react-day-picker";
 import { CaretLeft, CaretRight } from "@phosphor-icons/react/dist/ssr";
 
@@ -16,8 +15,6 @@ function Calendar({
   showOutsideDays = true,
   ...props
 }: CalendarProps) {
-  const defaultClassNames = getDefaultClassNames();
-
   return (
     <DayPicker
       showOutsideDays={showOutsideDays}
